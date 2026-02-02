@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Solar System: Document Object Model | 30 Days Of JavaScript</title>
+    
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
+        rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./main.js" ></script>
+
+</head>
+
+<body class="bg-gray-300">
+    <div class=" mx-auto p-4 ">
+        <video class="w-full top-0 fixed -z-10 left-0 h-full object-cover" autoplay loop muted>
+            <source src="../images/galaxy.gif " type="video/gif" />
+        </video>
+        <header class=" p-4 text-center">
+            <h1 class="text-xl font-semibold mb-4">
+                Calculate a weight of an object on a planet
+            </h1>
+
+            <input
+                type="number"
+                id="mass"
+                placeholder="Mass in Kilogram"
+                class="border p-2 mb-3"
+            />
+
+            <select id="planet" class="border p-2 mb-3">
+                <option 
+                class="text-gray-300"
+                value="none" selected disabled>
+                    -- Select Planet --
+                </option>
+                <option value="mercury">Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="earth">Earth</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+                <option value="neptune">Neptune</option>
+                <option value="pluto">Pluto</option>
+                <option value="moon">Moon</option>
+            </select>
+
+            <br />
+
+            <button id="btn" class="bg-blue-600 text-white px-4 py-2 rounded">
+                Calculate weight
+            </button>
+
+            <p id="result" class="mt-4 font-medium"></p>
+        </header>
+
+        <main class="mt-10 flex justify-center">
+            <img
+                src="../images/earth.png"
+                class="planet-image w-48"
+                alt="Planet image"
+            />
+        </main>
+    </div>
+</body>
+</html>

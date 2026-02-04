@@ -1,101 +1,96 @@
-console.log(typeof countries === 'undefined' ? 'countries not defined' : `countries: ${countries.length}`);
+document.addEventListener("DOMContentLoaded", () => {
 
-// Defensive fallback if countries isn't defined by the data script
-const countriesList = Array.isArray(window.countries) ? window.countries : [];
+  console.log(
+    typeof countries === "undefined"
+      ? "countries not defined"
+      : `countries: ${countries.length}`
+  );
 
-const container=document.getElementById("countriesgrid");
-const countriesSum=document.getElementById("countriesSum");
-const letterSum=document.getElementById("letterSum");
-const startLetterSpan=document.getElementById("startletter");
+  const countriesList = Array.isArray(window.countries) ? window.countries : [];
 
-const startLetterInput=document.getElementById("startLetterInput");
-const searchInput=document.getElementById("searchinput");
+  // DOM elements
+  const container = document.getElementById("countriesgrid");
+  const countriesSum = document.getElementById("countriesSum");
+  const letterSum = document.getElementById("letterSum");
+  const startLetterSpan = document.getElementById("startletter");
 
-// Buttons
-const startbtn = document.getElementById("startWord");
-const searchbtn = document.getElementById("search");
-const letterbtn = document.getElementById("sort");
+  const startLetterInput = document.getElementById("startLetterInput");
+  const searchInput = document.getElementById("searchinput");
 
-if (!container){
-    console.error('Missing #countriesgrid element. Aborting script.');
-} else {
-    // Display countries
-    function displayCountries(list){
-        container.innerHTML='';
-        list.forEach(country => {
-            const div=document.createElement('div');
-            div.className="bg-blue-200 text-center p-6 font-semibold rounded shadow";
-            div.textContent=String(country).toUpperCase();
-            container.appendChild(div);
-        });
+  const startbtn = document.getElementById("startWord");
+  const searchbtn = document.getElementById("search");
+  const letterbtn = document.getElementById("sort");
+
+  if (!container) {
+    console.error("Missing #countriesgrid element");
+    return;
+  }
+
+  /* -------- DISPLAY -------- */
+
+  function displayCountries(list) {
+    container.innerHTML = "";
+
+    list.forEach(country => {
+      const div = document.createElement("div");
+      div.className =
+        "bg-blue-200 text-center p-6 font-semibold rounded shadow";
+      div.textContent = String(country).toUpperCase();
+      container.appendChild(div);
+    });
+  }
+
+  function updateSummary(list, letter = "-") {
+    if (countriesSum) countriesSum.textContent = list.length;
+    if (letterSum) letterSum.textContent = list.length;
+    if (startLetterSpan) startLetterSpan.textContent = letter;
+  }
+
+  /* -------- FILTER LOGIC -------- */
+
+  function applyFilters() {
+    const letter =
+      startLetterInput?.value.trim().slice(0, 1).toUpperCase() || "";
+    const term = searchInput?.value.trim().toLowerCase() || "";
+
+    let filtered = countriesList;
+
+    if (letter) {
+      filtered = filtered.filter(c =>
+        String(c).toUpperCase().startsWith(letter)
+      );
     }
 
-    function updateSummary(list, startLetterDisplay = '-'){
-        if (countriesSum) countriesSum.textContent = list.length;
-        if (letterSum) letterSum.textContent = list.length;
-        if (startLetterSpan) startLetterSpan.textContent = startLetterDisplay;
+    if (term) {
+      filtered = filtered.filter(c =>
+        String(c).toLowerCase().includes(term)
+      );
     }
 
-    // Initial display
-    displayCountries(countriesList);
-    updateSummary(countriesList,'-');
+    displayCountries(filtered);
+    updateSummary(filtered, letter || "-");
+  }
 
-    // Helper filters
-    function filterByStart(letter){
-        // if (!letter) return coutriesList.slice();
-        const L = letter.toUpperCase();
-        return countriesList.filter(c => String(c).toUpperCase().startsWith(L));
-    }
+  /* -------- INITIAL LOAD -------- */
 
-    function filterByTerm(term) {
-        // if (!term) return countriesList.slice();
-        const t = term.toLowerCase();
-        return countriesList.filter(c => String(c).toLowerCase().includes(t));
-    }
+  displayCountries(countriesList);
+  updateSummary(countriesList, "-");
 
-    // Live start-letter filter
-    if (startLetterInput) {
-        startLetterInput.addEventListener('input',()=>{
-            const letter = startLetterInput.value.trim().slice(0,1);
-            const filtered = filterByStart(letter);
-            displayCountries(filtered);
-            updateSummary(filtered, letter ? letter.toUpperCase() : '-');
-        });
-    }
+  /* -------- EVENTS -------- */
 
-    if (searchInput) {
-        searchInput.addEventListener('input',()=> {
-            const term=searchInput.value.trim();
-            const filtered=filterByTerm(term);
-            displayCountries(filtered);
-            updateSummary(filtered, '-');
-        });
-    }
+  startLetterInput?.addEventListener("input", applyFilters);
+  searchInput?.addEventListener("input", applyFilters);
 
-    // Buttons (keep click behavior too)
-    if (startbtn) {
-        startbtn.addEventListener("click",()=>{
-            const letter=startLetterInput ? startLetterInput.value.trim().toUpperCase() : '';
-            const filtered=filterByStart(letter||'A');
-            displayCountries(filtered);
-            updateSummary(filtered,letter||'A');
-        });
-    }
+  startbtn?.addEventListener("click", applyFilters);
+  searchbtn?.addEventListener("click", applyFilters);
 
-    if (searchbtn) {
-        searchbtn.addEventListener("click",()=>{
-            const term=searchInput?searchInput.value.trim().toLowerCase() : '';
-            const filtered=filterByTerm(term);
-            displayCountries(filtered);
-            updateSummary(filtered, '-');
-        });
-    }
+  letterbtn?.addEventListener("click", () => {
+    const sorted = countriesList
+      .slice()
+      .sort((a, b) => String(a).localeCompare(String(b)));
 
-    if (letterbtn) {
-        letterbtn.addEventListener("click", () => {
-            const sorted=countriesList.slice().sort((a,b)=>String(a).localeCompare(String(b)));
-            displayCountries(sorted);
-            updateSummary(sorted,'-');
-        });
-    }
-}
+    displayCountries(sorted);
+    updateSummary(sorted, "-");
+  });
+
+});

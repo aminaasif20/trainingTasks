@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <script>
+        const aminationWord=["Interactive", "Creative", "Dynamic", "Responsive"];
+        const techWords = ["JavaScript", "Python", "React", "Tailwind CSS", "Redux"];
+        function aminationtext(elementId,words){
+            const animate=document.getElementById("animation");
+            const technologies=document.getElementById("technologies");
+
+            let index=0;
+            setInterval(()=>{
+                document.getElementById(elementId).textContent=words[index];
+                index=(index+1)%words.length;
+            },3000);
+
+        }
+    </script>
+</head>
+<body>
+	<h1 class="text-2xl font-bold text-center my-10 p-4 font-arial">Amina Asif</h1>
+	<div>
+        <div class="bg-amber-100  m-12 h-12 p-2">animation <span id="animation"></span> </div>
+        <div class="m-12">An interactive front-end web application that allows users to explore and filter country data in real time. The project features live search, starting-letter filtering, and alphabetical sorting, all implemented using vanilla JavaScript with a modern, responsive UI built in Tailwind CSS.
+
+        This project showcases my ability to work with DOM manipulation, event handling, and array methods while delivering a smooth user experience without page reloads. It reflects my focus on clean code, responsive design, and building intuitive user interfaces.</div>
+        <div class="flex  item-center justify-center gap-10">
+            <div class="w-28 text-center item-center rounded h-32 bg-blue-700 hover:bg-purple-700">JavaScript for Everyone</div>
+            <div class="w-28 text-center item-center rounded h-32 bg-blue-700 hover:bg-purple-700">30Days of Python</div>
+            <div class="w-28 text-center item-center rounded h-32 bg-blue-700 hover:bg-purple-700">30Days of JS</div>
+        </div>
+        <div class="m-12">
+            The technologies I teach <span id="technologies"></span>
+        </div>
+    </div>
+
+	<script src="./data/countries_data.js"></script>
+	<script src="./scripts/main.js"></script>
+
+</body>
+
+</html>

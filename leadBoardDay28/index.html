@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white p-10">
+
+ 
+  <div class="flex gap-3 mb-6">
+    <input id="firstName" placeholder="First Name" class="border px-3 py-2 w-40">
+    <input id="lastName" placeholder="Last Name" class="border px-3 py-2 w-40">
+    <input id="country" placeholder="Country" class="border px-3 py-2 w-40">
+    <input id="score" type="number" placeholder="Number" class="border px-3 py-2 w-28">
+    <button onclick="addPlayer()" class="bg-[#e6c9c4] hover:bg-amber-700 rounded-full px-6 py-2 text-white">
+      Add Player
+    </button>
+  </div>
+  <div id="players" class="space-y-4"></div>
+
+<script>
+
+  let players = [
+    {name:"Maha Ather", country:"Pakistan", score:85},
+    {name:"John Smith", country:"USA", score:84},
+    {name:"David Smith", country:"United Kingdom", score:80},
+    {name:"Asabeneh Yetayeh", country:"Finland", score:75},
+    {name:"Mathias Elias", country:"Sweden", score:70},
+  ];
+
+  function formatDate(){
+    const d = new Date();
+    return d.toDateString().toUpperCase() + " " + d.toLocaleTimeString();
+  }
+
+  function render(){
+    const container = document.getElementById("players");
+    container.innerHTML = "";
+
+    players.sort((a,b)=>b.score-a.score);
+
+    players.forEach((p,i)=>{
+      container.innerHTML += `
+        <div class="bg-[#e6c9c4] flex items-center justify-between px-6 py-4 rounded">
+          
+          <div class="w-1/3">
+            <p class="font-semibold uppercase">${p.name}</p>
+            <p class="text-xs text-gray-600">${formatDate()}</p>
+          </div>
+
+          <p class="uppercase w-1/4">${p.country}</p>
+          <p class="w-12">${p.score}</p>
+
+          <div class="flex gap-3">
+            <button onclick="removePlayer(${i})"
+              class="bg-white rounded-full w-10 h-10 flex items-center justify-center text-red-500">
+              🗑
+            </button>
+            <button onclick="changeScore(${i},5)"
+              class="bg-white rounded-full w-10 h-10">+5</button>
+            <button onclick="changeScore(${i},-5)"
+              class="bg-white rounded-full w-10 h-10">-5</button>
+          </div>
+
+        </div>
+      `;
+    });
+  }
+
+  function addPlayer(){
+    const f = firstName.value.trim();
+    const l = lastName.value.trim();
+    const c = country.value.trim();
+    const s = Number(score.value);
+
+    if(!f || !l || !c || !s) return;
+
+    players.push({
+      name: `${f} ${l}`,
+      country: c,
+      score: s
+    });
+
+    firstName.value = lastName.value = country.value = score.value = "";
+    render();
+  }
+
+  function removePlayer(i){
+    players.splice(i,1);
+    render();
+  }
+
+  function changeScore(i,val){
+    players[i].score += val;
+    render();
+  }
+
+  render();
+</script>
+
+</body>
+</html>

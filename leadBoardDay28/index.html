@@ -13,7 +13,7 @@
     <input id="lastName" placeholder="Last Name" class="border px-3 py-2 w-40">
     <input id="country" placeholder="Country" class="border px-3 py-2 w-40">
     <input id="score" type="number" placeholder="Number" class="border px-3 py-2 w-28">
-    <button onclick="addPlayer()" class="bg-[#e6c9c4] hover:bg-amber-700 rounded-full px-6 py-2 text-white">
+    <button onclick="addPlayer()" class="bg-[#e6c9c5] hover:bg-amber-700 rounded-full px-6 py-2 text-white">
       Add Player
     </button>
   </div>
@@ -22,47 +22,46 @@
 <script>
 
   let players = [
-    {name:"Maha Ather", country:"Pakistan", score:85},
-    {name:"John Smith", country:"USA", score:84},
-    {name:"David Smith", country:"United Kingdom", score:80},
-    {name:"Asabeneh Yetayeh", country:"Finland", score:75},
-    {name:"Mathias Elias", country:"Sweden", score:70},
+    {name:"Maha Ather",country:"Pakistan",score:85},
+    {name:"Ayesha",country:"USA",score:84},
+    {name:"Mahnoor",country:"Pakistan",score:80},
+    {name:"Eman",country:"Finland",score:75},
+    {name:"Eisha",country:"Canada",score:70},
   ];
 
   function formatDate(){
-    const d = new Date();
-    return d.toDateString().toUpperCase() + " " + d.toLocaleTimeString();
+    const d=new Date();
+    return d.toDateString()+" "+d.toLocaleTimeString();
   }
 
   function render(){
-    const container = document.getElementById("players");
-    container.innerHTML = "";
+    const container=document.getElementById("players");
+    container.innerHTML="";
 
     players.sort((a,b)=>b.score-a.score);
 
     players.forEach((p,i)=>{
-      container.innerHTML += `
-        <div class="bg-[#e6c9c4] flex items-center justify-between px-6 py-4 rounded">
+      container.innerHTML+=`
+        <div class="bg-[#e6c9c4] flex items-center justify-between px-6 mx-4 py-4 rounded">
           
           <div class="w-1/3">
-            <p class="font-semibold uppercase">${p.name}</p>
+            <p class="font-semibold">${p.name}</p>
             <p class="text-xs text-gray-600">${formatDate()}</p>
           </div>
 
-          <p class="uppercase w-1/4">${p.country}</p>
+          <p class="w-1/4">${p.country}</p>
           <p class="w-12">${p.score}</p>
 
           <div class="flex gap-3">
             <button onclick="removePlayer(${i})"
               class="bg-white rounded-full w-10 h-10 flex items-center justify-center text-red-500">
-              🗑
+              🧺
             </button>
-            <button onclick="changeScore(${i},5)"
+            <button onclick="changeScore(${i},+5)"
               class="bg-white rounded-full w-10 h-10">+5</button>
             <button onclick="changeScore(${i},-5)"
               class="bg-white rounded-full w-10 h-10">-5</button>
           </div>
-
         </div>
       `;
     });

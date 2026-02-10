@@ -11,52 +11,52 @@
   <div class="bg-white mx-56 sm:mx-12 rounded-lg w-full p-12">
     <h1 class="text-2xl font-bold text-center mb-6">Validating Web Forms</h1>
     
-    <form class="space-y-6 w-auto">
+    <form class="space-y-6 w-auto" id="validationForm">
       <div>
-        <label id="fname" class="block font-semibold mb-1">First Name</label>
+        <label for="firstName" class="block font-semibold mb-1">First Name</label>
         <input type="text" id="firstName" placeholder="First Name"
         class="w-full border border-gray-300 rounded px-3 py-2 "/>
-        <p class="text-amber-500 text-sm mt-1">
-          first
+        <p id="firstNameError" class="text-red-500 text-sm mt-1 hidden">
+          First name must be at least 3 characters
         </p>
       </div>
       <div>
-        <label id="lname" class="block font-semibold mb-1" for="lastName">Last Name</label>
+        <label for="lastName" class="block font-semibold mb-1">Last Name</label>
         <input type="text" id="lastName" placeholder="Last Name" class="w-full border border-gray-300 rounded px-3 py-2 "/>
-        <p class="text-amber-500 text-sm mt-1">
-          Last name
+        <p id="lastNameError" class="text-red-500 text-sm mt-1 hidden">
+          Last name must be at least 3 characters
         </p>
       </div>
       <div>
-        <label id="email" class="block font-semibold mb-1" for="email">Email</label>
-        <input type="email" id="email" placeholder="example@example.com" class="w-full border border-gray-300 rounded px-3 py-2"/>
-        <p class="text-amber-500 text-sm mt-1">
-          example@example.com
+        <label for="emailInput" class="block font-semibold mb-1">Email</label>
+        <input type="email" id="emailInput" placeholder="example@example.com" class="w-full border border-gray-300 rounded px-3 py-2"/>
+        <p id="emailError" class="text-red-500 text-sm mt-1 hidden">
+          Please enter a valid email address
         </p>
       </div>
       <div>
-        <label id="password" class="block font-semibold mb-1" for="password">Password</label>
-        <input type="password" id="password" placeholder="Password" class="w-full border border-gray-300 rounded px-3 py-2 "/>
-        <p id="password" class="text-amber-500 text-sm mt-1">
-          characters
+        <label for="passwordInput" class="block font-semibold mb-1">Password</label>
+        <input type="password" id="passwordInput" placeholder="Password" class="w-full border border-gray-300 rounded px-3 py-2 "/>
+        <p id="passwordError" class="text-red-500 text-sm mt-1 hidden">
+          Password must be at least 8 characters with uppercase, lowercase, number, and special character
         </p>
       </div>
       <div>
-        <label id="telephone" class="block font-semibold mb-1" for="telephone">Telephone</label>
-        <input type="text" id="telephone" placeholder="123-456-7890" class="w-full border border-gray-300 rounded px-3 py-2 "/>
-        <p id="tele" class="text-amber-500 text-sm mt-1">
-           Telephone 
+        <label for="telephoneInput" class="block font-semibold mb-1">Telephone</label>
+        <input type="text" id="telephoneInput" placeholder="03XX-XXXXXXX" class="w-full border border-gray-300 rounded px-3 py-2 "/>
+        <p id="telephoneError" class="text-red-500 text-sm mt-1 hidden">
+          Telephone must be in format: 03XX-XXXXXXX
         </p>
       </div>
       <div>
-        <label id="bio" class="block font-semibold mb-1" for="bio">Your Bio</label>
-        <textarea id="bio" rows="4" placeholder="Tell us about yourself" class="w-full border border-gray-300 rounded px-3 py-2 "></textarea>
-        <p id="bio" class="text-red-500 text-sm mt-1">
-          Your bio cannot be empty
+        <label for="bioInput" class="block font-semibold mb-1">Your Bio</label>
+        <textarea id="bioInput" rows="4" placeholder="Tell us about yourself" class="w-full border border-gray-300 rounded px-3 py-2 "></textarea>
+        <p id="bioError" class="text-red-500 text-sm mt-1 hidden">
+          Your bio must be between 10 and 255 characters
         </p>
       </div>
       <button type="submit" 
-              class="w-full bg-amber-500 text-white font-semibold py-2">
+              class="w-full bg-amber-500 text-white font-semibold py-2 hover:bg-amber-600">
         Submit
       </button>
     </form>

@@ -4,19 +4,57 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-	<link
-		href="https://fonts.googleapis.com/css?family=Aldrich|Lato:300,400,700|Montserrat:300,400,500|Nunito:300,400,600|Oswald|Raleway+Dots|Raleway:300,400|Roboto:300,400,500&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Aldrich|Lato:300,400,700|Montserrat:300,400,500|Nunito:300,400,600|Oswald|Raleway+Dots|Raleway:300,400|Roboto:300,400,500&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/ce3e7ed90f.js" crossorigin="anonymous"></script>
-	<title>30Days Of JavaScript: 29 Project 1</title>
-
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="./data.js"></script>
+	<script src="../../JsonDataDay25/script/main.js"></script>
+	<title>World Countries Data</title>
 </head>
 
-<body>
-	<div>
+<body class="bg-gray-100">
+	<header class="bg-gray-200 text-center py-6">
+		<h1 class="text-4xl font-bold text-orange-500">World Countries Data</h1>
+		<p class="text-gray-600">Currently, we have 250 countries</p>
+		<p class="text-orange-400 text-sm" id="searchInfo">11 countries satisfied the search criteria</p>
+	</header>
 
-	</div>
+	<main class="max-w-7xl mx-auto p-6">
+		<div class="mb-6">
+			<input 
+				id="searchInput" 
+				type="text" 
+				placeholder="sw" 
+				class="w-full px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+			>
+		</div>
+
+		<div class="flex justify-center gap-4 mb-8">
+			<button onclick="sortBy('name')" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold">
+				NAME
+			</button>
+			<button onclick="sortBy('capital')" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold">
+				CAPITAL
+			</button>
+			<button onclick="sortBy('population')" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold flex items-center gap-2">
+				POPULATION <span>↑</span>
+			</button>
+			<button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full">📊</button>
+		</div>
+
+		<div id="countriesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+			<!-- Country cards will be inserted here -->
+		</div>
+
+		<div class="flex justify-center gap-4 mt-8">
+			<button onclick="if (typeof showPopulation === 'function') showPopulation()" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded font-semibold">
+				POPULATION
+			</button>
+			<button onclick="if (typeof showLanguages === 'function') showLanguages()" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded font-semibold">
+				LANGUAGES
+			</button>
+		</div>
+	</main>
 
 	<script src="./script.js"></script>
 

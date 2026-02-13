@@ -8,6 +8,7 @@ const search=document.getElementById("search");
 let allCountries = countries;
 let displayedCountries = countries;
 let sortOrder = "asc";
+let imageSortOrder = "asc";
 
 search.addEventListener("click",()=>{
     const v=search.value.toLowerCase();
@@ -88,10 +89,15 @@ const graphTitle = document.querySelector(".graph-title");
 const populationBtn = document.getElementById("populationBtn");
 const languagesBtn = document.getElementById("languagesBtn");
 
+let currentGraphType = null;
+let graphSortOrder = "asc";
+
 populationBtn.addEventListener("click", showPopulation);
 languagesBtn.addEventListener("click", showLanguages);
 
 function showPopulation() {
+    currentGraphType = "population";
+    graphSortOrder = "asc";
     stat.innerHTML="";
     graphTitle.textContent="Top 15 Most Populated Countries";
 
@@ -113,6 +119,8 @@ function showPopulation() {
 }
 
 function showLanguages() {
+    currentGraphType = "languages";
+    graphSortOrder = "asc";
     stat.innerHTML="";
     graphTitle.textContent = "Top 10 Spoken Languages";
 
@@ -140,4 +148,15 @@ function showLanguages() {
             </div>
         </div>`;
     });
+}
+
+function sortAlphabetically() {
+    imageSortOrder = imageSortOrder === "asc" ? "desc" : "asc";
+    const sorted = [...displayedCountries].sort((a, b) =>
+        imageSortOrder === "asc"
+            ? a.name.localeCompare(b.name)
+            : b.name.localeCompare(a.name)
+    );
+    displayedCountries = sorted;
+    byName(displayedCountries);
 }

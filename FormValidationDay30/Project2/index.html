@@ -8,52 +8,62 @@
 	<script src="https://kit.fontawesome.com/ce3e7ed90f.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="./data.js"></script>
-	<script src="../../JsonDataDay25/script/main.js"></script>
+	<!-- <script src="./script.js"></script> -->
+	<!-- <script src="../../JsonDataDay25/script/main.js"> </script> -->
 	<title>World Countries Data</title>
 </head>
 
 <body class="bg-gray-100">
 	<header class="bg-gray-200 text-center py-6">
-		<h1 class="text-4xl font-bold text-orange-500">World Countries Data</h1>
-		<p class="text-gray-600">Currently, we have 250 countries</p>
-		<p class="text-orange-400 text-sm" id="searchInfo">11 countries satisfied the search criteria</p>
+		<h1 class="text-2xl font-bold text-orange-400">World Countries Data </h1>
+		<p>currently we have 250 countries data</p>
+		<p id="number" class="text-orange-400 font-light"> </p>
 	</header>
 
 	<main class="max-w-7xl mx-auto p-6">
-		<div class="mb-6">
-			<input 
-				id="searchInput" 
-				type="text" 
-				placeholder="sw" 
-				class="w-full px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
-			>
+		
+		<div class=" flex justify-center mb-8  ">
+			<input id="search" class="rounded-full w-64 h-10 p-4 focus:outline-none" type="text" placeholder="Search countries">
 		</div>
-
 		<div class="flex justify-center gap-4 mb-8">
-			<button onclick="sortBy('name')" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold">
-				NAME
+			<button id="byName" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
+				<i class="fas fa-sort-up"></i> Name
 			</button>
-			<button onclick="sortBy('capital')" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold">
-				CAPITAL
+			<button id="byCapital" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
+				<i class="fas fa-sort-up"></i> Capital
 			</button>
-			<button onclick="sortBy('population')" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold flex items-center gap-2">
-				POPULATION <span>↑</span>
-			</button>
-			<button class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full">📊</button>
+			<button id="byPopulation" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
+				<i class="fas fa-sort-up"></i> Population
+			</button>			
+			
 		</div>
 
-		<div id="countriesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-			<!-- Country cards will be inserted here -->
+		<div id="Container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+			
 		</div>
+		<div class="wrapper mb-8">
+            
+           
+           
+			<div class="graph-buttons flex item-center justify-center gap-4 mb-8 p-5">
+				<button id="populationBtn" class="bg-orange-600 p-4 rounded-2xl">
+			    Population
+			</button>
 
-		<div class="flex justify-center gap-4 mt-8">
-			<button onclick="if (typeof showPopulation === 'function') showPopulation()" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded font-semibold">
-				POPULATION
+			<button id="languagesBtn" class="bg-orange-600 p-4 rounded-2xl">
+			    Languages
 			</button>
-			<button onclick="if (typeof showLanguages === 'function') showLanguages()" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded font-semibold">
-				LANGUAGES
-			</button>
+
+			</div>
+			<h4 class=" text-center font-bold text-xl graph-title"></h4>
+			<div class="graphs flex item-center justify-center gap-4 p-5">
+
+				<div class="bg-gray-200  graph-wrapper" id="stat"></div>
+			</div>
 		</div>
+	
+
+		
 	</main>
 
 	<script src="./script.js"></script>

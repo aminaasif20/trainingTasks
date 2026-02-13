@@ -8,15 +8,15 @@ const bioInput = document.getElementById('bioInput');
 
 const validations = {
   firstName: {
-    validate: (value) => value.trim().length >= 3,
+    validate:(value)=>value.trim().length>=3,
     errorElement: document.getElementById('firstNameError')
   },
   lastName: {
-    validate: (value) => value.trim().length >= 3,
-    errorElement: document.getElementById('lastNameError')
+    validate:(value)=>value.trim().length>= 3,
+    errorElement:document.getElementById('lastNameError')
   },
   email: {
-    validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    validate:(value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
     errorElement: document.getElementById('emailError')
   },
   password: {
@@ -30,13 +30,13 @@ const validations = {
     errorElement: document.getElementById('passwordError')
   },
   telephone: {
-    validate: (value) => /^03\d{2}-\d{7}$/.test(value)
+    validate:(value) => /^03\d{2}-\d{7}$/.test(value)
 ,
-    errorElement: document.getElementById('telephoneError')
+    errorElement:document.getElementById('telephoneError')
   },
   bio: {
     validate: (value) => value.trim().length >= 10 && value.trim().length <= 255,
-    errorElement: document.getElementById('bioError')
+    errorElement:document.getElementById('bioError')
   }
 };
 firstName.addEventListener('blur', () => validateField('firstName', firstName));
@@ -66,11 +66,11 @@ function validateField(fieldName, inputElement) {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const isFirstNameValid = validateField('firstName', firstName);
-  const isLastNameValid = validateField('lastName', lastName);
-  const isEmailValid = validateField('email', emailInput);
-  const isPasswordValid = validateField('password', passwordInput);
-  const isTelephoneValid = validateField('telephone', telephoneInput);
+  const isFirstNameValid =validateField('firstName', firstName);
+  const isLastNameValid =validateField('lastName', lastName);
+  const isEmailValid =validateField('email', emailInput);
+  const isPasswordValid= validateField('password', passwordInput);
+  const isTelephoneValid= validateField('telephone', telephoneInput);
   const isBioValid = validateField('bio', bioInput);
 
   if (isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid && isTelephoneValid && isBioValid) {

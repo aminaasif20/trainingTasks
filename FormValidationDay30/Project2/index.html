@@ -24,16 +24,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 	<main class="max-w-7xl mx-auto p-6">
 		
 		<div class=" flex justify-center mb-8  ">
-			<input id="search" class="rounded-full w-64 h-10 p-4 focus:outline-none" type="text" placeholder="Search countries">
+			<input id="search" onchange="searchCountries()" class="rounded-full w-64 h-10 p-4 focus:outline-none" type="text" placeholder="Search countries" >
 		</div>
 		<div class="flex justify-center gap-4 mb-8">
-			<button id="byName" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
+			<button onclick="byname()" id="byName" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
 				<i class="fa-solid fa-arrow-down"></i>Name
 			</button>
-			<button id="byCapital" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
+			<button onclick="bycapital()" id="byCapital" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
 				<i class="fa-solid fa-arrow-down"></i>Capital
 			</button>
-			<button id="byPopulation" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
+			<button onclick="bypop()" id="byPopulation" class="bg-orange-200 px-8 rounded p-2 hover:bg-orange-300 flex items-center gap-2">
 				<i class="fa-solid fa-arrow-down"></i>Population
 			</button>
 			<img onclick="sortAlphabetically()" class="w-14 h-14 cursor-pointer" src="https://img.freepik.com/premium-vector/rising-business-graph-chart-suitable-project-web-design_929446-273.jpg" alt=" graph">			
@@ -48,11 +48,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
            
            
 			<div class="graph-buttons flex item-center justify-center gap-4 mb-8 p-5">
-				<button id="populationBtn" class="bg-orange-600 p-4 rounded-2xl">
+				<button onclick="showPopulation()" class="bg-orange-600 p-4 rounded-2xl">
 			    Population
 			</button>
 
-			<button id="languagesBtn" class="bg-orange-600 p-4 rounded-2xl">
+			<button onclick="showLanguages()" class="bg-orange-600 p-4 rounded-2xl">
 			    Languages
 			</button>
 

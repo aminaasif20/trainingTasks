@@ -1,7 +1,3 @@
-// const name=document.getElementById("byName");
-// const capital=document.getElementById("byCapital");
-// const pop=document.getElementById("byPopulation");
-
 const countriesContainer=document.getElementById("Container");
 const search=document.getElementById("search");
 
@@ -12,13 +8,12 @@ let imageSortOrder = "asc";
 
 function searchCountries(){
     const v=search.value.toLowerCase();
-    displayedCountries=allCountries.filter(c=>{
-            return c.name.toLowerCase().includes(v) ;
-        });
+    displayedCountries = allCountries.filter(c=>{
+        return c.name.toLowerCase().includes(v);
+    });
     sortOrder="asc";
     byName(displayedCountries);
     showPopulation();
-
 }
 function byName(list){
     countriesContainer.innerHTML = "";
@@ -45,10 +40,11 @@ function byname() {
             : b.name.localeCompare(a.name)
     );
     displayedCountries=sorted;
-    sortOrder =sortOrder==="asc";
+    sortOrder =sortOrder==="asc"?"desc":"asc";
     byName(displayedCountries);
     showPopulation();
 }
+
 function bycapital() {
     const v = search.value.toLowerCase();
     let filtered = allCountries.filter(c=>{
@@ -60,19 +56,20 @@ function bycapital() {
             : b.capital.localeCompare(a.capital)
     );
     displayedCountries = sorted;
-    sortOrder = sortOrder === "asc";
+    sortOrder = sortOrder === "asc" ? "desc" : "asc";
     byName(displayedCountries);
     showPopulation();
 }
+
 function bypop() {
     const v = search.value.toLowerCase();
     let filtered = allCountries.filter(c=>{
-        return (c.capital && c.capital.toLowerCase().includes(v));
+        return c.name.toLowerCase().includes(v);
     });
     const sorted = [...filtered].sort((a, b) =>
         sortOrder === "asc"
-            ? a.population - b.population
-            : b.population - a.population
+            ? a.population-b.population
+            : b.population-a.population
     );
     displayedCountries = sorted;
     sortOrder = sortOrder === "asc" ? "desc" : "asc";
@@ -80,15 +77,11 @@ function bypop() {
     showPopulation();
 }
 
-
-   
-
 const stat = document.getElementById("stat");
 const graphTitle = document.querySelector(".graph-title");
 
 let currentGraphType = null;
 let graphSortOrder = "asc";
-
 
 function showPopulation() {
     currentGraphType = "population";

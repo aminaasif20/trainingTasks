@@ -13,7 +13,7 @@ const Button = ({Children}:Props) => {
     {isAlertVisible &&<Alert Children='Alert ' onclose={()=> setIsAlertVisible(false)} />}
     <button 
     onClick={()=>setIsAlertVisible(true)}
-    className='bg-blue-300 p-2 rounded-md'> {Children}</button>
+    className='bg-blue-300 p-2 rounded-md' > {Children}</button>
     </>
   )
 }

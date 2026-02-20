@@ -1,4 +1,5 @@
 import Button from "./components/Button"
+import Counter from "./components/counter"
 // import './App.css'
 // import Alert from "./components/Alert"
 // import { ListGroup } from "./components/ListGroup"
@@ -13,7 +14,8 @@ function App() {
        
         {/* <ListGroup items={items} heading="Items Name List" selectItem={handleSelectItem}/> */}
         {/* <Alert Children="This is an alert"/> */}
-        <Button  Children="Click Me" />
+        {/* <Button  onClick={()=>{}} pr Children="Click Me" /> */}
+        <Counter/>
         {/* </Alert > */}
     </div>
   )

@@ -18,9 +18,9 @@ const TodoApp = () => {
 
 
 
-    const handleInputChange=(value)=>{
-        setInput(value);
-    }
+    // const handleInputChange=(value)=>{
+    //     setInput(value);
+    // }
 
     const handleTask=()=>{
         const trimInput=input.trim();
@@ -28,17 +28,10 @@ const TodoApp = () => {
             alert("Enter Task");
             return;
         }
-        if(editindex!==null){
-            const newtodos=[...todos];
-            newtodos[editindex].text=trimInput;
-            setTodo(newtodos);
-            setEditindex(null);
+        
+        setTodo((pre)=>[...pre,{text:trimInput,value:0}]);
             
-        }
-        else{
-            setTodo((pre)=>[...pre,{text:trimInput,value:0}]);
-            
-         }
+         
        setInput("");
     }
 
@@ -77,39 +70,38 @@ const TodoApp = () => {
         )
         )
     }
-    const resetPerson=()=>{
+    // const resetPerson=()=>{
         
-    }
+    // }
     const handleReset=()=>{
         setTodo(
-            todos.map(item=>({
-            ...item,value:0
+            todos.map(item=>({...item,value:0
             }))
         )
     }
     const handleSave = () => {
-        const trimmedText = editinput.trim();
-        if (!trimmedText) {
-            alert("Task cannot be empty");
+        if(!editinput){
+            alert("Enter Task");
             return;
         }
+        const trimmedText = editinput.trim();
         const newTodos = [...todos];
-        newTodos[editindex].text = trimmedText; // update text of specific item
-        setTodo(newTodos); // update state
-        setEditindex(null); // exit edit mode
-        setEditInput(""); // clear edit input
+        newTodos[editindex].text = trimmedText; 
+        setTodo(newTodos); 
+        setEditindex(null); 
+        setEditInput(""); 
     };
 
   return (
     <>
-    <div className='mt-1'>
-        <label className='p-2 m-2 mr-20 '> Enter Task </label>
+    <div className=''>
+        <label className='p-1 m-2 mr-28 '> Enter Task </label>
 
         <input 
         onChange={(e)=>{setInput(e.target.value)}}
         required
         value={input}
-        className='p-2 border rounded m-2 hover:border-blue-500'
+        className='p-1 border rounded m-2 hover:border-blue-500'
         placeholder='Task Name'
         type="text" />
 
@@ -117,9 +109,9 @@ const TodoApp = () => {
         onClick={handleTask}
         className='bg-blue-500 p-2 mr-14 m-2 text-white rounded hover:bg-blue-700'    
         >Add Task</button>
-        <button onClick={handleReset} className='bg-red-600 font-medium p-1 px-2 m-2 rounded text-white hover:bg-red-700'>Reset Number of Persons</button>
+        <button onClick={handleReset} className='bg-red-500 font p-1 ml-8  m-2 rounded text-white text-center  hover:bg-red-700'>Reset Number of Persons</button>
       <input
-            className='bg-red-600 text-3xl p-4 ml-20 rounded text-taupe-50 mt-2'
+            className='bg-red-500 mx-0 text-center text-3xl font-bold p-1 ml-20 rounded text-taupe-50 mt-1'
             type="text"
             value={`${date.toLocaleDateString()} ${date.toLocaleTimeString()}`}
             readOnly
@@ -131,11 +123,11 @@ const TodoApp = () => {
                     todos.map((item,i)=>
                     (
                         <li key={i}>
-                            <button onClick={()=>handleIncrement(i)} className='p-1 m-2 rounded bg-gray-500 text-white hover:bg-gray-700'>+</button>
+                            <button onClick={()=>handleIncrement(i)} className='p-1 rounded bg-gray-500 text-white hover:bg-gray-700'>+</button>
 
-                            <button onClick={()=>handleDecrement(i)} className='px-2 p-1 m-2 mr-6 rounded bg-gray-500 text-white hover:bg-gray-700' >-</button>
+                            <button onClick={()=>handleDecrement(i)} className='px-2 p-1  mr-3 rounded bg-gray-500 text-white hover:bg-gray-700' >-</button>
                             
-                            <span  className={item.value===0 ? "bg-yellow-500 m-2 p-1.5 mr-3":"bg-blue-500 m-2 p-1.5 mr-3"}>{item.value===0? "person: 0":`person : ${item.value}`}</span>
+                            <span  className={item.value===0 ? "bg-yellow-500 px-2 rounded  font-bold mr-3":"bg-blue-500 text-white  rounded px-2 mr-3"}>{item.value===0? "person zero":`person : ${item.value}`}</span>
 
                             {editindex===i?(
                                 <>
@@ -144,17 +136,18 @@ const TodoApp = () => {
                                 value={editinput}
                                 onChange={(e)=>setEditInput(e.target.value)}
                                 />
-                                <button className='bg-green-600 font-medium p-1 px-2 m-2 rounded text-white' onClick={ handleSave}>save</button>
+
+                                <button className='bg-[#138bb7] font-medium p-1 px-2 m-2 rounded text-white' onClick={ handleSave}>save</button>
                                 </>
 
                             ):(
                                 <>
-                                <span className='bg-blue-400 text-white px-2 p-1 rounded'>
+                                <span className=' px-2 p-1 rounded'>
                                 {item.text}
                                 </span>
 
                                 <button
-                                className='bg-green-600 font-medium p-1 px-2 m-2 rounded text-white'
+                                className='bg-[#138bb7] font-medium p-1 px-2 m-2 rounded text-white'
                                 onClick={() => handleEdit(i)}
                                 >
                                 Edit
@@ -165,7 +158,7 @@ const TodoApp = () => {
                             }
                             
 
-                            <button className='bg-red-600 font-medium p-1 px-2 m-2 rounded text-white hover:bg-red-700' onClick={()=>{handleDelete(i)}}>Delete</button>
+                            <button className='bg-red-600 text p-1 px-2 m-2 rounded text-white hover:bg-red-700' onClick={()=>{handleDelete(i)}}>Delete</button>
                         </li>
                     ))
                 }

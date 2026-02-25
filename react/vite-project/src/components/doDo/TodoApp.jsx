@@ -28,10 +28,16 @@ const TodoApp = () => {
             alert("Enter Task");
             return;
         }
+        if(editindex!==null){
+            const newtodos=[...todos];
+            newtodos[editindex].text=trimInput;
+            setTodo(newtodos);
+            setEditindex(null);
+            setInput("");
+            return;
+        }
         
-        setTodo((pre)=>[...pre,{text:trimInput,value:0}]);
-            
-         
+        setTodo((pre)=>[...pre,{text:trimInput,value:0}]);      
        setInput("");
     }
 
@@ -46,7 +52,7 @@ const TodoApp = () => {
     
     const handleEdit=(index)=>{
         setEditindex(index);
-        setEditInput(todos[index].text);
+        setInput(todos[index].text);
         // handleTask();
 
     }
@@ -106,9 +112,12 @@ const TodoApp = () => {
         type="text" />
 
         <button
-        onClick={handleTask}
-        className='bg-blue-500 p-2 mr-14 m-2 text-white rounded hover:bg-blue-700'    
-        >Add Task</button>
+            onClick={handleTask}
+            className='bg-blue-500 p-2 mr-14 m-2 text-white rounded hover:bg-blue-700'
+        >
+            {editindex !== null ? "Save Task" : "Add Task"}
+        </button>
+
         <button onClick={handleReset} className='bg-red-500 font p-1 ml-8  m-2 rounded text-white text-center  hover:bg-red-700'>Reset Number of Persons</button>
       <input
             className='bg-red-500 mx-0 text-center text-3xl font-bold p-1 ml-20 rounded text-taupe-50 mt-1'
@@ -128,13 +137,34 @@ const TodoApp = () => {
                             <button onClick={()=>handleDecrement(i)} className='px-2 p-1  mr-3 rounded bg-gray-500 text-white hover:bg-gray-700' >-</button>
                             
                             <span  className={item.value===0 ? "bg-yellow-500 px-2 rounded  font-bold mr-3":"bg-blue-500 text-white  rounded px-2 mr-3"}>{item.value===0? "person zero":`person : ${item.value}`}</span>
+                            <span>{item.text}</span>
 
-                            {editindex===i?(
+                             {/* <input type="text"
+                                className='border'
+                                value={todos.value}
+                                onChange={()=>handleTask(e.target.value)}
+                                />
+
+                                <button className='bg-[#138bb7] font-medium p-1 px-2 m-2 rounded text-white' onClick={ handleSave}>save</button>
+
+                                <span className=' px-2 p-1 rounded'>
+                                {item.text}
+                                </span>
+
+                                <button
+                                className='bg-[#138bb7] font-medium p-1 px-2 m-2 rounded text-white'
+                                onClick={() => handleEdit(i)}
+                                >
+                                Edit
+                                </button> */}
+                            
+
+                            {/* {editindex===i?(
                                 <>
                                 <input type="text"
                                 className='border'
-                                value={editinput}
-                                onChange={(e)=>setEditInput(e.target.value)}
+                                value={todos.value}
+                                onChange={()=>handleTask(e.target.value)}
                                 />
 
                                 <button className='bg-[#138bb7] font-medium p-1 px-2 m-2 rounded text-white' onClick={ handleSave}>save</button>
@@ -155,8 +185,15 @@ const TodoApp = () => {
                                 
                                 </>
                             )
-                            }
+                            } */}
+
                             
+                            <button
+                                className='bg-[#138bb7] font-medium p-1 px-2 m-2 rounded text-white hover:bg-[#0f6d8f]'
+                                onClick={() => handleEdit(i)}
+                            >
+                                Edit
+                            </button>
 
                             <button className='bg-red-600 text p-1 px-2 m-2 rounded text-white hover:bg-red-700' onClick={()=>{handleDelete(i)}}>Delete</button>
                         </li>

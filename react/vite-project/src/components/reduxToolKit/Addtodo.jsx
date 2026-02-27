@@ -14,6 +14,7 @@ const TodoApp = () => {
     useEffect(()=>{
         const timer=setInterval(() => {
             setDate(new Date());
+            
         }, 1000);
         return()=>{
             clearInterval(timer);
@@ -26,6 +27,8 @@ const TodoApp = () => {
       };  
 
      const handleAdd = () => {
+      
+        {console.log("Current Todos Array:", todos)} 
         const trimmed = input.trim();
         if (!trimmed) return alert("Enter Task");
         dispatch(addTask(trimmed));
@@ -33,6 +36,9 @@ const TodoApp = () => {
       };
 
       const handleSave = () => {
+         
+        {console.log("Current Todos Array:", todos)} 
+        console.log(input);
         const trimmed=input.trim();
         if (!trimmed) 
           {
@@ -41,7 +47,7 @@ const TodoApp = () => {
         dispatch(
           editTask({
             index: editindex,
-            newText: trimmed,
+            ntext: trimmed,
           })
         );
 
@@ -57,7 +63,7 @@ const TodoApp = () => {
         <input 
         onChange={(e)=>{setInput(e.target.value)}}
         required
-        value={input}
+        value={input || ""}
         className='p-1 border rounded m-2 hover:border-blue-500'
         placeholder='Task Name'
         type="text" />
@@ -95,7 +101,7 @@ const TodoApp = () => {
                               "bg-yellow-500 text-white  rounded px-2 mr-3 "
                             : "bg-green-500 px-2 rounded  font-bold mr-3"
                             }>{item.value===0? "person zero":`person : ${item.value}`}</span>
-                            <span>{item.text}</span>                                                        <button
+                            <span className='bg-amber-200'>{item.text}</span>                                                        <button
                                 className='bg-[#138bb7] font-medium p-1 px-2 m-2 rounded text-white hover:bg-[#0f6d8f]'
                                 onClick={() => handleEdit(i)}
                             >

@@ -8,6 +8,7 @@ const initailState={
 const todoSlice=createSlice({
     name:"todos",
     initialState:initailState,
+
     reducers:{
         addTask:(state,action)=>{
             state.items.push({
@@ -17,7 +18,7 @@ const todoSlice=createSlice({
            
         },
 
-        deleteTasl:(state,action)=>{
+        deleteTask:(state,action)=>{
             state.items=state.items.filter((_,ite)=> ite!==action.payload)
         },
 
@@ -26,18 +27,18 @@ const todoSlice=createSlice({
         },
 
         decrement:(state,action)=>{
-            if(state.items[action.payload].value>0){
-                state.items[action.payload].value=-1;
-            }
+            
+                state.items[action.payload].value-=1;
+            
         },
 
         resetValues:(state,action)=>{
-            state.items[action.payload].value=0;
+            state.items.forEach((item)=>item.value=0)
         },
 
         editTask:(state,action)=>{
-            const {id,newtask}=action.payload;
-            state.items[id].text=newtask;
+            const {index,ntext}=action.payload;
+            state.items[index].text=ntext;
 
         },
 
@@ -49,7 +50,7 @@ const todoSlice=createSlice({
 
 export const{
     addTask,
-    deleteTasl,
+    deleteTask,
     increment,
     decrement,
     resetValues,

@@ -1,0 +1,31 @@
+@import "tailwindcss";
+/* Parent toggle div should have relative positioning */
+.toggle {
+  position: relative;
+  width: 60px; /* example width */
+  height: 30px; /* example height */
+  background: gray;
+  border-radius: 9999px;
+}
+
+/* Cloud moves inside the toggle */
+.cloud {
+  position: absolute;
+  top: 50%; /* vertical center */
+  transform: translateY(-50%); /* vertically center exactly */
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  animation: moveCloud 2s linear infinite alternate;
+}
+
+@keyframes moveCloud {
+  0% { left: 2px; }          /* left inside toggle */
+   20% {
+    opacity: 1;   /* appear quickly */
+  }
+  80% {
+    opacity: 1;   /* stay visible while moving */
+  }
+  100% { left: calc(100% - 22px); } /* right inside toggle */
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/assets/speectoLogo.png"
 import "../App.css";
 
@@ -18,13 +19,13 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 text-md font-medium">
-          <li className="border-b-2 border-white">Home</li>
-          <li className="text-gray-300 hover:text-white cursor-pointer">Services</li>
-          <li className="text-gray-300 hover:text-white cursor-pointer">Contact Us</li>
-          <li className="text-gray-300 hover:text-white cursor-pointer">Our Team</li>
-          <li className="text-gray-300 hover:text-white cursor-pointer">About Us</li>
-        </ul>
+        <nav className="hidden md:flex gap-6 text-md font-medium">
+          <Link to="/" className="border-b-2 border-white">Home</Link>
+          <Link to="services" className="text-gray-300 hover:text-white cursor-pointer">Services</Link>
+          <Link to="Contact us" className="text-gray-300 hover:text-white cursor-pointer">Contact Us</Link>
+          <Link to="our team" className="text-gray-300 hover:text-white cursor-pointer">Our Team</Link>
+          <Link to="about us" className="text-gray-300 hover:text-white cursor-pointer">About Us</Link>
+        </nav>
 
         {/* Right Section */}
         <div className="flex items-center gap-3">

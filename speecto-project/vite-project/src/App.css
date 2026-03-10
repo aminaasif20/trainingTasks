@@ -29,3 +29,165 @@
   }
   100% { left: calc(100% - 22px); } /* right inside toggle */
 }
+
+/* Home section  */
+/* Container styling */
+.hero-wrapper {
+  position: relative;
+  background-color: #0B1C3D; 
+  /* padding: 100px 5%; */ 
+  padding: 80px 2%; /* Adjusted padding for better spacing */
+  min-height: 70vh;
+  display: flex;
+  /* align-items: center; */
+  overflow: hidden;
+  font-family: 'Inter', 'Montserrat', sans-serif;
+}
+
+/* --- Faded Background Text --- */
+.bg-watermark-text {
+  position: absolute;
+  top: 0;
+  left: 0 ;
+   /* Adjust this to move it up or down */
+  /* left: 5%; /Adjust this to move it left or right */
+  
+  font-size: 8rem; /* Make it HUGE */
+  font-weight: 600;
+  line-height: 1;
+  
+  /* The color and fade effect */
+  color: white;
+  opacity: 0.04; /* Extremely faded! (4% visible) */
+  
+  z-index: 0; /* Puts it behind everything else */
+  
+  /* Pro-tips for background text: */
+  pointer-events: none; /* Prevents it from blocking clicks on buttons below */
+  user-select: none; /* Prevents the user from accidentally highlighting it */
+}
+
+/* --- Foreground Content --- */
+.content-box {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-title {
+  left: 0;
+  margin-top: 40px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.typewriter-text {
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 24px;
+  height: 65px; /* Prevents layout jumping when text is empty */
+}
+
+/* Blinking cursor for the typewriter effect */
+.cursor {
+  font-weight: 300;
+  color: white;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-description {
+  color: #7a87a0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin-bottom: 40px;
+}
+
+/* --- Buttons --- */
+.button-group {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.btn-get-started {
+  background: transparent;
+  border: 2px solid; /* Color injected via React inline style */
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slide-in background effect from left on hover */
+.btn-get-started::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-get-started:hover::before {
+  left: 0;
+}
+
+/* A slight hover effect to make the button feel interactive */
+.btn-get-started:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.btn-learn-more {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-learn-more:hover {
+  text-decoration: underline;
+}
+
+/* Arrow animation - moves side to side */
+.arrow-icon {
+  display: inline-block;
+  animation: arrowSlide 0.8s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* Pause arrow animation on button hover */
+.btn-learn-more:hover .arrow-icon {
+  animation-play-state: paused;
+}

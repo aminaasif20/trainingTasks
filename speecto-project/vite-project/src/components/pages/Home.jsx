@@ -16,7 +16,7 @@ const CONTENT_VARIATIONS = [
     themeColor: "#ff6d00" // Orange
   },
   {
-    highlight: "SUPERIOR",
+    highlight: " Crafting SUPERIOR",
     suffix: "SOFTWARE SOLUTIONS",
     typewriterText: "DIGITAL SOLUTION",
     themeColor: "#8b80f9" // Purple
@@ -96,7 +96,7 @@ function Home() {
         
         {/* The Typewriter Text */}
         <h2 
-          className="typewriter-text" 
+          className="hero-title mb-4" 
           style={{ color: currentContent.themeColor }}
         >
           {typedText}
@@ -115,7 +115,8 @@ function Home() {
             className="btn-get-started"
             style={{ 
               borderColor: currentContent.themeColor, 
-              color: currentContent.themeColor 
+              color: currentContent.themeColor,
+              backgroundColor: isButtonHovered ? `${currentContent.themeColor}15` : 'transparent'
             }}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}

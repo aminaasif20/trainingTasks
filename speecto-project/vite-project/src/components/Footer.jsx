@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo  from '../assets/assets/speectoLogo.png';
+import Logo  from '../assets/asset/speectoLogo.png';
 const Footer = () => {
   return (
     <footer className="w-full font-sans text-gray-800">

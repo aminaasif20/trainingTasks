@@ -34,11 +34,12 @@
 /* Container styling */
 .hero-wrapper {
   position: relative;
-  background-color: #0B1C3D; 
-  /* padding: 100px 5%; */ 
-  padding: 80px 2%; /* Adjusted padding for better spacing */
-  min-height: 70vh;
+  background-color: #081533; 
+  padding: 7% 2%; 
+  /* padding: 80px 2%; Adjusted padding for better spacing */
+  min-height: 90vh;
   display: flex;
+  width:auto;
   /* align-items: center; */
   overflow: hidden;
   font-family: 'Inter', 'Montserrat', sans-serif;
@@ -48,13 +49,13 @@
 .bg-watermark-text {
   position: absolute;
   top: 0;
+  padding-top: none;
   left: 0 ;
-   /* Adjust this to move it up or down */
-  /* left: 5%; /Adjust this to move it left or right */
+  width: 50%;
   
-  font-size: 7rem; /* Make it HUGE */
-  font-weight: 700;
-  line-height: 1;
+  font-size: 9rem; /* Make it HUGE */
+  font-weight: 800;
+  line-height: 0.8;
   
   /* The color and fade effect */
   color: white;
@@ -71,22 +72,17 @@
 .content-box {
   position: relative;
   z-index: 1;
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .hero-title {
   left: 0;
   /* margin-top: 15px; */
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 2.4rem;
+  font-weight: 650;
   color: white;
   line-height: 1.1;
-  /* margin-bottom: 5px; */
   text-transform: uppercase;
-  /* min-height: 110px;  Fixed height to prevent button jumping */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: flex-start; */
 }
 
 /* Blinking cursor for the typewriter effect */
@@ -103,10 +99,12 @@
 
 .hero-description {
   color: #7a87a0;
-  font-size: 0.8rem;
+  
+  font-weight: 600;
+  font-size: 1.1rem;
   line-height: 1.6;
-  width: 500px;
-  /* margin-bottom:px; */
+  width: 700px;
+  margin-bottom: 40px;
   min-height: 80px; /* Prevents button jump */
 }
 
@@ -117,10 +115,19 @@
   align-items: center;
   height: 40px; /* Fixed height for button row */
 }
+.button-group {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  height: 40px; 
+}
 
 .btn-get-started {
   background: transparent;
-  border: 2px solid; /* Color injected via React inline style */
+  /* Use a CSS variable for dynamic colors, fallback to blueviolet if none provided */
+  border: 2px solid var(--btn-color, blueviolet);
+  color: var(--btn-color, blueviolet); 
+  
   padding: 12px 28px;
   border-radius: 8px;
   font-size: 1rem;
@@ -129,9 +136,11 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  
+  /* Creates a new stacking context so the ::before element doesn't hide behind the page background */
+  z-index: 1; 
 }
 
-/* Slide-in background effect from left on hover */
 .btn-get-started::before {
   content: '';
   position: absolute;
@@ -139,23 +148,25 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  
+  /* The sliding background now matches the dynamic border/text color */
+  background-color: var(--btn-color, blueviolet); 
+  
   transition: left 0.4s ease;
-  z-index: -1;
+  z-index: -1; /* Keeps the background color strictly behind the text */
 }
 
-.btn-get-started:hover::before {
-  left: 0;
-  background-color: blueviolet;
-}
-
-/* A slight hover effect to make the button feel interactive */
+/* Hover States */
 .btn-get-started:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  /* Change text to white (or your preferred color) so it's readable over the filled background */
+  color: #ffffff; 
   transform: translateX(5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.btn-get-started:hover::before {
+  left: 0;
+}
 .btn-learn-more {
   background: transparent;
   border: none;

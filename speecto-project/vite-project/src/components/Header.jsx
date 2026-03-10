@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/assets/speectoLogo.png"
+import logo from "../assets/asset/speectoLogo.png"
 import "../App.css";
 
 
@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-[#0B1C3D] text-white px-6 py-5 flex items-center justify-between">
+      <nav className="bg-[#081533] text-white px-6 py-5 flex items-center justify-between">
 
         {/* Logo */}
         <div className="w-40">
@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-6 text-md font-medium">
+        <nav className="hidden md:flex gap-9 text-md font-medium">
           <Link to="/" className="border-b-2 border-white">Home</Link>
           <Link to="services" className="text-gray-300 hover:text-white cursor-pointer">Services</Link>
           <Link to="Contact us" className="text-gray-300 hover:text-white cursor-pointer">Contact Us</Link>

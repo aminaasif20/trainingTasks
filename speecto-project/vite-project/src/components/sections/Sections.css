@@ -1,0 +1,598 @@
+/* =========================================
+   SCENE LAYOUT & BASE
+========================================= */
+.scene-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  background-color: #ffffff;
+}
+
+.scene-container {
+  position: relative;
+  width: 650px;
+  height: 500px;
+  /* border: 1px dashed #ccc; */ /* Uncomment to debug boundaries */
+}
+
+/* Base style for absolute positioned assets */
+.asset {
+  position: absolute;
+  object-fit: contain;
+}
+
+/* =========================================
+   ANIMATIONS (KEYFRAMES)
+========================================= */
+@keyframes move-up-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fade-bright {
+  0%, 100% { 
+    opacity: 0.5; 
+    transform: scale(0.95); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.05); 
+  }
+}
+
+@keyframes spin-seconds {
+  from { transform: rotate(45deg); }
+  to { transform: rotate(405deg); }
+}
+
+@keyframes spin-minute {
+  from { transform: rotate(110deg); }
+  to { transform: rotate(470deg); }
+}
+
+@keyframes spin-hour {
+  from { transform: rotate(200deg); }
+  to { transform: rotate(560deg); }
+}
+
+/* =========================================
+   NEW WINDOW BLIND ANIMATION
+========================================= */
+
+
+
+@keyframes blind-open-close {
+  0%, 10% { 
+    clip-path: inset(0 0 0 0); /* Blind fully down (closed) */
+  }
+  45%, 55% { 
+    clip-path: inset(0 0 95% 0); /* Blind pulled up (open), leaving just the top visible */
+  }
+  90%, 100% { 
+    clip-path: inset(0 0 0 0); /* Blind fully down again */
+  }
+}
+
+.window-blind {
+  top: 10%;
+  /* border: #333 solid 2px; */
+
+  right: 29%;
+  width: 90px;
+  opacity: 0.8;
+  z-index: 1;
+  /* Runs the animation over 8 seconds, smoothly easing in and out */
+  animation: blind-open-close 8s ease-in-out infinite; 
+}
+
+.sticky-wrapper{
+   position: sticky;
+    top: 100px; /* How far from the top of the screen it sticks. Adjust if you have a navbar! */
+    width: 100%;
+    display: flex;
+    margin-top: 20px    ;
+    justify-content: center;
+}
+.paper-left {
+  top: 40%;
+  left: 10%;
+  width: 40px;
+  opacity: 0.6;
+  transform: rotate(-15deg);
+  z-index: 1;
+}
+
+.paper-right {
+  top: 35%;
+  right: 30%;
+  width: 50px;
+  opacity: 0.6;
+  transform: rotate(15deg);
+  z-index: 1;
+}
+
+/* =========================================
+   CHAT BUBBLES
+========================================= */
+.chat-bubble {
+  width: 30px;
+  z-index: 2;
+  animation: fade-bright 3s ease-in-out infinite; /* Added animation */
+}
+
+.bubble-left {
+  top: 18%;
+  left: 15%;
+}
+
+.bubble-right {
+  top: 20%;
+  right: 30%;
+  animation-delay: 1.5s; /* Offset the animation so they alternate */
+}
+
+/* =========================================
+   CSS CONSTRUCTED CLOCK
+========================================= */
+.css-clock {
+  position: absolute;
+    top: -5%;
+  /* margin-bottom: 10px; */
+  right: 40%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 3px solid #0056FF;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.clock-hand {
+  position: absolute;
+  background-color: #333;
+  transform-origin: bottom center;
+}
+
+.seconds {
+  width: 1px;
+  height: 20px;
+  bottom: 50%;
+  left: calc(50% - 0.5px);
+  background-color: rgb(0, 0, 0);
+  animation: spin-seconds 5s linear infinite; /* Animates 1 full circle every 5s */
+}
+
+.minute {
+  width: 2px;
+  height: 20px;
+  bottom: 50%;
+  left: calc(50% - 1px);
+  animation: spin-minute 60s linear infinite; /* Animates 1 full circle every 60s */
+}
+
+.hour {
+  width: 2px;
+  height: 15px;
+  bottom: 50%;
+  left: calc(50% - 1px);
+  animation: spin-hour 360s linear infinite; /* Animates 1 full circle every 360s */
+}
+
+/* =========================================
+   GIANT CENTER CLIPBOARD
+========================================= */
+.giant-clipboard {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 320px;
+  background-color: #007BFF;
+  border-radius: 15px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clipboard-clip {
+  position: absolute;
+  top: -20px;
+  width: 70px;
+  z-index: 6;
+}
+
+.clipboard-paper {
+  width: 85%;
+  height: 90%;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 20px;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+.placeholder-box-top {
+  width: 90%;
+  height: 30px;
+  background-color: #cacaca;
+  margin-bottom: 10px;
+}
+
+.placeholder-box-bottom {
+  width: 90%;
+  height: 30px;
+  background-color: #e0e0e0;
+  margin-top: auto;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 70%;
+}
+
+.line {
+  height: 2px;
+  background-color: #0056FF;
+  width: 100%;
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #0056FF;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #0056FF;
+  font-weight: bold;
+}
+
+/* =========================================
+   FOREGROUND ELEMENTS
+========================================= */
+.man1 {
+  bottom: 24%;
+  left: 17%;
+  height: 250px;
+  z-index: 10;
+}
+
+.woman-standing {
+  bottom: 25%;
+  left: 35%;
+  height: 180px;
+  z-index: 10;
+}
+
+.desk-team {
+  bottom: 6%;
+  right: 5%;
+  height: 220px;
+  z-index: 10;
+}
+
+.plant {
+  bottom: 24%;
+  left: 15%;
+  height: 50px;
+  z-index: 9;
+}
+
+/* =========================================
+   FLOOR LINES
+========================================= */
+.floor-lines {
+  position: absolute;
+  bottom: 23%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 1;
+}
+
+.floor-line {
+  background-color: #cce0ff;
+}
+
+.floor-line.main {
+  width: 80%;
+  height: 3px;
+}
+
+.floor-line.shadow {
+  width: 80%;
+  height: 2px;
+}
+
+
+
+/* Right Section */
+/* =========================================
+   MAIN LAYOUT & HEADER
+========================================= */
+.requirements-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.step-badge {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #0056FF, #00A3FF);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 86, 255, 0.3);
+}
+
+.step-title {
+  color: #007BFF;
+  font-size: 24px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* =========================================
+   TWO-COLUMN CONTENT AREA
+========================================= */
+.content-layout {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Constrain max width for large screens */
+  margin-top: 20px;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+  width: 50%;
+}
+
+/* Since the IllustrationScene is explicitly 850px wide, 
+  we scale it down here so it fits beautifully in the half-screen column 
+*/
+.illustration-scaler {
+  transform: scale(0.65);
+  transform-origin: center right; 
+}
+
+/* =========================================
+   TIMELINE (RIGHT COLUMN)
+========================================= */
+.right-column {
+  flex: 1;
+  padding-left: 80px; /* Space between line and text */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* The Vertical Gradient Line */
+.right-column::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -80px; /* Reaches up towards the title */
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #2b6bf3 30%, #2b6bf3 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* The blue nodes on the timeline */
+.timeline-dot {
+  position: absolute;
+  left: -87px; /* Pulls the dot perfectly over the line */
+  top: 15px;
+  width: 16px;
+  height: 16px;
+  background-color: #2b6bf3;
+  border-radius: 50%;
+}
+
+.timeline-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.timeline-content h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+.timeline-content p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 450px;
+}
+
+/* =========================================
+   MAIN LAYOUT & HEADER
+========================================= */
+.requirements-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.step-badge {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #0056FF, #00A3FF);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 86, 255, 0.3);
+}
+
+.step-title {
+  color: #007BFF;
+  font-size: 24px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* =========================================
+   TWO-COLUMN CONTENT AREA
+========================================= */
+.content-layout {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Constrain max width for large screens */
+  margin-top: 30px;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Since the IllustrationScene is explicitly 850px wide, 
+  we scale it down here so it fits beautifully in the half-screen column 
+*/
+.illustration-scaler {
+  transform: scale(0.65);
+  transform-origin: center right; 
+}
+
+/* =========================================
+   TIMELINE (RIGHT COLUMN)
+========================================= */
+.right-column {
+  flex: 1;
+  padding-left: 80px; /* Space between line and text */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* The Vertical Gradient Line */
+.right-column::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -80px; /* Reaches up towards the title */
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #2b6bf3 30%, #2b6bf3 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+/* The blue nodes on the timeline */
+.timeline-dot {
+  position: absolute;
+  left: -87px; /* Pulls the dot perfectly over the line */
+  top: 15px;
+  width: 16px;
+  height: 16px;
+  background-color: #2b6bf3;
+  border-radius: 50%;
+}
+
+.timeline-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.timeline-content h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+.timeline-content p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 450px;
+}

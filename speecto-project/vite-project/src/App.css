@@ -33,16 +33,17 @@
 /* Home section  */
 /* Container styling */
 .hero-wrapper {
+
   position: relative;
   background-color: #081533; 
   padding: 7% 2%; 
-  /* padding: 80px 2%; Adjusted padding for better spacing */
-  min-height: 90vh;
+  height: 90vh;
   display: flex;
   width:auto;
   /* align-items: center; */
   overflow: hidden;
   font-family: 'Inter', 'Montserrat', sans-serif;
+
 }
 
 /* --- Faded Background Text --- */
@@ -56,7 +57,7 @@
   font-size: 9rem; /* Make it HUGE */
   font-weight: 800;
   line-height: 0.8;
-  
+  /* background-color: #ffffff; */
   /* The color and fade effect */
   color: white;
   opacity: 0.04; /* Extremely faded! (4% visible) */
@@ -72,6 +73,9 @@
 .content-box {
   position: relative;
   z-index: 1;
+  height: 60%;
+  /* background:white; */
+  height: 60%;
   max-width: 700px;
 }
 
@@ -204,3 +208,22 @@
 .btn-learn-more:hover .arrow-icon {
   animation-play-state: paused;
 }
+
+
+
+/* ------------------Home Amination---------------- */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+
+

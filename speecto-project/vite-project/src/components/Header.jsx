@@ -50,7 +50,7 @@ const Navbar = () => {
 
         </div>
       </nav>
-\
+
       <div
         className={`fixed top-0 left-0 h-full w-72 bg-gradient-to-b from-blue-600 to-cyan-500 text-white p-8 transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"

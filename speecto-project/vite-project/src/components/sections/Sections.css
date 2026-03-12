@@ -3,17 +3,24 @@
 ========================================= */
 .scene-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: top;
+  align-items: start;
+  position: relative;
+  width: 100%;
+  height: 100%;
   padding: 4px;
   background-color: #ffffff;
 }
 
 .scene-container {
+  top: -120px;
   position: relative;
-  width: 650px;
+/* margin-top: -60px; */
+  /* width: 10%; */
+  width: 500px;
+  /* align-items: flex-start; */
   height: 500px;
-  /* border: 1px dashed #ccc; */ /* Uncomment to debug boundaries */
+  border: 2px dashed #ccc; /* Uncomment to debug boundaries */
 }
 
 /* Base style for absolute positioned assets */
@@ -88,11 +95,11 @@
 
 .sticky-wrapper{
    position: sticky;
-    top: 100px; /* How far from the top of the screen it sticks. Adjust if you have a navbar! */
+    top: 80px; 
     width: 100%;
     display: flex;
     margin-top: 20px    ;
-    justify-content: center;
+    /* justify-content: start; */
 }
 .paper-left {
   top: 40%;
@@ -370,24 +377,27 @@
   margin: 0;
 }
 
+.product-design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
 /* =========================================
    TWO-COLUMN CONTENT AREA
 ========================================= */
-.content-layout {
-  display: flex;
-  width: 100%;
-  max-width: 1200px; /* Constrain max width for large screens */
-  margin-top: 20px;
-}
 
 .left-column {
   flex: 1;
+  top: 0%;
   display: flex;
   justify-content: start;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   position: relative;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: 50%;
 }
 
@@ -396,13 +406,13 @@
 */
 .illustration-scaler {
   transform: scale(0.65);
-  transform-origin: center right; 
+  transform-origin: start right; 
 }
 
 /* =========================================
    TIMELINE (RIGHT COLUMN)
 ========================================= */
-.right-column {
+.right-column, .right-column-product {
   flex: 1;
   padding-left: 80px; /* Space between line and text */
   position: relative;
@@ -411,12 +421,41 @@
   justify-content: center;
 }
 
+/* RIGHT SIDE TIMELINE - Separate code */
+.timeline-right-column {
+  flex: 0 0 100px;
+  position: relative;
+  padding-right: 80px;
+}
+
+.timeline-right-column::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -80px;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #f74ec7 30%, #f74ec7 100%);
+}
+
+.timeline-dot-right {
+  position: absolute;
+  right: -87px;
+  top: 15px;
+  width: 16px;
+  height: 16px;
+  background-color: #f74ec7;
+  border-radius: 50%;
+}
+
+
 /* The Vertical Gradient Line */
 .right-column::before {
   content: "";
   position: absolute;
   left: 0;
-  top: -80px; /* Reaches up towards the title */
+  top: -80px; 
+  /* Reaches up towards the title */
   bottom: 0;
   width: 2px;
   background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #2b6bf3 30%, #2b6bf3 100%);
@@ -424,17 +463,17 @@
 
 .timeline-item {
   position: relative;
-  margin-bottom: 50px;
+  /* margin-bottom: 10px; */
 }
 
 /* The blue nodes on the timeline */
-.timeline-dot {
+.timeline-dot1 {
   position: absolute;
   left: -87px; /* Pulls the dot perfectly over the line */
   top: 15px;
   width: 16px;
   height: 16px;
-  background-color: #2b6bf3;
+  background-color: #f74ec7;
   border-radius: 50%;
 }
 
@@ -470,7 +509,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 20px;
+  padding: 10px 20px;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: #ffffff;
 }
@@ -479,7 +518,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -557,8 +596,8 @@
 
 .timeline-item {
   position: relative;
-  margin-bottom: 50px;
-  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* The blue nodes on the timeline */
@@ -586,6 +625,7 @@
 .timeline-content h3 {
   color: #333;
   font-size: 20px;
+  font-weight: 600;
   margin: 0 0 10px 0;
 }
 
@@ -596,3 +636,18 @@
   margin: 0;
   max-width: 450px;
 }
+
+
+
+
+/* Product Design right column line */
+.right-column-product::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -80px;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #f74ec7 30%, #f74ec7 100%);
+}
+

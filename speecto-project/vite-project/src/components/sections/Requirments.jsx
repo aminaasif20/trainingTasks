@@ -61,8 +61,9 @@ const Requirments = () => {
                   </div>
                   <div className="checklist-item">
                     <div className="lines"><div className="line"></div><div className="line"></div></div>
-                    <div className="checkbox"></div>
+                    <div className="checkbox checked"></div>
                   </div>
+                 
 
                   <div className="box placeholder-box-bottom"></div>
                 </div>
@@ -72,7 +73,7 @@ const Requirments = () => {
               <img src={womanStanding} className="asset woman-standing" alt="woman standing" />
               {/* <img src={deskTeam} className="asset desk-team" alt="team at desk" /> */}
               <img src={plant} className="asset plant" alt="plant in vase" />
-\
+
               <div className="floor-lines">
                 <div className="floor-line main"></div>
                 <div className="floor-line shadow"></div>
@@ -89,6 +90,7 @@ const Requirments = () => {
         {/* Right Section  */}
 
         <div className="right-column">
+          <div className='bg-white w-auto h-28'></div>
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-icon-box">
@@ -113,6 +115,7 @@ const Requirments = () => {
           </div>
 
           {/* Timeline Item 3 */}
+
           <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-icon-box">
@@ -123,9 +126,20 @@ const Requirments = () => {
               <p>Document requirements in a clear and concise manner.</p>
             </div>
           </div>
-
           {/* Timeline Item 4 (Placeholder to match image) */}
+
           <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-icon-box">
+              <img src="../../../assets/asset/check.svg" alt="" />
+            </div>
+            <div className="timeline-content">
+              <h3>Verification and validation</h3>
+              <p>Requirement verification checks that the requirements are correct, while requirement validation checks that the requirements are suitable for the intended purpose.</p>
+            </div>
+          </div>
+          {/* Timeline Item 4 (Placeholder to match image) */}
+          {/* <div className="timeline-item">
             <div className="timeline-dot"></div>
             <div className="timeline-icon-box">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -133,7 +147,7 @@ const Requirments = () => {
             <div className="timeline-content">
               <h3 style={{ color: "transparent" }}>Placeholder</h3>
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>

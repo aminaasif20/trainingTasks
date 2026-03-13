@@ -421,6 +421,9 @@
   justify-content: center;
 }
 
+
+
+
 /* RIGHT SIDE TIMELINE - Separate code */
 .timeline-right-column {
   flex: 0 0 100px;
@@ -550,6 +553,7 @@
 ========================================= */
 .content-layout {
   display: flex;
+  align-items: flex-start;
   width: 100%;
   max-width: 1200px; /* Constrain max width for large screens */
   margin-top: 30px;
@@ -559,6 +563,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  width: 50%;
   align-items: center;
   position: relative;
 }
@@ -579,9 +584,17 @@
   padding-left: 80px; /* Space between line and text */
   position: relative;
   display: flex;
+  width: 50%;
   flex-direction: column;
   justify-content: center;
 }
+
+.productDesignIllustrationWrapper{
+  position: sticky;
+  top: 100px;
+}
+
+
 
 /* The Vertical Gradient Line */
 .right-column::before {
@@ -590,8 +603,8 @@
   left: 0;
   top: -80px; /* Reaches up towards the title */
   bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #2b6bf3 30%, #2b6bf3 100%);
+  width: 1px;
+  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #175aec 30%, #1258ef 100%);
 }
 
 .timeline-item {
@@ -639,15 +652,88 @@
 
 
 
+.timeline-line1{
+  position:absolute;
+  top:0;
+  height: 700px;
+  bottom:0;
+  width:1.5px;
 
-/* Product Design right column line */
-.right-column-product::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -80px;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #f74ec7 30%, #f74ec7 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,   /* faded start */
+    #dce8ff 10%,      /* light blue */
+    #d822a5 20%,      /* bright */
+    #de0ba3 100%      /* solid */
+  );
 }
+.timeline-line3{
+  position:absolute;
+  top:0;
+  height: 600px;
+  bottom:0;
+  width:1.5px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,   /* faded start */
+    #dce8ff 10%,      /* light blue */
+    #5759b3 20%,      /* bright */
+    #5759b3 100%      /* solid */
+  );
+}
+.timeline-line4{
+  position:absolute;
+  top:0;
+  height: 450px;
+  bottom:0;
+  width:1.5px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,   /* faded start */
+    #dce8ff 10%,      /* light blue */
+    #5759b3 20%,      /* bright */
+    #5759b3 100%      /* solid */
+  );
+}
+.timeline-lineHeader{
+  position:absolute;
+  top:0;
+  height: 50px;
+  bottom:0;
+  width:1.5px;
+  /* margin-top: 10px; */
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,   /* faded start */
+    #dce8ff 20%,      /* light blue */
+    #f74ec7 60%,      /* bright */
+    #f74ec7 100%      /* solid */
+  );
+}
+.timeline-lineHeader3{
+  position:absolute;
+  top:0;
+  height: 50px;
+  bottom:0;
+  width:1.5px;
+  /* margin-top: 10px; */
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,   /* faded start */
+    #dce8ff 20%,      /* light blue */
+    #5759b3 60%,      /* bright */
+    #5759b3 100%      /* solid */
+  );
+}
+
+
+/* ============================================ */
+/* ---------------Right Side of Product Design------------ */
+/* =============================================*/
+
+
 

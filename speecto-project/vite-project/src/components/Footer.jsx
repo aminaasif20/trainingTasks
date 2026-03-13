@@ -10,7 +10,7 @@ const Footer = () => {
             <img 
                 src={Logo} 
                 alt="Speecto Logo" 
-                class="h-7 w-auto filter invert"
+                className="h-7 w-auto filter invert"
             />
         </div>
 

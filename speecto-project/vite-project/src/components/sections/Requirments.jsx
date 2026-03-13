@@ -20,9 +20,10 @@ const Requirments = () => {
         <div className="step-badge">1</div>
         <h2 className="step-title">REQUIREMENTS ENGINEERING</h2>
       </div>
-      <div className="content-layout">
-        <div className=" left-column ">
-          <div className='sticky-wrapper'>
+      <div className="flex items-start max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+
+        <div className="w-1/2 sticky  top-34">
+          <div className='flex items-start justify-center mt-32'>
           <div className="scene-wrapper">
             <div className="scene-container">
               

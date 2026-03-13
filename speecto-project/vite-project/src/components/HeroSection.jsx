@@ -4,6 +4,8 @@ import Section1 from './sections/Section1'
 import Requirments from './sections/Requirments'
 import ProductDesign from './sections/ProductDesgin'
 import SystemDesign from './sections/SystemDesign'
+import Development from './sections/Development'
+import Testing from './sections/Testing'
 
 const HeroSection = () => {
   return (
@@ -13,6 +15,8 @@ const HeroSection = () => {
     <Requirments/>
     <ProductDesign/>
     <SystemDesign/>
+    <Development/>
+    <Testing/>
     </>
   )
 }

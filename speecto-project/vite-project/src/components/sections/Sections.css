@@ -784,6 +784,22 @@
     #57c126c7 100%      /* solid */
   );
 }
+.timeline-lineHeader7{
+  position:absolute;
+  top:0;
+  height: 50px;
+  bottom:0;
+  width:1.5px;
+  /* margin-top: 10px; */
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,   /* faded start */
+     20%,      /* light blue */
+    #ff4550 60%,      /* bright */
+    #ff2d3b 100%      /* solid */
+  );
+}
 
 
 .timeline-lineHeader4{

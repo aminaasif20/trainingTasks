@@ -22,7 +22,7 @@ const HeroSection = () => {
     <Testing/>
     <Production/>
     <AutomatedDep/>
-    <SectionMsg/>
+    {/* <SectionMsg/> */}
     </>
   )
 }

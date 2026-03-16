@@ -22,7 +22,7 @@ const HomeAnimation = () => {
   ];
 
   return (
-    <div className="flex h-screen bg-[#081533]">
+    <div className="flex">
 
       <div className="relative w-[400px] h-[400px] flex items-center justify-center">
 

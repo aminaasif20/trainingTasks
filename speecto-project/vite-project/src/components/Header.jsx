@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/asset/speectoLogo.png"
 import "../App.css";
 
@@ -17,11 +17,41 @@ const Navbar = () => {
         </div>
 
         <nav className="hidden md:flex gap-9 text-md font-medium">
-          <Link to="/" className="border-b-2 border-white">Home</Link>
-          <Link to="services" className="text-gray-300 hover:text-white cursor-pointer">Services</Link>
-          <Link to="Contact us" className="text-gray-300 hover:text-white cursor-pointer">Contact Us</Link>
-          <Link to="our team" className="text-gray-300 hover:text-white cursor-pointer">Our Team</Link>
-          <Link to="about us" className="text-gray-300 hover:text-white cursor-pointer">About Us</Link>
+
+          <NavLink to="/" 
+          className={({isActive})=>
+            isActive
+              ? "border-b-2 border-white"
+              : "text-gray-300 hover:text-white cursor-pointer"
+        }
+
+          >Home</NavLink>
+          <NavLink to="services" className={({isActive})=>
+            isActive
+              ? "border-b-2 border-white"
+              : "text-gray-300 hover:text-white cursor-pointer"
+        }>Services</NavLink>
+
+          <NavLink to="Contact" 
+          className={({isActive})=>
+            isActive
+              ? "border-b-2 border-white"
+              : "text-gray-300 hover:text-white cursor-pointer"
+        }
+          >Contact</NavLink>
+
+          <NavLink to="team" 
+          className={({isActive})=>
+            isActive
+              ? "border-b-2 border-white"
+              : "text-gray-300 hover:text-white cursor-pointer"
+        }>Team</NavLink>
+          <NavLink to="about us"
+          className={({isActive})=>
+            isActive
+              ? "border-b-2 border-white"
+              : "text-gray-300 hover:text-white cursor-pointer"
+        }>About Us</NavLink>
         </nav>
 
         <div className="flex items-center gap-3">

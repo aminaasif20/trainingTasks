@@ -32,7 +32,7 @@ const Navbar = () => {
               : "text-gray-300 hover:text-white cursor-pointer"
         }>Services</NavLink>
 
-          <NavLink to="Contact" 
+          <NavLink to="contact" 
           className={({isActive})=>
             isActive
               ? "border-b-2 border-white"

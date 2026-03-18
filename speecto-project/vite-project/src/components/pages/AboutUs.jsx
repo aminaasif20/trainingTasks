@@ -7,7 +7,7 @@ const AboutUs = () => {
     <div className='flex flex-col'>
       <div className='flex flex-row bg-[#081533] h-[400px]  items-center justify-center'>
      {/* Left */}
-    <div className='flex px-7 w-[50%] flex-col justify-center ml-28'>
+    <div className='flex px-4 w-[50%] flex-col justify-center ml-2'>
      <div>
        <h1 className='text-white text-5xl '>
         About <span className='bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent text-5xl '> Us</span>

@@ -65,14 +65,22 @@ const SectionMsg = () => {
           </div>
 
           {/* Button */}
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="px-6 py-2 border border-blue-400 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition"
-            >
-              Submit
-            </button>
-          </div>
+          <div className="relative w-36 mt-8 p-[1.5px] rounded-md bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
+          <button className="relative px-4 py-2 rounded-md bg-[#081533] text-blue-500 
+                            transition-transform duration-300 hover:translate-x-1 w-full">
+            
+            {/* Sliding background */}
+            <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 
+                           ransition-all 
+                            duration-300 group-hover:w-full z-0"></span>
+            
+            {/* Button text */}
+            <span className="relative font-bold z-10 group-hover:text-white">
+              {/* <Link to>Our Team</Link> */}
+              Submit kro
+            </span>
+          </button>
+        </div>
 
         </form>
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../App.css';
 
 import HomeAmination from './homeAnimation/HomeAmination';
+import LaptopAnimation from './homeAnimation/LaptopAnimation';
 // Here we define the different states of the hero section
 const CONTENT_VARIATIONS = [
   {
@@ -142,8 +143,8 @@ function Home() {
       {/* Right Section */}
 
 
-      <HomeAmination/>
-      
+      {/* <HomeAmination/> */}
+      <LaptopAnimation/>
 
     </section>
   );

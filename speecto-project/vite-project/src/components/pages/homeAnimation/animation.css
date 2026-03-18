@@ -1,0 +1,247 @@
+/* ---------------Laptop---------------- */
+
+/* Container & Layout */
+.animation-wrapper {
+  min-height: 100vh;
+  background-color: #0b1120; /* Dark blue background from video */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+.controls {
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.scene-container {
+  transition: filter 0.1s ease-out;
+  perspective: 1200px;
+}
+
+.isometric-scene {
+  position: relative;
+  width: 700px;
+  height: 600px;
+  /* Initial pop in animation */
+  animation: popIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transform: rotateX(15deg) rotateZ(-25deg) rotateY(10deg);
+  transform-style: preserve-3d;
+}
+
+/* Base layer positioning */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- Laptop Hover Animation --- */
+.laptop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+/* --- Lid Opening Animation --- */
+.laptop-lid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Assuming the hinge is roughly at the bottom-left/center of the image assets */
+  transform-origin: 30% 70%;
+  transform: scaleY(0);
+  opacity: 0;
+  animation: openLid 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards;
+}
+
+/* --- Keyboard Glow Pulse --- */
+.keyboard-glow.pulse {
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+/* --- Simulated Screen Code --- */
+.screen-content {
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  width: 25%;
+  height: 30%;
+  transform: skewY(-20deg) rotateZ(10deg); /* Adjust to match the screen's isometric angle */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.code-line {
+  height: 4px;
+  background: #00e5ff;
+  border-radius: 2px;
+  width: 0;
+  opacity: 0;
+}
+
+.w-long { max-width: 90%; }
+.w-med { max-width: 70%; }
+.w-short { max-width: 40%; }
+
+/* Code Typing Delays */
+.type-1 { animation: typeCode 0.5s forwards 2s; }
+.type-2 { animation: typeCode 0.5s forwards 2.3s; }
+.type-3 { animation: typeCode 0.5s forwards 2.6s; }
+.type-4 { animation: typeCode 0.5s forwards 2.9s; }
+
+
+/* --- Floating Background Elements --- */
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sphere, .icon {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Large Orange/Red Circles */
+.sphere-1 {
+  width: 55px; height: 55px; background: linear-gradient(135deg, #ff6b5a, #ff8c42);
+  top: 15%; right: 18%;
+  animation: floatRandom 5s infinite alternate ease-in-out;
+}
+
+.sphere-2 {
+  width: 75px; height: 75px; background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  top: 55%; left: 8%;
+  animation: floatRandom 6s infinite alternate-reverse ease-in-out;
+}
+
+.sphere-3 {
+  width: 65px; height: 65px; background: linear-gradient(135deg, #ff6b5a, #ff8c42);
+  bottom: 18%; right: 5%;
+  animation: floatRandom 5.5s infinite alternate ease-in-out;
+}
+
+.sphere-4 {
+  width: 48px; height: 48px; background: #ff6560;
+  top: 8%; right: 10%;
+  animation: floatRandom 4.5s infinite alternate ease-in-out;
+}
+
+.sphere-5 {
+  width: 38px; height: 38px; background: #ff6b5a;
+  bottom: 40%; left: 3%;
+  animation: floatRandom 5.8s infinite alternate-reverse ease-in-out;
+}
+
+/* Cyan/Turquoise Circles */
+.sphere-6 {
+  width: 32px; height: 32px; background: #00d4ff;
+  top: 12%; left: 15%;
+  animation: floatRandom 5.2s infinite alternate ease-in-out;
+}
+
+.sphere-7 {
+  width: 28px; height: 28px; background: #00e8ff;
+  top: 5%; right: 28%;
+  animation: floatRandom 4.8s infinite alternate-reverse ease-in-out;
+}
+
+.sphere-8 {
+  width: 30px; height: 30px; background: #00d4ff;
+  bottom: 25%; left: 50%;
+  animation: floatRandom 5.5s infinite alternate ease-in-out;
+}
+
+/* Cross Icon */
+.cross-1 {
+  font-size: 28px; color: #ff6560;
+  top: 32%; right: 8%;
+  width: auto; height: auto;
+  animation: floatRandom 6.2s infinite alternate ease-in-out;
+}
+
+/* Circle Outline Icon */
+.circle-1 {
+  width: 45px; height: 45px;
+  border: 3px solid #00d4ff;
+  background: transparent;
+  top: 30%; left: 38%;
+  animation: floatRandom 5.3s infinite alternate-reverse ease-in-out;
+}
+
+/* Small Dots */
+.dot-1 {
+  width: 14px; height: 14px; background: #ff6b5a;
+  top: 62%; left: 12%;
+  animation: floatRandom 4.2s infinite alternate ease-in-out;
+}
+
+.dot-2 {
+  width: 12px; height: 12px; background: #00d4ff;
+  bottom: 28%; left: 42%;
+  animation: floatRandom 5.9s infinite alternate-reverse ease-in-out;
+}
+
+.dot-3 {
+  width: 16px; height: 16px; background: #ff6560;
+  top: 72%; right: 6%;
+  animation: floatRandom 5.1s infinite alternate ease-in-out;
+}
+
+.dot-4 {
+  width: 13px; height: 13px; background: #00e8ff;
+  bottom: 35%; left: 25%;
+  animation: floatRandom 4.7s infinite alternate-reverse ease-in-out;
+}
+
+/* --- Keyframes --- */
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+@keyframes floatRandom {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(15px, -20px); }
+}
+
+@keyframes openLid {
+  0% { transform: scaleY(0) skewX(-10deg); opacity: 0; }
+  100% { transform: scaleY(1) skewX(0deg); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0% { filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); opacity: 0.7; }
+  100% { filter: drop-shadow(0 0 15px rgba(0, 229, 255, 1)); opacity: 1; }
+}
+
+@keyframes typeCode {
+  0% { width: 0; opacity: 1; }
+  100% { width: 100%; opacity: 1; }
+}

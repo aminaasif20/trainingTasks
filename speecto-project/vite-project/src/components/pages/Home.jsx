@@ -1,34 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import '../../App.css';
+import React, { useState, useEffect } from "react";
+import "../../App.css";
 
-import HomeAmination from './homeAnimation/HomeAmination';
-import LaptopAnimation from './homeAnimation/LaptopAnimation';
+import HomeAmination from "./homeAnimation/HomeAmination";
+import LaptopAnimation from "./homeAnimation/LaptopAnimation";
+import StandingAnimation from "./homeAnimation/StandingAnimation.jsx";
 // Here we define the different states of the hero section
 const CONTENT_VARIATIONS = [
   {
     highlight: "HIGH-PERFORMANCE",
     suffix: "MOBILE APPS",
     typewriterText: "APP DEVELOPMENT",
-    themeColor: "#ff2a85" // Pink
+    themeColor: "#ff2a85", // Pink
   },
   {
     highlight: "HIGH-PERFORMANCE",
     suffix: "WEB APPS",
     typewriterText: "WEB DEVELOPMENT",
-    themeColor: "#ff6d00" // Orange
+    themeColor: "#ff6d00", // Orange
   },
   {
     highlight: " Crafting SUPERIOR",
     suffix: "SOFTWARE SOLUTIONS",
     typewriterText: "DIGITAL SOLUTION",
-    themeColor: "#8b80f9" // Purple
-  }
+    themeColor: "#8b80f9", // Purple
+  },
 ];
 
 function Home() {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typedText, setTypedText] = useState('');
+  const [typedText, setTypedText] = useState("");
   const [typingSpeed, setTypingSpeed] = useState(100);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
@@ -43,10 +44,9 @@ function Home() {
 
   const [hoveredImg, setHoveredImg] = useState(null);
 
-  // Define the 8 points on your circle. 
+  // Define the 8 points on your circle.
   // 'rotation' is the angle: 0 is right, 90 is bottom, 180 is left, 270 is top
   // I've spaced them exactly 45 degrees apart as shown in your picture.
- 
 
   const handleTyping = () => {
     const currentVariantIndex = loopNum % CONTENT_VARIATIONS.length;
@@ -68,8 +68,8 @@ function Home() {
     if (!isDeleting && updatedText === fullText) {
       // Finished typing: pause for 2 seconds before deleting
       setIsDeleting(true);
-      setTypingSpeed(2000); 
-    } else if (isDeleting && updatedText === '') {
+      setTypingSpeed(2000);
+    } else if (isDeleting && updatedText === "") {
       // Finished deleting: move to next word and start typing again
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
@@ -78,34 +78,34 @@ function Home() {
   };
 
   // Get the current variation based on the loop number
-  const currentContent = CONTENT_VARIATIONS[loopNum % CONTENT_VARIATIONS.length];
+  const currentContent =
+    CONTENT_VARIATIONS[loopNum % CONTENT_VARIATIONS.length];
 
   return (
     <section className="flex flex-row hero-wrapper">
-      
       {/* 1. The Faded Background Text */}
-      <div className="bg-watermark-text">
-        TECH
-      </div>
+      <div className="bg-watermark-text">TECH</div>
 
       {/* 2. The Main Content */}
       <div className=" content-box">
-        
         <h2 className="hero-title">
-          <span style={{ color: isButtonHovered ? currentContent.themeColor : 'white' }}>
+          <span
+            style={{
+              color: isButtonHovered ? currentContent.themeColor : "white",
+            }}
+          >
             WE DEVELOP
-          </span>
-          {' '}
+          </span>{" "}
           <span style={{ color: currentContent.themeColor }}>
             {currentContent.highlight}
           </span>
           <br />
           {currentContent.suffix}
         </h2>
-        
+
         {/* The Typewriter Text */}
-        <h2 
-          className="hero-title mb-4" 
+        <h2
+          className="hero-title mb-4"
           style={{ color: currentContent.themeColor }}
         >
           {typedText}
@@ -117,19 +117,19 @@ function Home() {
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.
         </p>
-        
+
         {/* Buttons */}
         <div className="button-group">
-          <button 
+          <button
             className="btn-get-started"
             // We only pass the CSS variable now! The CSS file handles the rest.
-            style={{ '--btn-color': currentContent.themeColor }}
+            style={{ "--btn-color": currentContent.themeColor }}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
           >
             Get Started
           </button>
-          <button 
+          <button
             className="btn-learn-more"
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
@@ -137,15 +137,13 @@ function Home() {
             Learn more <span className="arrow-icon">→</span>
           </button>
         </div>
-
       </div>
 
       {/* Right Section */}
 
-
       {/* <HomeAmination/> */}
-      <LaptopAnimation/>
-
+      <LaptopAnimation />
+      {/* <StandingAnimation/> */}
     </section>
   );
 }

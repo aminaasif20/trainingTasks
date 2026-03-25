@@ -1,0 +1,332 @@
+.wrapper {
+  height: 60vh;
+  /* background: #050a18; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SCENE */
+.scene {
+  width: 350px;
+  height: 350px;
+  perspective: 1500px;
+  animation: zoomIn 2s ease forwards;
+  z-index: 10;
+}
+
+/* Floating Geometric Shapes */
+.floating-shapes-layer {
+  pointer-events: none;
+  z-index: 1; /* Behind the main laptop scene */
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.9;
+  animation: floatGeometric 6s ease-in-out infinite alternate;
+}
+
+/* Distributing the shapes around the laptop */
+.pos1 {
+  top: 15%;
+  left: 20%;
+  width: 90px;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  filter: drop-shadow(0 0 10px rgba(255, 69, 58, 0.6));
+}
+
+.pos2 {
+  top: 45%;
+  right: 15%;
+  width: 100px;
+  animation-duration: 7s;
+  animation-delay: -2s;
+  filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.6));
+}
+
+.pos3 {
+  top: 10%;
+  left: 45%;
+  width: 40px;
+  animation-duration: 4s;
+  animation-delay: -1s;
+}
+
+.pos4 {
+  top: 25%;
+  right: 25%;
+  width: 30px;
+  animation-duration: 5.5s;
+}
+
+.pos5 {
+  bottom: 25%;
+  right: 35%;
+  width: 30px;
+  animation-duration: 6.5s;
+}
+
+.pos6 {
+  top: 45%;
+  left: 15%;
+  width: 20px;
+  animation-duration: 3s;
+}
+
+.pos7 {
+  bottom: 25%;
+  left: 45%;
+  width: 15px;
+  animation-duration: 4.5s;
+  filter: hue-rotate(180deg); /* Turn the remaining small circle to blue/cyan */
+}
+
+.pos8 {
+  top: 15%;
+  right: 45%;
+  width: 25px;
+  animation-duration: 5s;
+}
+
+@keyframes floatGeometric {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-20px) rotate(15deg);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ONLY place where 3D happens */
+.laptop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(40deg) rotateZ(-15deg);
+  transform-style: preserve-3d;
+}
+
+/* BASE */
+.base {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* LID */
+.lid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  transform-origin: bottom center;
+  transform: rotateX(-100deg);
+
+  animation: openLaptop 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 1.5s; /* 🔥 delay so it opens AFTER entry */
+}
+
+@keyframes openLaptop {
+  0% {
+    transform: rotateX(-110deg);
+  }
+  60% {
+    transform: rotateX(10deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* SMOOTHER + NATURAL OPEN */
+@keyframes openLaptop {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+  60% {
+    transform: rotateX(10deg); /* slight overshoot */
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* glow */
+.glow {
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ALL IMAGES PERFECTLY STACKED */
+.img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.img1 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.img2 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.img3 {
+  position: absolute;
+  width: 65%;
+  height: auto;
+  top: 38%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+.img4 {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  top: -50%;
+  left: 70%;
+  transform: translate(-50%, 15%);
+}
+.imgLid {
+  position: relative;
+  width: 75%;
+  height: 100%;
+  top: -55%;
+  left: 72%;
+  transform: translate(-50%, 15%);
+}
+.imgLidLine {
+  display: none; /* Removing the broken zigzag outline */
+}
+
+/* Specific glows or texts if they truly need offsetting */
+.glow {
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+/* IMPORTANT: REMOVE ANY translateZ OR rotate from children */
+
+/* SHADOW FIX */
+.shadow {
+  opacity: 0.5;
+}
+
+/* OPEN ANIMATION */
+@keyframes open {
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+/* SCREEN */
+.screen-content {
+  position: absolute;
+  top: 35%;
+  left: 20%;
+  width: 60%;
+}
+
+/* LINES */
+.line {
+  height: 5px;
+  background: #4dd0e1;
+  margin: 6px 0;
+  border-radius: 4px;
+  width: 0;
+  animation: typing 2s forwards;
+}
+
+.l1 {
+  animation-delay: 1s;
+  width: 80%;
+}
+.l2 {
+  animation-delay: 1.5s;
+  width: 50%;
+}
+.l3 {
+  animation-delay: 2s;
+  width: 65%;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+  }
+}
+
+/* TimeLine */
+
+.animation-container {
+  animation: fullSequence 5s ease-in-out forwards;
+}
+
+/* 🔥 MASTER ANIMATION */
+@keyframes fullSequence {
+  /* START: small in center */
+  0% {
+    transform: scale(0.2) translate(0, 0);
+    opacity: 0;
+  }
+
+  /* APPEAR */
+  15% {
+    transform: scale(0.6) translate(0, 0);
+    opacity: 1;
+  }
+
+  /* FULL SIZE + POSITION */
+  35% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+
+  /* HOLD while lid opens */
+  70% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+
+  /* EXIT (back to center) */
+  /* 100% {
+    transform: scale(0.2) translate(0, 0);
+    opacity: 0;
+  } */
+}

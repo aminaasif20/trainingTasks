@@ -135,36 +135,17 @@
   transform-origin: bottom center;
   transform: rotateX(-100deg);
 
-  animation: openLaptop 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  animation-delay: 1.5s; /* 🔥 delay so it opens AFTER entry */
+  animation: seqLaptopLid 12s infinite;
 }
 
-@keyframes openLaptop {
-  0% {
-    transform: rotateX(-110deg);
-  }
-  60% {
-    transform: rotateX(10deg);
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
-}
-
-/* SMOOTHER + NATURAL OPEN */
-@keyframes openLaptop {
-  0% {
-    transform: rotateX(-90deg);
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
-  60% {
-    transform: rotateX(10deg); /* slight overshoot */
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
+@keyframes seqLaptopLid {
+  0% { transform: rotateX(-95deg); }
+  8.33% { transform: rotateX(-95deg); } /* Wait for container scale up */
+  14% { transform: rotateX(10deg); }   /* Open overshoot */
+  16% { transform: rotateX(0deg); }    /* Settle open */
+  25% { transform: rotateX(0deg); }    /* Hold open while scaling down begins */
+  30% { transform: rotateX(-95deg); }  /* Close early as scaling down */
+  100% { transform: rotateX(-95deg); }
 }
 
 /* glow */
@@ -292,41 +273,17 @@
   }
 }
 
-/* TimeLine */
-
+/* TimeLine Sequencer */
 .animation-container {
-  animation: fullSequence 5s ease-in-out forwards;
+  opacity: 0;
+  animation: seqScaleLaptop 12s ease-in-out infinite;
+  animation-fill-mode: both;
 }
 
-/* 🔥 MASTER ANIMATION */
-@keyframes fullSequence {
-  /* START: small in center */
-  0% {
-    transform: scale(0.2) translate(0, 0);
-    opacity: 0;
-  }
-
-  /* APPEAR */
-  15% {
-    transform: scale(0.6) translate(0, 0);
-    opacity: 1;
-  }
-
-  /* FULL SIZE + POSITION */
-  35% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
-  }
-
-  /* HOLD while lid opens */
-  70% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
-  }
-
-  /* EXIT (back to center) */
-  /* 100% {
-    transform: scale(0.2) translate(0, 0);
-    opacity: 0;
-  } */
+@keyframes seqScaleLaptop {
+  0% { transform: scale(0); opacity: 0; }
+  8.33% { transform: scale(1); opacity: 1; }
+  25% { transform: scale(1); opacity: 1; }
+  33.33% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(0); opacity: 0; }
 }

@@ -1,0 +1,137 @@
+.mobile-wrapper {
+  perspective: 1200px;
+}
+
+.mobile-animation-container {
+  /* Provide space for floating shapes */
+  transform-style: preserve-3d;
+  opacity: 0;
+  animation: seqScaleMobile 12s ease-in-out infinite;
+  animation-delay: -4s;
+  animation-fill-mode: both;
+}
+
+.mobile-scene {
+  animation: mobileFloat 6s ease-in-out infinite;
+}
+
+.mobile-img {
+  filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.4));
+  transform: translateZ(50px);
+}
+
+@keyframes seqScaleMobile {
+  0% { transform: scale(0); opacity: 0; }
+  8.33% { transform: scale(1); opacity: 1; }
+  25% { transform: scale(1); opacity: 1; }
+  33.33% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+/* Floating Animations */
+@keyframes mobileFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Base styles for Isometric Squares */
+.mobile-iso-square {
+  position: absolute;
+  border: 4px solid #fe4c1c;
+  border-radius: 8px;
+  /* Make them isometric */
+  transform: rotateX(60deg) rotateZ(-45deg);
+  box-shadow:
+    0 0 10px rgba(254, 76, 28, 0.5),
+    inset 0 0 10px rgba(254, 76, 28, 0.3);
+  animation: squarePulse 4s ease-in-out infinite alternate;
+}
+
+/* Top Left Square */
+.sq-1 {
+  width: 80px;
+  height: 80px;
+  top: 30%;
+  left: 20%;
+  animation-delay: 0s;
+  border-color: #fe4c1c; /* Orange fading to red styling */
+}
+
+/* Middle Right Square */
+.sq-2 {
+  width: 100px;
+  height: 100px;
+  bottom: 25%;
+  right: 20%;
+  animation-delay: 1.5s;
+}
+
+/* Bottom Right Square */
+.sq-3 {
+  width: 90px;
+  height: 90px;
+  bottom: 5%;
+  right: 10%;
+  animation-delay: 2.5s;
+}
+
+/* Dashed lines animation */
+.dash-line {
+  display: inline-block;
+  box-shadow: 0 0 8px currentColor;
+  animation: dashFade 3s infinite alternate;
+}
+
+.group-dash-tl .dash-line:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.group-dash-tl .dash-line:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.group-dash-tl .dash-line:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.group-dash-b .dash-line:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.group-dash-b .dash-line:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.group-dash-b .dash-line:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.group-dash-b .dash-line:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.group-dash-b .dash-line:nth-child(5) {
+  animation-delay: 1s;
+}
+
+/* Keyframes for elements */
+@keyframes squarePulse {
+  0% {
+    transform: rotateX(60deg) rotateZ(-45deg) translateZ(0px);
+    border-color: #fe4c1c;
+    box-shadow:
+      0 0 10px rgba(254, 76, 28, 0.3),
+      inset 0 0 10px rgba(254, 76, 28, 0.2);
+  }
+  100% {
+    transform: rotateX(60deg) rotateZ(-45deg) translateZ(20px);
+    border-color: #ff8c42;
+    box-shadow:
+      0 0 20px rgba(255, 140, 66, 0.6),
+      inset 0 0 15px rgba(255, 140, 66, 0.4);
+  }
+}
+
+@keyframes dashFade {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

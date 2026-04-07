@@ -4,6 +4,8 @@ import "../../App.css";
 import HomeAmination from "./homeAnimation/HomeAmination";
 import LaptopAnimation from "./homeAnimation/LaptopAnimation";
 import StandingAnimation from "./homeAnimation/StandingAnimation.jsx";
+import MobileAnimation from "./homeAnimation/MobileAnimation.jsx";
+import ManLaptop from "./homeAnimation/ManLaptop.jsx";
 // Here we define the different states of the hero section
 const CONTENT_VARIATIONS = [
   {
@@ -61,23 +63,20 @@ function Home() {
 
     // Speed logic
     if (isDeleting) {
-      setTypingSpeed(50); // Delete faster than typing
+      setTypingSpeed(50);
     }
 
     // Phase transitions
     if (!isDeleting && updatedText === fullText) {
-      // Finished typing: pause for 2 seconds before deleting
       setIsDeleting(true);
       setTypingSpeed(2000);
     } else if (isDeleting && updatedText === "") {
-      // Finished deleting: move to next word and start typing again
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setTypingSpeed(100);
     }
   };
 
-  // Get the current variation based on the loop number
   const currentContent =
     CONTENT_VARIATIONS[loopNum % CONTENT_VARIATIONS.length];
 
@@ -103,7 +102,6 @@ function Home() {
           {currentContent.suffix}
         </h2>
 
-        {/* The Typewriter Text */}
         <h2
           className="hero-title mb-4"
           style={{ color: currentContent.themeColor }}
@@ -122,7 +120,6 @@ function Home() {
         <div className="button-group">
           <button
             className="btn-get-started"
-            // We only pass the CSS variable now! The CSS file handles the rest.
             style={{ "--btn-color": currentContent.themeColor }}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
@@ -140,10 +137,18 @@ function Home() {
       </div>
 
       {/* Right Section */}
-
-      {/* <HomeAmination/> */}
-      <LaptopAnimation />
-      {/* <StandingAnimation/> */}
+      <div className="relative flex-1 w-full h-full min-h-[700px] overflow-hidden">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
+          <LaptopAnimation />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <StandingAnimation />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <MobileAnimation />
+        </div> */}
+        <ManLaptop />
+      </div>
     </section>
   );
 }

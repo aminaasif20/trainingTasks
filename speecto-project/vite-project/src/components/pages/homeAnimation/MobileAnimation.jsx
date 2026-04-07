@@ -1,0 +1,45 @@
+import React from "react";
+import mobile5 from "../../../assets/asset/mobile5.svg";
+import "./MobileAnimation.css";
+
+const MobileAnimation = () => {
+  return (
+    <div className="mobile-wrapper relative w-full h-full flex items-center justify-center">
+      <div className="mobile-animation-container relative flex items-center justify-center w-[300px] h-[400px]">
+        {/* Floating Geometric Background Shapes */}
+        <div className="mobile-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">
+          {/* Top Left Dashes */}
+          <div className="mobile-dash group-dash-tl absolute left-[20%] top-[10%] opacity-80 flex flex-col gap-2">
+            <div className="flex gap-2"></div>
+            <div className="flex gap-2 -ml-6"></div>
+          </div>
+
+          {/* Bottom Dashes */}
+          <div className="mobile-dash group-dash-b absolute left-[45%] bottom-[5%] opacity-80 flex flex-col gap-2">
+            <div className="flex gap-2 -ml-4"></div>
+          </div>
+
+          {/* Isometric Square 1 (Top Left) */}
+          <div className="mobile-iso-square relative sq-1"></div>
+
+          {/* Isometric Square 2 (Bottom Right Middle) */}
+          <div className="mobile-iso-square sq-2"></div>
+
+          {/* Isometric Square 3 (Bottom Right Edge) */}
+          <div className="mobile-iso-square sq-3"></div>
+        </div>
+
+        {/* Central Mobile Image Layer */}
+        <div className="mobile-scene z-10 w-full flex items-center justify-center">
+          <img
+            src={mobile5}
+            alt="Mobile App"
+            className="mobile-img w-full max-w-[500px]"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MobileAnimation;

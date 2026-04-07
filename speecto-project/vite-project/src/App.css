@@ -20,30 +20,32 @@
 }
 
 @keyframes moveCloud {
-  0% { left: 2px; }          /* left inside toggle */
-   20% {
-    opacity: 1;   /* appear quickly */
+  0% {
+    left: 2px;
+  } /* left inside toggle */
+  20% {
+    opacity: 1; /* appear quickly */
   }
   80% {
-    opacity: 1;   /* stay visible while moving */
+    opacity: 1; /* stay visible while moving */
   }
-  100% { left: calc(100% - 22px); } /* right inside toggle */
+  100% {
+    left: calc(100% - 22px);
+  } /* right inside toggle */
 }
 
 /* Home section  */
 /* Container styling */
 .hero-wrapper {
-
   position: relative;
-  background-color: #081533; 
-  padding: 7% 2%; 
+  background-color: #081533;
+  padding: 7% 2%;
   height: 90vh;
   display: flex;
-  width:auto;
+  width: auto;
   /* align-items: center; */
   overflow: hidden;
-  font-family: 'Inter', 'Montserrat', sans-serif;
-
+  font-family: "Inter", "Montserrat", sans-serif;
 }
 
 /* --- Faded Background Text --- */
@@ -51,9 +53,9 @@
   position: absolute;
   top: 0;
   padding-top: none;
-  left: 0 ;
+  left: 0;
   width: 50%;
-  
+
   font-size: 9rem; /* Make it HUGE */
   font-weight: 800;
   line-height: 0.8;
@@ -61,9 +63,9 @@
   /* The color and fade effect */
   color: white;
   opacity: 0.04; /* Extremely faded! (4% visible) */
-  
+
   z-index: 0; /* Puts it behind everything else */
-  
+
   /* Pro-tips for background text: */
   pointer-events: none; /* Prevents it from blocking clicks on buttons below */
   user-select: none; /* Prevents the user from accidentally highlighting it */
@@ -97,13 +99,18 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-description {
   color: #7a87a0;
-  
+
   font-weight: 600;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -123,15 +130,15 @@
   display: flex;
   gap: 30px;
   align-items: center;
-  height: 40px; 
+  height: 40px;
 }
 
 .btn-get-started {
   background: transparent;
   /* Use a CSS variable for dynamic colors, fallback to blueviolet if none provided */
   border: 2px solid var(--btn-color, blueviolet);
-  color: var(--btn-color, blueviolet); 
-  
+  color: var(--btn-color, blueviolet);
+
   padding: 12px 28px;
   border-radius: 8px;
   font-size: 1rem;
@@ -140,22 +147,22 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  
+
   /* Creates a new stacking context so the ::before element doesn't hide behind the page background */
-  z-index: 1; 
+  z-index: 1;
 }
 
 .btn-get-started::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  
+
   /* The sliding background now matches the dynamic border/text color */
-  background-color: var(--btn-color, blueviolet); 
-  
+  background-color: var(--btn-color, blueviolet);
+
   transition: left 0.4s ease;
   z-index: -1; /* Keeps the background color strictly behind the text */
 }
@@ -163,7 +170,7 @@
 /* Hover States */
 .btn-get-started:hover {
   /* Change text to white (or your preferred color) so it's readable over the filled background */
-  color: #ffffff; 
+  color: #ffffff;
   transform: translateX(5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -196,7 +203,8 @@
 }
 
 @keyframes arrowSlide {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   50% {
@@ -208,8 +216,6 @@
 .btn-learn-more:hover .arrow-icon {
   animation-play-state: paused;
 }
-
-
 
 /* ------------------Home Amination---------------- */
 @keyframes spinSlow {
@@ -224,9 +230,6 @@
 .spin-slow {
   animation: spinSlow 40s linear infinite;
 }
-
-
-
 
 /* button */
 @keyframes slideIn {

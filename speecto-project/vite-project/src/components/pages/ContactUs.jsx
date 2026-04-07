@@ -1,22 +1,25 @@
-import React from 'react'
+import React from "react";
 
 const ContactUs = () => {
   return (
-    <div className='flex flex-col'>
-      <div className='flex flex-row bg-[#081533] h-[330px] w-full items-center justify-center'>
-     {/* Left */}
-    <div className='flex justify-center items-center'>
-      <h1 className='bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent text-5xl text-center'>Contact Us</h1>
-    </div>
+    <div className="flex flex-col">
+      <div className="flex flex-col md:flex-row bg-[#081533] min-h-[250px] md:min-h-[330px] w-full items-center justify-center py-12 md:py-0">
+        {/* Left */}
+        <div className="flex w-full md:w-1/2 justify-center items-center mb-6 md:mb-0">
+          <h1 className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent text-4xl md:text-5xl text-center px-4">
+            Contact Us
+          </h1>
+        </div>
 
-     {/* Right */}
-     <div className='w-[50%]'>Picture</div>
-    </div>
-    <div className="max-w-7xl mx-auto px-4 py-12">
-          <h2 className="text-2xl font-semibold mb-8">Get In Touch</h2>
+        {/* Right */}
+        <div className="w-full md:w-1/2 flex justify-center items-center">
+          {/* Picture Placeholder */}
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <h2 className="text-2xl font-semibold mb-8">Get In Touch</h2>
 
         <div className="grid md:grid-cols-2 gap-10">
-
           {/* Left side: Contact info + map */}
           <div className="space-y-6">
             {/* Address */}
@@ -86,25 +89,28 @@ const ContactUs = () => {
             ></textarea>
 
             <div className="relative w-36 p-[1.5px] rounded-md bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
-              <button className="relative px-4 py-2 rounded-md bg-white text-blue-500 
-                                transition-transform duration-300 hover:translate-x-1 w-full">
-                
+              <button
+                className="relative px-4 py-2 rounded-md bg-white text-blue-500 
+                                transition-transform duration-300 hover:translate-x-1 w-full"
+              >
                 {/* Sliding background */}
-                <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 
+                <span
+                  className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 
                               ransition-all 
-                                duration-300 group-hover:w-full z-0"></span>
-                
+                                duration-300 group-hover:w-full z-0"
+                ></span>
+
                 {/* Button text */}
                 <span className="relative font-bold z-10 group-hover:text-white">
                   Contact Us
                 </span>
               </button>
-            </div>    
+            </div>
           </form>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactUs
+export default ContactUs;

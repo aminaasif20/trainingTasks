@@ -1,5 +1,5 @@
 import React from "react";
-
+import logo from "../../assets/asset/speectoLogo.png";
 const ContactUs = () => {
   return (
     <div className="flex flex-col">
@@ -14,6 +14,9 @@ const ContactUs = () => {
         {/* Right */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
           {/* Picture Placeholder */}
+          <div className="mb-7 flex justify-center items-center">
+            
+          </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 py-12">

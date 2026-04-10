@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full min-h-screen bottom-0.5 flex flex-col font-sans text-gray-800">
-      <div className="pt-16 pb-8 px-20 gap-10">
+      <div className="pt-6 pb-8 px-20 gap-10">
         <div className=" py-16 ">
           <div className="w-auto  p-8">
             {/* Title */}
@@ -134,7 +134,7 @@ const Footer = () => {
         </h2>
 
         <div className="w-full max-w-3xl flex flex-col mb-8">
-          <div className="w-full flex items-center">
+          <div className="w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-0">
             <input
               type="email"
               placeholder="Email"
@@ -150,11 +150,12 @@ const Footer = () => {
                   setError("");
                 }
               }}
-              className="flex-1 border-1 border-gray-800 border-r-0 rounded-l-md px-4 py-3 text-sm focus:outline-none placeholder-gray-400 text-gray-700"
+              className="w-full sm:flex-1 border border-gray-800 sm:border-r-0 rounded-md sm:rounded-l-md sm:rounded-r-none px-4 py-3 text-sm focus:outline-none placeholder-gray-400 text-gray-700"
             />
+
             <button
               onClick={handleSubscribe}
-              className="bg-black border border-black rounded-r-md text-white px-14 py-[.68rem] text-md font-semibold "
+              className="w-full sm:w-auto bg-black border border-black text-white px-6 sm:px-10 py-3 text-sm sm:text-md font-semibold rounded-md sm:rounded-r-md sm:rounded-l-none"
             >
               Subscribe
             </button>

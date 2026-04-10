@@ -7,6 +7,7 @@ import {
   FaCode,
   FaChartBar,
   FaPaintBrush,
+  FaVaadin,
 } from "react-icons/fa";
 import {
   MdOutlineWeb,
@@ -78,7 +79,7 @@ const Serivces = () => {
           {/* Button */}
           <div className="relative w-36 p-[1.5px] mt-8 rounded-lg bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
             <button
-              className="relative px-6 py-3 rounded-lg bg-[#081533] text-blue-500 
+              className="relative px-2 py-3 rounded-lg bg-[#081533] text-blue-500 
                               transition-transform duration-300 hover:translate-x-1 w-full flex items-center justify-center"
             >
               {/* Sliding background */}
@@ -98,13 +99,13 @@ const Serivces = () => {
         {/* Right Section */}
         <div className="w-full lg:w-1/2 flex items-center justify-center mt-10 lg:mt-0 min-h-[300px]">
           <div className="transform scale-75 md:scale-90 lg:scale-100 origin-center lg:origin-left">
-            <HomeAnimation />
+            {/* <HomeAnimation /> */}
           </div>
         </div>
       </div>
 
       {/* Services Grid Section */}
-      <div className="bg-white py-14 px-2 md:px-6 lg:px-8">
+      <div className="bg-white py-14 px-2 md:px-4 lg:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (
             <div
@@ -136,8 +137,8 @@ const Serivces = () => {
       </div>
 
       {/* Process Section */}
-      <div className="bg-white py-16 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto w-full">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+      <div className="bg-white py-8 px-2 md:px-4 lg:px-6 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-start">
           {/* Left Content */}
           <div className="lg:w-1/2 flex flex-col">
             <div className="flex items-center gap-4 mb-4">
@@ -146,10 +147,10 @@ const Serivces = () => {
               </h4>
               <div className="h-[2px] w-12 bg-blue-600"></div>
             </div>
-            <h2 className="text-2xl  md:text-3xl font-Montserrat lg:text-3xl font-bold text-gray-900 mb-6 leading-tight">
+            <h2 className="text-2xl  md:text-2xl font-Montserrat lg:text-2xl font-bold text-gray-900 mb-3 leading-tight">
               Crafting Exceptional Digital Experiences: Our Process
             </h2>
-            <p className="text-gray-500 mb-12 text-[1.1rem] leading-relaxed">
+            <p className="text-gray-500 mb-7 text-[.8rem] leading-relaxed">
               We create exceptional digital experiences by understanding your
               business goals, user requirements, and product specifications. Our
               process involves selecting the best technology, creating user
@@ -157,18 +158,35 @@ const Serivces = () => {
               wireframes, and designing and launching your product.
             </p>
 
+            {/* Mobile/Tablet Image */}
+            <div className="w-full block lg:hidden pb-6">
+              <img
+                src={howWeWorkImage}
+                alt="Our Process"
+                className="w-full h-auto max-h-[400px] object-cover rounded-lg shadow-sm"
+              />
+            </div>
+
             {/* Steps */}
             <div className="flex flex-col gap-8">
               {/* Step 1 */}
-              <div className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-md border-[6px] border-blue-50">
-                  <FaChartBar />
+              <div className="flex gap-5 items-start">
+                <div className="relative flex-shrink-0 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center">
+                  {/* Top-left grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 -top-1 -left-1 md:-top-2 md:-left-2"></div>
+
+                  {/* Bottom-right grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 top-1 left-1 md:top-2 md:left-2"></div>
+
+                  {/* Main blue circle */}
+                  <div className="relative w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#008cff] text-white flex items-center justify-center text-[18px] md:text-[26px]">
+                    <FaChartBar />
+                  </div>
                 </div>
+
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                    Strategy & Planning
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed text-[1.05rem]">
+                  <h3 className="text-[20px]  mb-2">Strategy & Planning</h3>
+                  <p className="text-gray-500 leading-relaxed text-[.8rem]">
                     We partner with our clients to understand their business
                     goals and objectives, then create a customized strategy that
                     aligns with their vision.
@@ -177,15 +195,23 @@ const Serivces = () => {
               </div>
 
               {/* Step 2 */}
-              <div className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-md border-[6px] border-blue-50">
-                  <FaPaintBrush />
+              <div className="flex gap-5 items-start">
+                <div className="relative flex-shrink-0 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center">
+                  {/* Top-left grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 -top-1 -left-1 md:-top-2 md:-left-2"></div>
+
+                  {/* Bottom-right grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 top-1 left-1 md:top-2 md:left-2"></div>
+
+                  {/* Main blue circle */}
+                  <div className="relative w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#008cff] text-white flex items-center justify-center text-[18px] md:text-[26px]">
+                    <FaPaintBrush />
+                  </div>
                 </div>
+
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                    Design
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed text-[1.05rem]">
+                  <h3 className="text-[20px] mb-2">Design</h3>
+                  <p className="text-gray-500 leading-relaxed text-[.8rem]">
                     Our team uses the latest UI/UX practices to create stunning,
                     user-friendly products that capture our clients' brands.
                   </p>
@@ -193,15 +219,23 @@ const Serivces = () => {
               </div>
 
               {/* Step 3 */}
-              <div className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-md border-[6px] border-blue-50">
-                  <FaCode />
+              <div className="flex gap-5 items-start">
+                <div className="relative flex-shrink-0 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center">
+                  {/* Top-left grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 -top-1 -left-1 md:-top-2 md:-left-2"></div>
+
+                  {/* Bottom-right grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 top-1 left-1 md:top-2 md:left-2"></div>
+
+                  {/* Main blue circle */}
+                  <div className="relative w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#008cff] text-white flex items-center justify-center text-[18px] md:text-[26px]">
+                    <FaCode />
+                  </div>
                 </div>
+
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                    Development
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed text-[1.05rem]">
+                  <h3 className="text-[20px]  mb-2">Development</h3>
+                  <p className="text-gray-500 leading-relaxed text-[.8rem]">
                     We develop the product with the latest technologies and
                     frameworks to ensure the best performance and scalability.
                   </p>
@@ -209,15 +243,23 @@ const Serivces = () => {
               </div>
 
               {/* Step 4 */}
-              <div className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-md border-[6px] border-blue-50">
-                  <MdVerified />
+              <div className="flex gap-5 items-start">
+                <div className="relative flex-shrink-0 w-10 h-10 md:w-14 md:h-14 flex items-center justify-center">
+                  {/* Top-left grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 -top-1 -left-1 md:-top-2 md:-left-2"></div>
+
+                  {/* Bottom-right grey circle */}
+                  <div className="absolute w-10 h-10 md:w-14 md:h-14 rounded-full bg-gray-200 top-1 left-1 md:top-2 md:left-2"></div>
+
+                  {/* Main blue circle */}
+                  <div className="relative w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#008cff] text-white flex items-center justify-center text-[18px] md:text-[26px]">
+                    <FaVaadin />
+                  </div>
                 </div>
+
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                    Testing
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed text-[1.05rem]">
+                  <h3 className="text-[20px]   mb-2">Testing</h3>
+                  <p className="text-gray-500 leading-relaxed text-[.8rem]">
                     Our products undergo rigorous testing before launch to
                     ensure they meet the highest standards of quality and
                     functionality.
@@ -227,12 +269,12 @@ const Serivces = () => {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="lg:w-1/2">
+          {/* Right Image (Desktop) */}
+          <div className="hidden lg:block w-full object-cover lg:w-[55%] lg:order-last">
             <img
               src={howWeWorkImage}
               alt="Our Process"
-              className="w-full h-auto rounded-lg"
+              className="w-full h-[650px]"
             />
           </div>
         </div>

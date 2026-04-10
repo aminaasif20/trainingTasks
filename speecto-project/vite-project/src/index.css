@@ -1,1 +1,25 @@
+/* 1. The Import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+/* 2. Tailwind Directives (v3 or v4) */
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Montserrat", serif;
+  --font-mono: "Montserrat", monospace;
+}
+
+/* 3. The Global Force */
+* {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* 4. Specific fix for inputs and buttons (they often ignore global fonts) */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Montserrat", sans-serif !important;
+}

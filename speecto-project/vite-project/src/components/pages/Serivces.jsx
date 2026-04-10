@@ -141,12 +141,12 @@ const Serivces = () => {
           {/* Left Content */}
           <div className="lg:w-1/2 flex flex-col">
             <div className="flex items-center gap-4 mb-4">
-              <h4 className="text-blue-600 font-medium text-lg">
+              <h4 className="text-blue-600 font-light text-md">
                 How Do We Do It.
               </h4>
               <div className="h-[2px] w-12 bg-blue-600"></div>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h2 className="text-2xl  md:text-3xl font-Montserrat lg:text-3xl font-bold text-gray-900 mb-6 leading-tight">
               Crafting Exceptional Digital Experiences: Our Process
             </h2>
             <p className="text-gray-500 mb-12 text-[1.1rem] leading-relaxed">

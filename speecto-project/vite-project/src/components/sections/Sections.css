@@ -15,7 +15,7 @@
 .scene-container {
   top: -120px;
   position: relative;
-/* margin-top: -60px; */
+  /* margin-top: -60px; */
   /* width: 10%; */
   width: 500px;
   /* align-items: flex-start; */
@@ -33,50 +33,71 @@
    ANIMATIONS (KEYFRAMES)
 ========================================= */
 @keyframes move-up-down {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes fade-bright {
-  0%, 100% { 
-    opacity: 0.5; 
-    transform: scale(0.95); 
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
   }
-  50% { 
-    opacity: 1; 
-    transform: scale(1.05); 
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
   }
 }
 
 @keyframes spin-seconds {
-  from { transform: rotate(45deg); }
-  to { transform: rotate(405deg); }
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
 }
 
 @keyframes spin-minute {
-  from { transform: rotate(110deg); }
-  to { transform: rotate(470deg); }
+  from {
+    transform: rotate(110deg);
+  }
+  to {
+    transform: rotate(470deg);
+  }
 }
 
 @keyframes spin-hour {
-  from { transform: rotate(200deg); }
-  to { transform: rotate(560deg); }
+  from {
+    transform: rotate(200deg);
+  }
+  to {
+    transform: rotate(560deg);
+  }
 }
 
 /* =========================================
    NEW WINDOW BLIND ANIMATION
 ========================================= */
 
-
-
 @keyframes blind-open-close {
-  0%, 10% { 
+  0%,
+  10% {
     clip-path: inset(0 0 0 0); /* Blind fully down (closed) */
   }
-  45%, 55% { 
-    clip-path: inset(0 0 95% 0); /* Blind pulled up (open), leaving just the top visible */
+  45%,
+  55% {
+    clip-path: inset(
+      0 0 95% 0
+    ); /* Blind pulled up (open), leaving just the top visible */
   }
-  90%, 100% { 
+  90%,
+  100% {
     clip-path: inset(0 0 0 0); /* Blind fully down again */
   }
 }
@@ -90,16 +111,16 @@
   opacity: 0.8;
   z-index: 1;
   /* Runs the animation over 8 seconds, smoothly easing in and out */
-  animation: blind-open-close 8s ease-in-out infinite; 
+  animation: blind-open-close 8s ease-in-out infinite;
 }
 
-.sticky-wrapper{
-   position: sticky;
-    top: 80px; 
-    width: 100%;
-    display: flex;
-    margin-top: 20px    ;
-    /* justify-content: start; */
+.sticky-wrapper {
+  position: sticky;
+  top: 80px;
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  /* justify-content: start; */
 }
 .paper-left {
   top: 40%;
@@ -144,13 +165,13 @@
 ========================================= */
 .css-clock {
   position: absolute;
-    top: -5%;
+  top: -5%;
   /* margin-bottom: 10px; */
   right: 40%;
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  border: 3px solid #0056FF;
+  border: 3px solid #0056ff;
   background-color: transparent;
   z-index: 2;
 }
@@ -196,7 +217,7 @@
   transform: translateX(-50%);
   width: 180px;
   height: 320px;
-  background-color: #007BFF;
+  background-color: #007bff;
   border-radius: 15px;
   z-index: 5;
   display: flex;
@@ -255,20 +276,20 @@
 
 .line {
   height: 2px;
-  background-color: #0056FF;
+  background-color: #0056ff;
   width: 100%;
 }
 
 .checkbox {
   width: 25px;
   height: 25px;
-  border: 2px solid #0056FF;
+  border: 2px solid #0056ff;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  color: #0056FF;
+  color: #0056ff;
   font-weight: bold;
 }
 
@@ -331,8 +352,6 @@
   height: 2px;
 }
 
-
-
 /* Right Section */
 /* =========================================
    MAIN LAYOUT & HEADER
@@ -342,7 +361,7 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #ffffff;
 }
 
@@ -357,7 +376,7 @@
 .step-badge {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #0056FF, #00A3FF);
+  background: linear-gradient(135deg, #0056ff, #00a3ff);
   border-radius: 50%;
   color: white;
   display: flex;
@@ -370,7 +389,7 @@
 }
 
 .step-title {
-  color: #007BFF;
+  color: #007bff;
   font-size: 24px;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -406,13 +425,14 @@
 */
 .illustration-scaler {
   transform: scale(0.65);
-  transform-origin: start right; 
+  transform-origin: start right;
 }
 
 /* =========================================
    TIMELINE (RIGHT COLUMN)
 ========================================= */
-.right-column, .right-column-product {
+.right-column,
+.right-column-product {
   flex: 1;
   padding-left: 80px; /* Space between line and text */
   position: relative;
@@ -420,9 +440,6 @@
   flex-direction: column;
   justify-content: center;
 }
-
-
-
 
 /* RIGHT SIDE TIMELINE - Separate code */
 .timeline-right-column {
@@ -438,7 +455,13 @@
   top: -80px;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #f74ec7 30%, #f74ec7 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #dce8ff 10%,
+    #f74ec7 30%,
+    #f74ec7 100%
+  );
 }
 
 .timeline-dot-right {
@@ -451,17 +474,22 @@
   border-radius: 50%;
 }
 
-
 /* The Vertical Gradient Line */
 .right-column::before {
   content: "";
   position: absolute;
   left: 0;
-  top: -80px; 
+  top: -80px;
   /* Reaches up towards the title */
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #2b6bf3 30%, #2b6bf3 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #dce8ff 10%,
+    #2b6bf3 30%,
+    #2b6bf3 100%
+  );
 }
 
 .timeline-item {
@@ -513,7 +541,7 @@
   flex-direction: column;
   align-items: center;
   padding: 10px 20px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #ffffff;
 }
 
@@ -528,7 +556,7 @@
 .step-badge {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #0056FF, #00A3FF);
+  background: linear-gradient(135deg, #0056ff, #00a3ff);
   border-radius: 50%;
   color: white;
   display: flex;
@@ -541,7 +569,7 @@
 }
 
 .step-title {
-  color: #007BFF;
+  color: #007bff;
   font-size: 24px;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -573,7 +601,7 @@
 */
 .illustration-scaler {
   transform: scale(0.65);
-  transform-origin: center right; 
+  transform-origin: center right;
 }
 
 /* =========================================
@@ -589,12 +617,10 @@
   justify-content: center;
 }
 
-.productDesignIllustrationWrapper{
+.productDesignIllustrationWrapper {
   position: sticky;
   top: 100px;
 }
-
-
 
 /* The Vertical Gradient Line */
 .right-column::before {
@@ -604,7 +630,13 @@
   top: -80px; /* Reaches up towards the title */
   bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, transparent 0%, #dce8ff 10%, #175aec 30%, #1258ef 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #dce8ff 10%,
+    #175aec 30%,
+    #1258ef 100%
+  );
 }
 
 .timeline-item {
@@ -650,195 +682,183 @@
   max-width: 450px;
 }
 
-
-
-.timeline-line1{
-  position:absolute;
-  top:0;
+.timeline-line1 {
+  position: absolute;
+  top: 0;
   height: 700px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 10%,      /* light blue */
-    #d822a5 20%,      /* bright */
-    #de0ba3 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 10%,
+    /* light blue */ #d822a5 20%,
+    /* bright */ #de0ba3 100% /* solid */
   );
 }
 
-
-.timeline-linee4{
-  position:absolute;
-  top:0;
+.timeline-linee4 {
+  position: absolute;
+  top: 0;
   height: 500px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 10%,      /* light blue */
-    #f46b48 20%,      /* bright */
-    #f46643 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 10%,
+    /* light blue */ #f46b48 20%,
+    /* bright */ #f46643 100% /* solid */
   );
 }
 
-.timeline-line3{
-  position:absolute;
-  top:0;
+.timeline-line3 {
+  position: absolute;
+  top: 0;
   height: 600px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 10%,      /* light blue */
-    #5759b3 20%,      /* bright */
-    #5759b3 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 10%,
+    /* light blue */ #5759b3 20%,
+    /* bright */ #5759b3 100% /* solid */
   );
 }
-.timeline-line5{
-  position:absolute;
-  top:0;
+.timeline-line5 {
+  position: absolute;
+  top: 0;
   height: 890px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 10%,      /* light blue */
-    #57c126 20%,      /* bright */
-    #57c126 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 10%,
+    /* light blue */ #57c126 20%,
+    /* bright */ #57c126 100% /* solid */
   );
 }
 
-
-
-
-.timeline-line4{
-  position:absolute;
-  top:0;
+.timeline-line4 {
+  position: absolute;
+  top: 0;
   height: 450px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 10%,      /* light blue */
-    #5759b3 20%,      /* bright */
-    #5759b3 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 10%,
+    /* light blue */ #5759b3 20%,
+    /* bright */ #5759b3 100% /* solid */
   );
 }
-.timeline-lineHeader{
-  position:absolute;
-  top:0;
+.timeline-lineHeader {
+  position: absolute;
+  top: 0;
   height: 50px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
   /* margin-top: 10px; */
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 20%,      /* light blue */
-    #f74ec7 60%,      /* bright */
-    #f74ec7 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 20%,
+    /* light blue */ #f74ec7 60%,
+    /* bright */ #f74ec7 100% /* solid */
   );
 }
-.timeline-lineHeader{
-  position:absolute;
-  top:0;
+.timeline-lineHeader {
+  position: absolute;
+  top: 0;
   height: 50px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
   /* margin-top: 10px; */
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 20%,      /* light blue */
-    #f74ec7 60%,      /* bright */
-    #f74ec7 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 20%,
+    /* light blue */ #f74ec7 60%,
+    /* bright */ #f74ec7 100% /* solid */
   );
 }
 
-
-.timeline-lineHeader5{
-  position:absolute;
-  top:0;
+.timeline-lineHeader5 {
+  position: absolute;
+  top: 0;
   height: 50px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
   /* margin-top: 10px; */
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-     20%,      /* light blue */
-    #57c126 60%,      /* bright */
-    #57c126c7 100%      /* solid */
+    transparent 0%,
+    /* faded start */ 20%,
+    /* light blue */ #57c126 60%,
+    /* bright */ #57c126c7 100% /* solid */
   );
 }
-.timeline-lineHeader7{
-  position:absolute;
-  top:0;
+.timeline-lineHeader7 {
+  position: absolute;
+  top: 0;
   height: 50px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
   /* margin-top: 10px; */
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-     20%,      /* light blue */
-    #ff4550 60%,      /* bright */
-    #ff2d3b 100%      /* solid */
+    transparent 0%,
+    /* faded start */ 20%,
+    /* light blue */ #ff4550 60%,
+    /* bright */ #ff2d3b 100% /* solid */
   );
 }
 
-
-.timeline-lineHeader4{
-  position:absolute;
-  top:0;
+.timeline-lineHeader4 {
+  position: absolute;
+  top: 0;
   height: 50px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
   /* margin-top: 10px; */
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 20%,      /* light blue */
-    #f46b48 60%,      /* bright */
-    #f46b48 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 20%,
+    /* light blue */ #f46b48 60%,
+    /* bright */ #f46b48 100% /* solid */
   );
 }
-.timeline-lineHeader3{
-  position:absolute;
-  top:0;
+.timeline-lineHeader3 {
+  position: absolute;
+  top: 0;
   height: 50px;
-  bottom:0;
-  width:1.5px;
+  bottom: 0;
+  width: 1.5px;
   /* margin-top: 10px; */
 
   background: linear-gradient(
     to bottom,
-    transparent 0%,   /* faded start */
-    #dce8ff 20%,      /* light blue */
-    #5759b3 60%,      /* bright */
-    #5759b3 100%      /* solid */
+    transparent 0%,
+    /* faded start */ #dce8ff 20%,
+    /* light blue */ #5759b3 60%,
+    /* bright */ #5759b3 100% /* solid */
   );
 }
-
 
 /* ============================================ */
 /* ---------------Right Side of Product Design------------ */
 /* =============================================*/
-
-
-

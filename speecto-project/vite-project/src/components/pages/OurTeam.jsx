@@ -182,7 +182,11 @@ const OurTeam = () => {
                   <h3 className="text-lg font-bold text-white tracking-wide">
                     {mem.name}
                   </h3>
-                  <p className="text-sm mt-1 text-[#ff2a85] font-medium">
+                  <p className={`text-sm mt-1 font-medium bg-clip-text text-transparent ${
+                    indx % 2 === 0
+                      ? 'bg-gradient-to-r from-pink-500 to-rose-400'
+                      : 'bg-gradient-to-r from-purple-500 to-fuchsia-400'
+                  }`}>
                     {mem.role}
                   </p>
                 </div>

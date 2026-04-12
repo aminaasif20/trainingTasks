@@ -13,13 +13,11 @@ import seondLaptopScreenText from "../../../assets/asset/seondLaptopScreenText.w
 import bigCircle from "../../../assets/asset/mediumCircle.webp";
 import smallCircle from "../../../assets/asset/smallCircle.webp";
 
-// We'll use inline SVGs for perfect geometrical shapes (cross, hollow circle, diamond)
 import "./LaptopAnimation.css";
 
 const LaptopAnimation = () => {
   const [brightness, setBrightness] = useState(40);
 
-  // 🔥 AUTO BRIGHTNESS (like video)
   useEffect(() => {
     let value = 30;
 

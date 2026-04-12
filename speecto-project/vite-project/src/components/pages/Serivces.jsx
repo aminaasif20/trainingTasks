@@ -15,6 +15,7 @@ import {
   MdVerified,
 } from "react-icons/md";
 import { IoArrowForward } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import howWeWorkImage from "../../assets/asset/howWeWork.webp";
 
 const servicesList = [
@@ -23,40 +24,47 @@ const servicesList = [
     description:
       "Unveiling software needs, capturing stakeholder expectations, and defining actionable requirements for successful development.",
     icon: <FaDesktop />,
+    link: "/services/product-saas",
   },
   {
     title: "Web App Development",
     description:
       "Accelerating development processes through automated tools, streamlined workflows, and efficient code generation.",
     icon: <MdOutlineWeb />,
+    link: "/services/web-app",
   },
   {
     title: "SEO Optimised Web Application",
     description:
       "Crafting intuitive, user-centric interfaces that elevate user experiences and enhance digital interactions.",
     icon: <MdOutlineDocumentScanner />,
+    link: "/services/seo-optimization",
   },
   {
     title: "Mobile App Development",
     description:
       "Delivering high-quality software solutions to production, ensuring seamless deployment and optimal performance for end-users.",
     icon: <FaMobileAlt />,
+    link: "/services/mobile-app",
   },
   {
     title: "SEO",
     description:
       "Ensuring software quality through comprehensive testing, meticulous bug identification, and continuous optimization.",
     icon: <MdVerified />,
+    link: "/services/seo",
   },
   {
     title: "MVP Development",
     description:
       "Building innovative and reliable software solutions with cutting-edge technologies and for seamless development experiences",
     icon: <FaCode />,
+    link: "/services/mvp",
   },
 ];
 
 const Serivces = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col w-full">
       {/* Top Banner */}
@@ -109,6 +117,7 @@ const Serivces = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesList.map((service, index) => (
             <div
+              onClick={() => navigate(service.link)}
               key={index}
               className="group relative bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-lg  overflow-hidden flex flex-col items-start"
             >

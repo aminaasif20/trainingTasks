@@ -1,10 +1,14 @@
 import React from "react";
 import systemDesignLightMan from "../../assets/asset/systemDesignLightMan.webp";
+import systemDesignLightBg from "../../assets/asset/systemDesignLightBg.webp";
+import bracesIcon from "../../assets/asset/bracesIcon.webp";
+import settingsIcon from "../../assets/asset/settingsIcons.webp";
 import "./SystemDesignAnimation.css";
 import l1 from "../../assets/asset/systemDesignLine1.webp";
 import l2 from "../../assets/asset/systemDesignLine2.webp";
+import message from "../../assets/asset/systemDesignMessage.webp";
 
-/* ── Inline gear SVG (material-design settings icon) ── */
+/* ── Standard gear SVG (for monitor) ── */
 const GearSVG = ({ size = 40, color = "#7c3aed" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -17,9 +21,24 @@ const GearSVG = ({ size = 40, color = "#7c3aed" }) => (
   </svg>
 );
 
+/* ── 6-toothed Gear SVG (for fading grey elements) ── */
+const Gear6SVG = ({ size = 50, color = "#8b95a1" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill={color}
+  >
+    <path d="M19.34 11.23c-.02-.27-.05-.53-.1-.8l2.09-1.55a.48.48 0 0 0 .11-.61l-1.92-3.32a.48.48 0 0 0-.59-.22l-2.47.96c-.45-.36-.95-.66-1.48-.88l-.37-2.52a.48.48 0 0 0-.47-.4H10.3a.48.48 0 0 0-.47.4l-.37 2.52c-.53.22-1.03.52-1.48.88l-2.47-.96a.48.48 0 0 0-.59.22L3 8.27a.48.48 0 0 0 .11.61L5.2 10.43c-.05.27-.08.53-.1.8l-2.09 1.55a.48.48 0 0 0-.11.61l1.92 3.32a.48.48 0 0 0 .59.22l2.47-.96c.45.36.95.66 1.48.88l.37 2.52c.05.22.24.4.47.4h3.84a.48.48 0 0 0 .47-.4l.37-2.52c.53-.22 1.03-.52 1.48-.88l2.47.96a.48.48 0 0 0 .59-.22l1.92-3.32a.48.48 0 0 0-.11-.61L19.34 11.23zM12.22 14.88c-1.59 0-2.88-1.29-2.88-2.88s1.29-2.88 2.88-2.88 2.88 1.29 2.88 2.88-1.29 2.88-2.88 2.88z" />
+  </svg>
+);
+
 const SystemDesignAnimation = () => {
   return (
     <div className="sda-scene">
+      {/* ── GREY BACKGROUND IMAGE LAYER (asset) ── */}
+      <img src={systemDesignLightBg} alt="" className="sda-bg-layer" />
       {/* ── SVG CONNECTOR LINES ── */}
       <svg
         className="sda-connectors"
@@ -68,7 +87,7 @@ const SystemDesignAnimation = () => {
           <img className="w-10 ml-10 mb-10" src={l1} alt="" />
           {/* Big central gear: PULSES only — no rotation */}
           <div className="sda-big-gear">
-            <GearSVG size={125} color="#7c3aed" />
+            <GearSVG size={105} color="#9246f4" />
             {/* White circle behind API label */}
             <div className="sda-api-circle">
               <span className="sda-api-label">API</span>
@@ -79,20 +98,20 @@ const SystemDesignAnimation = () => {
           {/* Top-right gear */}
 
           <div className="sda-small-gear sda-gear-top-right">
-            <GearSVG size={42} color="#5759b3" />
+            <GearSVG size={42} color="#6230a0" />
           </div>
 
           {/* Bottom-left gear */}
           <div className="mb-3 sda-small-gear sda-gear-bottom-left">
-            <GearSVG size={42} color="#5759b3" />
+            <GearSVG size={42} color="#6230a0" />
           </div>
           <div className="mr-[-20px] sda-small-gear sda-gear-bottom-left1">
-            <GearSVG size={26} color="#454679ff" />
+            <GearSVG size={26} color="#503d67" />
           </div>
 
           {/* Bottom-right gear */}
           <div className="sda-small-gear sda-gear-bottom-right">
-            <GearSVG size={28} color="#454679ff" />
+            <GearSVG size={28} color="#503d67" />
           </div>
         </div>
 
@@ -100,7 +119,9 @@ const SystemDesignAnimation = () => {
         <div className="sda-base" />
       </div>
 
-      {/* ── GREY FADING ELEMENTS ── */}
+      {/* ── GREY FADING ELEMENTS (asset images) ── */}
+
+      {/* Top-center grey box */}
       <div className="sda-grey sda-grey-rect sda-fade-a">
         <div className="sda-grey-rect-dots">
           <span />
@@ -110,36 +131,58 @@ const SystemDesignAnimation = () => {
         <div className="sda-grey-rect-bar" />
         <div className="sda-grey-rect-bar sda-bar-short" />
       </div>
+      <div className="  sda-grey sda-grey-gear-ml1 sda-fade-a">
+        <Gear6SVG size={92} />
+      </div>
 
+      {/* Top-right grey gear SVG */}
       <div className="sda-grey sda-grey-gear-tr sda-fade-b">
-        <GearSVG size={42} color="#9ca3af" />
+        <Gear6SVG size={44} />
       </div>
 
-      <div className="sda-grey sda-code-brackets sda-fade-c">&lt;/&gt;</div>
-
-      <div className="sda-grey sda-grey-gear-ml sda-fade-a">
-        <GearSVG size={46} color="#9ca3af" />
+      {/* Code brackets image */}
+      <div className="sda-grey sda-code-brackets sda-fade-c">
+        <img src={bracesIcon} alt="" className="sda-braces-img" />
       </div>
 
+      {/* Left-middle grey gear SVG */}
+      <div className="  sda-grey sda-grey-gear-ml sda-fade-a">
+        <Gear6SVG size={52} />
+      </div>
+
+      {/* Right-middle small grey gear SVG */}
       <div className="sda-grey sda-grey-gear-mr sda-fade-b">
-        <GearSVG size={32} color="#9ca3af" />
+        <Gear6SVG size={46} />
       </div>
 
       {/* ── PURPLE CARDS ── */}
       <div className="sda-card sda-cloud-card">
-        <div className="sda-card-hdr">
-          <span />
-          <span />
-          <span />
+        {/* Dark header with 3 white dots */}
+        <div className="sda-cloud-hdr">
+          <span className="sda-cloud-dot" />
+          <span className="sda-cloud-dot" />
+          <span className="sda-cloud-dot" />
         </div>
+        {/* Light lavender body with cloud upload icon */}
         <div className="sda-cloud-body">
-          <svg width="38" height="32" viewBox="0 0 38 32" fill="none">
-            <ellipse cx="19" cy="20" rx="15" ry="10" fill="#1f1f4e" />
-            <ellipse cx="12" cy="20" rx="9" ry="7" fill="#1f1f4e" />
-            <ellipse cx="26" cy="20" rx="9" ry="7" fill="#1f1f4e" />
-            <ellipse cx="19" cy="14" rx="9" ry="9" fill="#1f1f4e" />
-            <polygon points="19,6 14,14 24,14" fill="white" />
-            <rect x="17" y="14" width="4" height="8" fill="white" />
+          <svg
+            width="44"
+            height="36"
+            viewBox="0 0 44 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Cloud silhouette — dark solid shape */}
+            <path
+              d="M34 28H12C7.6 28 4 24.4 4 20C4 16.1 6.7 12.8 10.4 12.1C10.9 7.6 14.8 4 19.5 4C23.1 4 26.2 6 27.8 9
+                 C28.7 8.7 29.6 8.5 30.5 8.5C35.2 8.5 39 12.3 39 17C39 17.7 38.9 18.3 38.7 18.9
+                 C40.6 19.8 42 21.7 42 24C42 26.2 40.3 28 38 28Z"
+              fill="#2a1050"
+            />
+            {/* Upload arrow stem */}
+            <rect x="20" y="15" width="4" height="10" rx="1.5" fill="#c69ef9" />
+            {/* Upload arrow head */}
+            <polygon points="22,8 16,16 28,16" fill="#c69ef9" />
           </svg>
         </div>
       </div>
@@ -206,12 +249,15 @@ const SystemDesignAnimation = () => {
               <div className=" sda-db-dot" />
               <div className="sda-db-dot" />
               <div className="sda-db-dot" />
+              <div className="sda-db-dot" />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="sda-code-bubble">&lt;/&gt;</div>
+      <div className="sda-code-bubble">
+        <img src={message} alt="" />
+      </div>
 
       {/* ── PERSON ── */}
       <img src={systemDesignLightMan} alt="Developer" className="sda-person" />

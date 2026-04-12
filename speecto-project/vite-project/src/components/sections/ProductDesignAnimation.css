@@ -61,8 +61,8 @@
   border-radius: 8px 8px 0 0;
 }
 
-.sda-topbar {
-  background: linear-gradient(90deg, #7c23ed, #b984fe);
+.sda-topbar1 {
+  background: linear-gradient(90deg, #c0238e, #c0238e);
   height: 22px;
   display: flex;
   width: 100%;
@@ -73,8 +73,8 @@
   box-sizing: border-box;
 }
 
-.sda-topbar .sda-dot {
-  background: linear-gradient(90deg, #cfb2f5, #cfb9ed);
+.sda-topbar1 .sda-dot {
+  background: linear-gradient(90deg, #6a104c, #6a104c);
   height: 10px;
   width: 10px;
   border-radius: 50%;
@@ -597,24 +597,3 @@
   font-family: monospace;
   z-index: 6;
 }
-
-.sda-person {
-  position: absolute;
-  left: 65px;
-  bottom: 25px;
-  height: 168px;
-  z-index: 7;
-}
-/* .sda-neck {
-  width: 20px;
-  height: 0px;
-  background: #b0b8c8;
-  margin: 0 auto;
-} */
-/* .sda-base {
-  width: 100px;
-  height: 8px;
-  background: #b0b8c8;
-  border-radius: 4px;
-  margin: 0 auto;
-} */

@@ -125,7 +125,6 @@
   z-index: 2;
 }
 
-/* White circle in center of big gear */
 .sda-api-circle {
   position: absolute;
   width: 46px;
@@ -198,36 +197,27 @@
 }
 
 .sda-fade-a1 {
-  animation: sda-fade1 4s ease-in-out infinite;
+  animation: sda-fade1 6s ease-in-out infinite;
   animation-delay: -1.3s;
 }
 .sda-fade-b {
-  animation: sda-fade 4s ease-in-out infinite;
-  animation-delay: -1.3s;
+  animation: sda-fade 6s ease-in-out infinite;
+  animation-delay: -2.3s;
 }
 .sda-fade-c {
-  animation: sda-fade 4s ease-in-out infinite;
-  animation-delay: -1.3s;
+  animation: sda-fade 6s ease-in-out infinite;
+  animation-delay: -2.3s;
 }
 
 @keyframes sda-fade {
-  40% {
-    opacity: 0;
-  }
-
+  0%,
   100% {
-    opacity: 0.35;
-    transform: rotate(0deg) translateY(0px);
+    opacity: 0;
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
     opacity: 1;
-    transform: rotate(180deg) translateY(-15px);
-  }
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+    transform: translateY(-15px) rotate(360deg);
   }
 }
 
@@ -240,12 +230,10 @@
   }
   50% {
     opacity: 1;
-    transform: rotate(180deg);
+    transform: rotate(360deg);
     transform: translateY(-15px);
   }
 }
-
-/* Placement for grey elements */
 .sda-grey-rect1 {
   left: 172px;
   top: 7px;

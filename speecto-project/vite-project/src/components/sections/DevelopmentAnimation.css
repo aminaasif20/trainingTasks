@@ -1,0 +1,293 @@
+.hero-container {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 500px;
+  /* margin-right: -12px; */
+}
+
+.bg-layer {
+  margin-left: 34px;
+  width: 75%;
+  height: full;
+  margin-top: -30px;
+  /* display: flex; */
+}
+
+.character-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Floating Card Styles */
+.floating-card {
+  position: absolute;
+  background: #f7aa95;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+}
+
+.card-top-left {
+  top: -10%;
+  left: 12%;
+  height: 60px;
+  width: 75px;
+}
+
+/* The Main Card Container */
+.card-top-right {
+  position: absolute;
+  top: -6%;
+  right: 12%;
+  width: 70px;
+  height: 60px;
+  background-color: #f9c9bc;
+  border-radius: 10%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns bars to the bottom */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  z-index: 5;
+}
+
+/* Container for Bars and SVG */
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+/* The Bars */
+.bar {
+  width: 14px;
+  /* margin-bottom: 5px; */
+  background-color: #e29e8e; /* Darker coral for the bars */
+  border-radius: 4px 4px 0 0;
+  z-index: 1; /* Bars stay behind the dots */
+}
+.bar1 {
+  width: 14px;
+  /* margin-bottom: 5px; */
+  background-color: #b18074; /* Darker coral for the bars */
+  border-radius: 4px 4px 0 0;
+  z-index: 1; /* Bars stay behind the dots */
+}
+
+/* The SVG Overlay for Lines and Dots */
+.line-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Lines and dots stay on top */
+  overflow: visible;
+}
+
+.line-path {
+  fill: none;
+  stroke: #8b6b63; /* The brownish-grey line color */
+  stroke-width: 1.5;
+}
+
+.dot {
+  fill: #ff8e72; /* The bright coral dot color */
+}
+
+/* Mock UI Elements */
+.orange-header {
+  background: #ff7f50;
+  height: 20px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.pulse-circle {
+  width: 40px;
+  height: 45px;
+  border-radius: 50%;
+  background: conic-gradient(#ff7f50 70%, #444 0);
+  margin: 5px auto;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15); /* bigger */
+  }
+  100% {
+    transform: scale(1); /* back to normal */
+  }
+}
+
+.mock-chart {
+  background: #fdfdfd;
+  height: 40px;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-bottom: 2px;
+}
+
+.bar {
+  width: 15%;
+  background: #ff7f50;
+  border-radius: 2px 2px 0 0;
+}
+
+/* -----Gears  -------------*/
+
+.sda-small-gear {
+  position: absolute;
+  /* z-index: 5; */
+  opacity: 1;
+  animation: sda-self-spin 5s linear infinite;
+}
+
+/* Top-right of the big gear */
+.sda-gear-top-right {
+  top: 60px;
+  right: 40px;
+}
+
+.sda-gear-bottom-left {
+  bottom: 40px;
+  left: 40px;
+}
+
+.sda-gear-bottom-left1 {
+  bottom: 80px;
+  left: 80px;
+}
+
+.sda-gear-bottom-right {
+  bottom: 60px;
+  right: 80px;
+}
+.sda-gear-top-right,
+.sda-gear-bottom-left,
+.sda-gear-bottom-left1,
+.sda-gear-bottom-right {
+  animation: sda-bg-gear 8s ease-in-out infinite;
+}
+@keyframes sda-bg-gear {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+/* cloud card */
+/*  */
+.sda-card {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 6;
+}
+
+.sda-card-hdr span {
+  width: 6px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Dark charcoal header — distinct from the purple card style */
+.sda-cloud-hdr1 {
+  background: linear-gradient(90deg, #ee4f25, #f98163);
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 5px;
+  padding: 0 8px;
+}
+
+.sda-cloud-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+}
+
+/* Light lavender body */
+.sda-cloud-body {
+  background: #c8a8f5;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+/* ── CONNECTOR LINES ── */
+.sda-connectors {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Monitor → Big Gear */
+.sda-line-monitor-gear {
+  left: 280px;
+  top: 235px;
+  width: 10px;
+  height: 50px;
+}
+
+/* Big Gear → Small Gear (top-right) */
+.sda-line-gear-tr {
+  left: 320px;
+  top: 180px;
+  width: 10px;
+  height: 50px;
+}
+
+/* Big Gear → Small Gear (bottom-left) */
+.sda-line-gear-bl {
+  left: 220px;
+  top: 280px;
+  width: 10px;
+  height: 50px;
+}
+
+/* Big Gear → Small Gear (bottom-right) */
+.sda-line-gear-br {
+  left: 320px;
+  top: 280px;
+  width: 10px;
+  height: 50px;
+}

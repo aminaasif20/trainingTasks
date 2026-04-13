@@ -138,8 +138,6 @@
   z-index: 2;
 }
 
-/* ── FIXED-POSITION SELF-SPINNING GEARS (on screen) ── */
-/* Each gear sits at a fixed spot and rotates on its own axis */
 .sda-small-gear {
   position: absolute;
   z-index: 3;
@@ -191,9 +189,17 @@
   position: absolute;
   z-index: 4;
 }
+.sda-grey1 {
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-left: 80px;
+  position: absolute;
+  z-index: 4;
+}
 
-.sda-fade-a {
-  animation: sda-fade 4s ease-in-out infinite;
+.sda-fade-a1 {
+  animation: sda-fade1 4s ease-in-out infinite;
+  animation-delay: -1.3s;
 }
 .sda-fade-b {
   animation: sda-fade 4s ease-in-out infinite;
@@ -201,26 +207,51 @@
 }
 .sda-fade-c {
   animation: sda-fade 4s ease-in-out infinite;
-  animation-delay: -2.6s;
+  animation-delay: -1.3s;
 }
 
 @keyframes sda-fade {
-  0%,
+  40% {
+    opacity: 0;
+  }
+
   100% {
     opacity: 0.35;
+    transform: rotate(0deg) translateY(0px);
   }
   50% {
     opacity: 1;
+    transform: rotate(180deg) translateY(-15px);
+  }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sda-fade1 {
+  0%,
+  100% {
+    opacity: 0;
+    transform: rotate(0deg);
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(180deg);
+    transform: translateY(-15px);
   }
 }
 
 /* Placement for grey elements */
-.sda-grey-rect {
+.sda-grey-rect1 {
   left: 172px;
   top: 7px;
   width: 89px;
   height: 70px;
-  background: #b2bac6;
+  background: #c2c4c6;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

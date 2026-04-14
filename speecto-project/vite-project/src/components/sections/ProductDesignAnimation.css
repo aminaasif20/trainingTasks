@@ -627,3 +627,220 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   opacity: 1;
 }
+
+.sda-cloud-body1 {
+  /* background: #c8a8f5; */
+  padding: 12px 8px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* cloud animation  */
+
+@keyframes floatCloud {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+}
+
+/* Apply animation */
+.cloud-animate {
+  animation: floatCloud 4s ease-in-out infinite;
+}
+
+.sda-db-right {
+  flex: 1;
+  background: #ceacf8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px 8px;
+  position: relative;
+  border-radius: 0 8px 8px 0; /* Matches the right side of the server block */
+}
+
+.sda-db-row1 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2px; /* Adjust height based on your design */
+  width: 80%;
+  margin: 4px;
+  margin-bottom: 4px;
+}
+
+/* THE ANIMATED BAR: Synchronized Grow and Retract */
+.sda-db-bar1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #f3b7f4;
+  transform-origin: left;
+  transform: scaleX(0);
+  opacity: 0;
+  /* All bars move together because they share this 3s animation */
+  animation: sda-bar-sync 3s ease-in-out infinite;
+}
+
+.sda-db-right2 {
+  flex: 1;
+  /* background: #f33fbd; */
+  display: flex;
+  flex-direction: column;
+  padding: 12px 10px;
+  position: relative;
+  margin-left: 28px;
+}
+
+.sda-db-row2 {
+  display: flex;
+  align-items: end;
+  position: relative;
+  height: 2px; /* Adjust height based on your design */
+  width: 60%;
+  margin: 2px;
+}
+
+/* THE ANIMATED BAR */
+.sda-db-bar2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #f3b7f4;
+
+  transform-origin: right center;
+  transform: scaleX(0);
+  opacity: 0;
+
+  animation: sda-bar-sync2 5s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes sda-bar-sync2 {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1; /* quick appearance */
+  }
+
+  45% {
+    transform: scaleX(1); /* grow to full */
+  }
+
+  55% {
+    transform: scaleX(1); /* hold */
+  }
+
+  85% {
+    transform: scaleX(0); /* shrink back to left */
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+/* Figma-Style Bounding Box Container */
+.box {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: -28px auto 4px auto;
+  box-sizing: border-box;
+}
+
+/* Marching Ants Animation */
+.sda-marching-ants {
+  animation: sda-march 1s linear infinite;
+}
+
+@keyframes sda-march {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+/* Static, Pulsing Corner Handles */
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff2fc0;
+  border: 1px solid #4a0e2e;
+  border-radius: 1px;
+  z-index: 10;
+  /* animation: pulseDot 2s ease-in-out infinite; */
+  box-sizing: border-box;
+}
+
+/* Corner & Middle Handle Positioning */
+.p-tl {
+  top: -3px;
+  left: -3px;
+}
+.p-tm {
+  top: -3px;
+  left: calc(50% - 3px);
+}
+.p-tr {
+  top: -3px;
+  right: -3px;
+}
+.p-bl {
+  bottom: -3px;
+  left: -3px;
+}
+.p-bm {
+  bottom: -3px;
+  left: calc(50% - 3px);
+}
+.p-br {
+  bottom: -3px;
+  right: -3px;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}

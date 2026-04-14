@@ -1,7 +1,7 @@
 import React from "react";
 import productDesignLightMan from "../../assets/asset/productDesignLightMan.webp";
-import productDesignLightBg from "../../assets/asset/productDesignLightBg.webp";
 import productDesignLightCloud1 from "../../assets/asset/productDesignLightCloud1.webp";
+import productDesignLightBg from "../../assets/asset/productDesignLightBg.webp";
 import productDesignLightCloud2 from "../../assets/asset/productDesignLightCloud2.webp";
 import productDesignLightGeometry from "../../assets/asset/productDesignLightGeometry.webp";
 import "./ProductDesignAnimation.css";
@@ -33,23 +33,30 @@ const GearSVG = ({ size = 40, color = "#7c3aed" }) => (
 const ProductDesignAnimation = () => {
   return (
     <div>
-      <div className="absolute top-[-14px] left-8 opacity-40 ">
+      <div className="absolute mt-[-48px] left-8 opacity-50 ">
         <img
           src={productDesignLightBg}
           alt="Tree Diagram"
-          className="w-full h-auto object-contain"
+          className="w-full  h-auto object-contain"
         />
       </div>
       {/* Top Clouds (Coded SVG) */}
-      <div className="absolute top-12 left-1/4 opacity-60">
-        <svg width="60" height="40" viewBox="0 0 24 24" fill="#94a3b8">
-          <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5S19.98 10 17.5 10c-.17 0-.33.02-.5.05C16.27 7.15 13.82 5 11 5 7.69 5 5 7.69 5 11c0 .17.01.33.04.5C2.79 11.83 1 13.72 1 16c0 2.76 2.24 5 5 5h11.5z" />
-        </svg>
+      <div className="absolute left-16 top-16 w-18 h-18 cloud-animate">
+        <img src={productDesignLightCloud1} alt="cloud1" />
       </div>
-      <div className="absolute top-8 right-1/3 opacity-60">
-        <svg width="40" height="30" viewBox="0 0 24 24" fill="#cbd5e1">
-          <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5S19.98 10 17.5 10c-.17 0-.33.02-.5.05C16.27 7.15 13.82 5 11 5 7.69 5 5 7.69 5 11c0 .17.01.33.04.5C2.79 11.83 1 13.72 1 16c0 2.76 2.24 5 5 5h11.5z" />
-        </svg>
+      <div className="absolute left-62 top-28 w-10 h-10 right-20 opacity-60 cloud-animate">
+        <img src={productDesignLightCloud2} alt="cloud2" />
+      </div>
+      <div className="absolute right-28 ">
+        <div className="ml-12 mt-2 sda-small-gear sda-gear-bottom-left3">
+          <GearSVG size={30} color="#dad4d8ff" />
+        </div>
+        <div className="mt-[-8px] ml-3 sda-small-gear sda-gear-bottom-left3">
+          <GearSVG size={42} color="#dad4d8ff" />
+        </div>
+        <div className="mt-7 ml-8 sda-small-gear sda-gear-bottom-left3">
+          <GearSVG size={23} color="#dad4d8ff" />
+        </div>
       </div>
 
       {/* CENTRAL MONITOR (Coded UI) */}
@@ -95,119 +102,50 @@ const ProductDesignAnimation = () => {
               <div className="flex-1 flex flex-col relative">
                 {/* Header Bar */}
                 <div className="h-[25%] bg-[#c2238e]"></div>
+                {/* Animated Bounding Box (Marching Ants) */}
+                <div className="box">
+                  {/* Moving dashed border via SVG */}
+                  <svg
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ overflow: "visible" }}
+                  >
+                    <rect
+                      x="0"
+                      y="0"
+                      width="100%"
+                      height="100%"
+                      fill="none"
+                      stroke="#8b1e60"
+                      strokeWidth="2"
+                      strokeDasharray="6 6"
+                      className="sda-marching-ants"
+                    />
+                  </svg>
 
-                {/* SVG Layer for all lines */}
-                <svg
-                  className="absolute inset-0 w-full h-full pointer-events-none z-10"
-                  viewBox="0 0 137 153"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M 22 20 H 115 M 22 20 V 132 H 115 V 20 M 115 132 H 22 M 68 20 V 20 M 68 132 V 132 M 22 75 V 75 M 68 20 H 115 M 22 20 H 68"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                    fill="none"
-                    strokeLinecap="square"
-                  />
-                  {/* Precise Lines based on node positions */}
-                  <line
-                    x1="22"
-                    y1="20"
-                    x2="68"
-                    y2="20"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                  />
-                  <line
-                    x1="68"
-                    y1="20"
-                    x2="115"
-                    y2="20"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                  />
-                  <line
-                    x1="22"
-                    y1="20"
-                    x2="22"
-                    y2="75"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                  />
-                  <line
-                    x1="22"
-                    y1="75"
-                    x2="22"
-                    y2="132"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                  />
-                  <line
-                    x1="115"
-                    y1="20"
-                    x2="115"
-                    y2="132"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                  />
-                  <line
-                    x1="22"
-                    y1="132"
-                    x2="68"
-                    y2="132"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                  />
-                  <line
-                    x1="68"
-                    y1="132"
-                    x2="115"
-                    y2="132"
-                    stroke="#4a0e2e"
-                    strokeWidth="2.5"
-                  />
-                </svg>
+                  {/* Static Corner Handles */}
+                  <div className="dot p-tl"></div>
+                  <div className="dot p-tm"></div>
+                  <div className="dot p-tr"></div>
+                  <div className="dot p-bl"></div>
+                  <div className="dot p-bm"></div>
+                  <div className="dot p-br"></div>
 
-                {/* Nodes */}
-                <div className="absolute inset-0 z-20 pointer-events-none">
-                  {/* Header Nodes */}
-                  <div
-                    className="sda-node-new absolute"
-                    style={{ left: "15px", top: "13px" }}
-                  ></div>
-                  <div
-                    className="sda-node-new absolute"
-                    style={{ left: "61px", top: "13px" }}
-                  ></div>
-                  <div
-                    className="sda-node-new absolute"
-                    style={{ left: "108px", top: "13px" }}
-                  ></div>
-
-                  {/* Body Nodes */}
-                  <div
-                    className="sda-node-new absolute"
-                    style={{ left: "15px", top: "68px" }}
-                  ></div>
-                  <div
-                    className="sda-node-new absolute"
-                    style={{ left: "15px", top: "125px" }}
-                  ></div>
-                  <div
-                    className="sda-node-new absolute"
-                    style={{ left: "61px", top: "125px" }}
-                  ></div>
-                  <div
-                    className="sda-node-new absolute"
-                    style={{ left: "108px", top: "125px" }}
-                  ></div>
+                  {/* Inner Two Pills */}
+                  <div className="flex justify-center gap-3 items-center h-full relative z-10">
+                    <div className="w-6 h-2.5 bg-[#ffebf6] opacity-90 rounded-full border border-[#d24ab0]"></div>
+                    <div className="w-6 h-2.5 bg-[#ffebf6] opacity-90 rounded-full border border-[#d24ab0]"></div>
+                  </div>
                 </div>
 
-                {/* Pill Buttons in center */}
-                <div className="absolute top-[50px] left-[35px] right-[15px] bottom-[40px] flex flex-col items-center justify-center gap-4 z-0">
-                  <div className="sda-pill-new w-[70px] h-[35px]"></div>
-                  <div className="sda-pill-new w-[70px] h-[35px]"></div>
+                <div className="sda-db-right2">
+                  {[0, 1, 2, 3].map((i) => (
+                    <div key={i} className="sda-db-row2">
+                      {/* Scanner bar — slides left→right over the dots */}
+                      <div className="sda-db-bar2" />
+                    </div>
+                  ))}
                 </div>
+                <div className="w-10 absolute ml-[-16px] mt-[90px] h-3  bg-[#ffebf6] opacity-80 rounded-full"></div>
 
                 {/* Decorative Text Bars */}
                 <div className="absolute bottom-2 right-4 flex flex-col gap-1 items-end z-20">
@@ -221,7 +159,7 @@ const ProductDesignAnimation = () => {
 
         {/* Monitor Stand */}
         <div
-          className=" h-30 bg-[#ffbfe1] shadow-inner relative z-0"
+          className=" h-26 bg-[#ffbfe1] shadow-inner relative z-0"
           style={{
             clipPath: "polygon(0% 0, 80% 0, 100% 100%, 0% 100%)",
             marginTop: "-10px",
@@ -230,15 +168,24 @@ const ProductDesignAnimation = () => {
         {/* <div className="w-48 h-4 bg-[#f052b0] rounded-full mt-2 shadow"></div> */}
       </div>
       {/* Small Pink Box (Left) */}
-      <div className="absolute bottom-42 left-[25%] z-20">
-        <div className="w-18 h-14 bg-[#f12eb3] border-10 border-[#f8a5dc] shadow-lg"></div>
+      <div className="absolute bottom-44 left-[25%] z-20">
+        <div className="w-12 h-10 bg-[#f12eb3] border-5 border-[#f8a5dc] shadow-lg">
+          <div className="sda-db-right1">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="sda-db-row1">
+                {/* Scanner bar — slides left→right over the dots */}
+                <div className="sda-db-bar1" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center">
         <img
           src={productDesignLightMan}
           alt="Characters working"
-          className="absolute w-[90%] h-[300px] mt-[40px] object-contain object-center scale-105"
+          className="absolute w-[98%] h-[350px] mt-[40px] object-contain object-center scale-105"
         />
       </div>
     </div>

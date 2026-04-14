@@ -138,15 +138,15 @@ function Home() {
 
       {/* Right Section */}
       <div className="relative flex-1 w-full h-full min-h-[400px] md:min-h-[700px] overflow-hidden mt-10 md:mt-0">
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
           <LaptopAnimation />
-        </div>
+        </div> */}
         {/* <div className="absolute inset-0 flex items-center justify-center">
           <StandingAnimation />
         </div> */}
-        {/* <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center">
           <MobileAnimation />
-        </div> */}
+        </div>
         {/* <ManLaptop /> */}
       </div>
     </section>

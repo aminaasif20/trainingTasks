@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./StandingAnimation.css";
 
-// Using probable candidate images based on the reference picture.
 import manImg from "../../../assets/asset/man.webp";
-import baseImg from "../../../assets/asset/steps.webp"; // Or stepsBottom.webp
+import baseImg from "../../../assets/asset/steps.webp";
 import dashboard1 from "../../../assets/asset/psRound1.webp";
 // import dashboard2 from "../../../assets/asset/productionWave.webp";
 // import dashboard3 from "../../../assets/asset/psRound2.webp";
@@ -22,7 +21,7 @@ const StandingAnimation = () => {
           <div className="dashboard orbit-1">
             <img src={dashboard1} alt="Chart 1" />
           </div>
-            {/* <div className="dashboard orbit-2">
+          {/* <div className="dashboard orbit-2">
             <img src={dashboard3} alt="Chart 2" />
           </div>
           <div className="dashboard orbit-3">

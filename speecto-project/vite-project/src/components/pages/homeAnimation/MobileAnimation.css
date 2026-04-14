@@ -5,14 +5,18 @@
 .mobile-animation-container {
   /* Provide space for floating shapes */
   transform-style: preserve-3d;
-  opacity: 0;
+  opacity: 1;
   animation: seqScaleMobile 12s ease-in-out infinite;
   animation-delay: -4s;
   animation-fill-mode: both;
 }
 
 .mobile-scene {
-  animation: mobileFloat 6s ease-in-out infinite;
+  animation: mobileFloat 3s ease-in-out infinite;
+}
+
+.squarebox {
+  animation: square 3s ease-in-out infinite;
 }
 
 .mobile-img {
@@ -21,18 +25,51 @@
 }
 
 @keyframes seqScaleMobile {
-  0% { transform: scale(0); opacity: 0; }
-  8.33% { transform: scale(1); opacity: 1; }
-  25% { transform: scale(1); opacity: 1; }
-  33.33% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(0); opacity: 0; }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  8.33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  33.33% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 
 /* Floating Animations */
 @keyframes mobileFloat {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes square {
+  0% {
+    transform: rotateX(60deg) rotateZ(-45deg) scale(1);
+  }
+  50% {
+    transform: rotateX(60deg) rotateZ(-45deg) scale(1.05);
+  }
+  100% {
+    transform: rotateX(60deg) rotateZ(-45deg) scale(1);
+  }
 }
 
 /* Base styles for Isometric Squares */
@@ -45,7 +82,7 @@
   box-shadow:
     0 0 10px rgba(254, 76, 28, 0.5),
     inset 0 0 10px rgba(254, 76, 28, 0.3);
-  animation: squarePulse 4s ease-in-out infinite alternate;
+  /* animation: squarePulse 4s ease-in-out infinite alternate; */
 }
 
 /* Top Left Square */
@@ -54,17 +91,17 @@
   height: 80px;
   top: 30%;
   left: 20%;
-  animation-delay: 0s;
+  animation-delay: 3s;
   border-color: #fe4c1c; /* Orange fading to red styling */
 }
 
 /* Middle Right Square */
 .sq-2 {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   bottom: 25%;
   right: 20%;
-  animation-delay: 1.5s;
+  animation-delay: 3s;
 }
 
 /* Bottom Right Square */
@@ -80,7 +117,7 @@
 .dash-line {
   display: inline-block;
   box-shadow: 0 0 8px currentColor;
-  animation: dashFade 3s infinite alternate;
+  animation: dashFade 2s infinite alternate;
 }
 
 .group-dash-tl .dash-line:nth-child(1) {

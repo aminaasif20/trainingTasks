@@ -4,6 +4,7 @@ import "./DevelopmentAnimation.css";
 // Import your images (assuming they are in your src/assets folder)
 import manImage from "../../assets/asset/developmentMan.webp";
 import bgImage from "../../assets/asset/developmentBg.webp";
+// import v1 from "../../assets/asset/d1.mp4";
 
 const GearSVG = ({ size = 40, color = "#c5c4c7ff" }) => (
   <svg

@@ -32,18 +32,18 @@ const ProductDesign = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex max-w-6xl w-full items-start">
+      <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
-        <div className=" w-[50%] sticky top-24 self-start flex items-start justify-center pt-[60px] mt-[80px] sm:mt-[40px] md:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full max-w-4xl h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
+        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-24 self-start flex items-start justify-center pt-4 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
+          <div className="relative w-full max-w-4xl h-[400px] lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
             <SystemDesignAnimation />
           </div>
         </div>
 
         {/* -------------------------Middle dots--------------- */}
-        <div className="relative h-[650px] w-16 flex justify-center">
+        <div className="hidden lg:flex relative h-[650px] w-16 justify-center">
           <div className="timeline-line3"></div>
 
           {/* dot */}
@@ -51,7 +51,7 @@ const ProductDesign = () => {
           <div className="absolute mt-[580px] w-4 h-4 bg-[#5759b3] rounded-full"></div>
           <div className="absolute mt-[380px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
         </div>
-        <div className="relative h-[650px] mt-[630px] w-16 mr-3 flex justify-center">
+        <div className="hidden lg:flex relative h-[650px] mt-[630px] w-16 mr-3 justify-center">
           <div className="timeline-line4"></div>
 
           {/* dot */}
@@ -63,8 +63,8 @@ const ProductDesign = () => {
         </div>
 
         {/*------------------- Right section----------------------- */}
-        <div className="w-[50%] flex flex-col">
-          <div className="bg-white w-auto h-28"></div>
+        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start text-center lg:text-left px-4">
+          <div className="hidden lg:block bg-white w-auto h-28"></div>
 
           {[
             {
@@ -93,9 +93,9 @@ const ProductDesign = () => {
               img: product,
             },
           ].map((item, index) => (
-            <div key={index} className="relative my-5 max-w-md">
+            <div key={index} className="relative my-5 w-full flex flex-col items-center lg:items-start">
               {/* Image */}
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm">
+              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
                 <img
                   src={item.img}
                   alt={item.title}

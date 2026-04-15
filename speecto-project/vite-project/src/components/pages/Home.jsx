@@ -81,45 +81,51 @@ function Home() {
     CONTENT_VARIATIONS[loopNum % CONTENT_VARIATIONS.length];
 
   return (
-    <section className="flex flex-row hero-wrapper">
+    <section className="flex flex-col lg:flex-row hero-wrapper items-center justify-between">
       {/* 1. The Faded Background Text */}
       <div className="bg-watermark-text">TECH</div>
 
       {/* 2. The Main Content */}
-      <div className=" content-box">
-        <h2 className="hero-title">
-          <span
-            style={{
-              color: isButtonHovered ? currentContent.themeColor : "white",
-            }}
+      <div className="content-box flex flex-col w-full lg:w-1/2">
+        <div className="order-1 lg:order-none header-group text-center lg:text-left w-full">
+          <h2 className="hero-title">
+            <span
+              style={{
+                color: isButtonHovered ? currentContent.themeColor : "white",
+              }}
+            >
+              WE DEVELOP
+            </span>{" "}
+            <span style={{ color: currentContent.themeColor }}>
+              {currentContent.highlight}
+            </span>{" "}
+            <span className="lg:block inline">{currentContent.suffix}</span>
+          </h2>
+
+          <h2
+            className="hero-title mb-4 hidden lg:block"
+            style={{ color: currentContent.themeColor }}
           >
-            WE DEVELOP
-          </span>{" "}
-          <span style={{ color: currentContent.themeColor }}>
-            {currentContent.highlight}
-          </span>
-          <br />
-          {currentContent.suffix}
-        </h2>
+            {typedText}
+            <span className="cursor">|</span>
+          </h2>
+        </div>
 
-        <h2
-          className="hero-title mb-4"
-          style={{ color: currentContent.themeColor }}
-        >
-          {typedText}
-          <span className="cursor">|</span>
-        </h2>
+        {/* Mobile Animation */}
+        <div className="order-2 lg:hidden w-full h-[250px] relative flex items-center justify-center -my-10 scale-50 origin-center pointer-events-none">
+          <StandingAnimation />
+        </div>
 
-        <p className="hero-description">
+        <p className="order-3 lg:order-none hero-description text-center lg:text-left w-full">
           We are a team of tech enthusiasts dedicated to developing world-class
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.
         </p>
 
         {/* Buttons */}
-        <div className="button-group">
+        <div className="order-4 lg:order-none button-group flex flex-col w-full px-2 mt-4 lg:mt-0 items-center">
           <button
-            className="btn-get-started"
+            className="btn-get-started w-full font-medium"
             style={{ "--btn-color": currentContent.themeColor }}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
@@ -127,7 +133,7 @@ function Home() {
             Get Started
           </button>
           <button
-            className="btn-learn-more"
+            className="btn-learn-more hidden lg:flex"
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
           >
@@ -136,8 +142,8 @@ function Home() {
         </div>
       </div>
 
-      {/* Right Section */}
-      <div className="relative flex-1 w-full h-full min-h-[400px] md:min-h-[700px] overflow-hidden mt-10 md:mt-0">
+      {/* Right Section Desktop Animation */}
+      <div className="hidden lg:flex relative flex-1 w-full h-full min-h-[400px] md:min-h-[700px] overflow-hidden mt-10 md:mt-0">
         {/* <div className="absolute inset-0 flex items-center justify-center">
           <LaptopAnimation />
         </div> */}

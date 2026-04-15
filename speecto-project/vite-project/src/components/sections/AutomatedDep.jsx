@@ -29,7 +29,7 @@ const AutomatedDep = () => {
         <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#ff4550] to-[#ff4550] bg-clip-text text-transparent">
           AUTOMATED DEPLOUMENT
         </h2>
-        <p className="p-4 mx-34 text-center text-gray-600 leading-relaxed">
+        <p className="p-4 mx-4 w-full lg:w-auto lg:mx-32 text-center text-gray-600 leading-relaxed">
           Taking a product into Automate involves finalizing development,
           testing, preparing for deployment, and coordinating with operations
           and support teams. The process may vary based on the product and the
@@ -40,7 +40,7 @@ const AutomatedDep = () => {
 
       {/* MAIN CONTENT */}
 
-      <div className="relative w-[700px] max-w-5xl aspect-[16/10] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
+      <div className="relative w-full lg:w-[700px] max-w-5xl aspect-[16/10] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
         <video
           src={v1}
           autoPlay

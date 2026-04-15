@@ -30,9 +30,8 @@ const Production = () => {
         <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#22bf86] to-[#22bf86] bg-clip-text text-transparent">
           PRODUCTION
         </h2>
-        <p 
-          className="p-4 mx-34 text-center text-gray-600 leading-relaxed">Taking a product into production involves finalizing development, testing, preparing for deployment, and coordinating with operations and support teams. The process may vary based on the product and the organization's specific needs. Once completed, the product is released to the public for use.
-
+        <p className="p-4 mx-4 w-full lg:w-auto lg:mx-32 text-center text-gray-600 leading-relaxed">
+          Taking a product into production involves finalizing development, testing, preparing for deployment, and coordinating with operations and support teams. The process may vary based on the product and the organization's specific needs. Once completed, the product is released to the public for use.
         </p>
       </div>
 

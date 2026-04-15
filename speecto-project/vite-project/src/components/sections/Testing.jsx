@@ -29,7 +29,7 @@ const Testins = () => {
         <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#57c126] to-[#57c126] bg-clip-text text-transparent">
           TESTING
         </h2>
-        <p className="p-4 mx-20 text-center text-gray-600 leading-relaxed">
+        <p className="p-4 mx-4 w-full lg:w-auto lg:mx-20 text-center text-gray-600 leading-relaxed">
           By employing various testing strategies such as unit, integration,
           integration testing, and end-to-end testing, we identify and fix
           defects early in the development process, leading to a highly reliable
@@ -39,11 +39,11 @@ const Testins = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex max-w-6xl w-full items-start">
+      <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
-        <div className=" w-[50%] sticky top-24 self-start flex items-start justify-center pt-[60px] mt-[80px] sm:mt-[40px] md:mt-0 productDesignIllustrationWrapper">
+        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-24 self-start flex items-start justify-center pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
           <video
             src={v1}
             autoPlay
@@ -57,7 +57,7 @@ const Testins = () => {
         </div>
 
         {/* -------------------------Middle dots--------------- */}
-        <div className="relative h-[750px] w-16 flex justify-center">
+        <div className="hidden lg:flex relative h-[750px] w-16 justify-center">
           <div className="timeline-line5"></div>
 
           {/* dot */}
@@ -68,8 +68,8 @@ const Testins = () => {
         </div>
 
         {/* Right section */}
-        <div className="w-[50%] flex flex-col">
-          <div className="bg-white w-auto h-28"></div>
+        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start text-center lg:text-left px-4">
+          <div className="hidden lg:block bg-white w-auto h-28"></div>
 
           {[
             {
@@ -93,9 +93,9 @@ const Testins = () => {
               img: design,
             },
           ].map((item, index) => (
-            <div key={index} className="relative my-5 max-w-md">
+            <div key={index} className="relative my-5 w-full flex flex-col items-center lg:items-start">
               {/* Image */}
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm">
+              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
                 <img
                   src={item.img}
                   alt={item.title}

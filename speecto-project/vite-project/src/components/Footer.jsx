@@ -32,7 +32,7 @@ const Footer = () => {
 
             <form className="space-y-6">
               {/* Row 1 */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold  mb-2">Name</label>
                   <input
@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
 
               {/* Row 2 */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold mb-2">
                     Phone No.
@@ -134,7 +134,7 @@ const Footer = () => {
         </h2>
 
         <div className="w-full max-w-3xl flex flex-col mb-8">
-          <div className="w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-0">
+          <div className="w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-0">
             <input
               type="email"
               placeholder="Email"
@@ -170,7 +170,7 @@ const Footer = () => {
         {/* Footer Links Grid */}
         <div className="w-full grid lg:ml-12 grid-cols-1 md:grid-cols-3 gap-2 px-6 md:px-42">
           {/* Explore */}
-          <div className="flex flex-col  items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-start px-2 mb-4 md:mb-0 text-left">
             <h3 className="font-semibold text-base mb-4">Explore</h3>
             <ul className="flex flex-col  gap-3 text-sm text-gray-900">
               <li>
@@ -187,7 +187,7 @@ const Footer = () => {
           </div>
 
           {/* Resources */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-start px-2 mb-4 md:mb-0 text-left">
             <h3 className="font-semibold text-base mb-4">Resources</h3>
             <ul className="flex flex-col gap-3 text-sm text-gray-900">
               <li>
@@ -204,17 +204,17 @@ const Footer = () => {
           </div>
 
           {/* Get In Touch */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-start px-2 mb-4 md:mb-0 text-left">
             <h3 className="font-semibold text-base mb-4">Get In Touch</h3>
             <ul className="flex flex-col gap-4 text-sm text-gray-900">
-              <li className="flex items-start gap-3 justify-center md:justify-start">
+              <li className="flex items-start gap-3 justify-start">
                 <span>
                   71-75 Shelton Street, Covent <br />
                   Garden, London, WC2H 9JQ
                 </span>
               </li>
 
-              <li className="flex items-center gap-3 justify-center md:justify-start">
+              <li className="flex items-center gap-3 justify-start">
                 <a
                   href="mailto:contactus@speecto.com"
                   className="hover:text-black"
@@ -223,7 +223,7 @@ const Footer = () => {
                 </a>
               </li>
 
-              <li className="flex items-center gap-3 justify-center md:justify-start">
+              <li className="flex items-center gap-3 justify-start">
                 <a href="tel:+442071757733" className="hover:text-black">
                   +442071757733
                 </a>

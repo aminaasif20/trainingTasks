@@ -617,9 +617,11 @@
   justify-content: center;
 }
 
-.productDesignIllustrationWrapper {
-  position: sticky;
-  top: 100px;
+@media (min-width: 1200px) {
+  .productDesignIllustrationWrapper {
+    position: sticky;
+    top: 100px;
+  }
 }
 
 /* The Vertical Gradient Line */
@@ -862,3 +864,62 @@
 /* ============================================ */
 /* ---------------Right Side of Product Design------------ */
 /* =============================================*/
+
+/* Responsive overrides for Sections entirely */
+@media (max-width: 1024px) {
+  .right-column,
+  .right-column-product {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    align-items: center !important;
+    margin-top: 20px;
+  }
+
+  /* Hide desktop timeline graphics when stacked */
+  .right-column::before,
+  .right-column-product::before,
+  .timeline-dot,
+  .timeline-dot1,
+  .timeline-dot-right {
+    display: none !important;
+  }
+
+  .timeline-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100%;
+    margin-bottom: 40px !important;
+  }
+
+  .timeline-icon-box {
+    margin: 0 auto 15px auto !important;
+  }
+
+  .timeline-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .timeline-content p {
+    text-align: center;
+    padding: 0 15px; /* Stops text from overflowing edges */
+    max-width: 100%;
+  }
+
+  .illustration-scaler,
+  .scene-wrapper {
+    transform: scale(0.63);
+    transform-origin: top center;
+    margin-bottom: -120px;
+  }
+
+  .scene-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -11,8 +11,8 @@
   width: 350px;
   height: 350px;
   perspective: 1500px;
-  animation: zoomIn 2s ease forwards;
-  z-index: 10;
+  /* animation: zoomIn 2s ease forwards;
+  z-index: 10; */
 }
 
 /* Floating Geometric Shapes */
@@ -133,19 +133,33 @@
   height: 100%;
 
   transform-origin: bottom center;
-  transform: rotateX(-100deg);
+  /* transform: rotateX(-100deg);
 
-  animation: seqLaptopLid 12s infinite;
+  animation: seqLaptopLid 12s infinite; */
 }
 
 @keyframes seqLaptopLid {
-  0% { transform: rotateX(-95deg); }
-  8.33% { transform: rotateX(-95deg); } /* Wait for container scale up */
-  14% { transform: rotateX(10deg); }   /* Open overshoot */
-  16% { transform: rotateX(0deg); }    /* Settle open */
-  25% { transform: rotateX(0deg); }    /* Hold open while scaling down begins */
-  30% { transform: rotateX(-95deg); }  /* Close early as scaling down */
-  100% { transform: rotateX(-95deg); }
+  0% {
+    transform: rotateX(-95deg);
+  }
+  8.33% {
+    transform: rotateX(-95deg);
+  } /* Wait for container scale up */
+  14% {
+    transform: rotateX(10deg);
+  } /* Open overshoot */
+  16% {
+    transform: rotateX(0deg);
+  } /* Settle open */
+  25% {
+    transform: rotateX(0deg);
+  } /* Hold open while scaling down begins */
+  30% {
+    transform: rotateX(-95deg);
+  } /* Close early as scaling down */
+  100% {
+    transform: rotateX(-95deg);
+  }
 }
 
 /* glow */
@@ -281,9 +295,24 @@
 }
 
 @keyframes seqScaleLaptop {
-  0% { transform: scale(0); opacity: 0; }
-  8.33% { transform: scale(1); opacity: 1; }
-  25% { transform: scale(1); opacity: 1; }
-  33.33% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(0); opacity: 0; }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  8.33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  33.33% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }

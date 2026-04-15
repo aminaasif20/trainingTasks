@@ -141,13 +141,16 @@ function Home() {
         {/* <div className="absolute inset-0 flex items-center justify-center">
           <LaptopAnimation />
         </div> */}
-        {/* <div className="absolute inset-0 flex items-center justify-center">
-          <StandingAnimation />
-        </div> */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <MobileAnimation />
+          <StandingAnimation />
         </div>
+        {/* <div className="absolute inset-0 flex items-center justify-center">
+          <MobileAnimation />
+        </div> */}
         {/* <ManLaptop /> */}
+        {/* <div className="absolute inset-0 flex items-center justify-center">
+          <ManLaptop />
+        </div> */}
       </div>
     </section>
   );

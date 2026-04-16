@@ -282,6 +282,11 @@
   animation: paCodeLineMove 3s ease-in-out infinite;
 }
 
+.pa-mountain-line {
+  transform-origin: right;
+  animation: paCodeLineMove 3s ease-in-out infinite;
+}
+
 @keyframes paCodeLineMove {
   0% {
     transform: scaleX(0);
@@ -318,4 +323,75 @@
   50% {
     transform: translateX(0);
   }
+}
+
+.cloud,
+.mountain-move {
+  transform-origin: right;
+  animation: paCodeLineMove 3s ease-in-out infinite;
+  width: 100%;
+}
+
+/* Desktop: full size */
+.production-animation-scaler {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  transform: none;
+  transform-origin: top center;
+}
+
+/* Tablet / small desktop */
+@media (max-width: 1024px) {
+  .production-animation-scaler {
+    max-width: 600px;
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .production-animation-scaler {
+    max-width: 420px;
+    margin-bottom: 0;
+  }
+}
+
+
+.line {
+  position: absolute;
+  top: 53%;
+  width: 5%;
+  height: 2px;
+  margin-left: 13%;
+  background: #161717;
+  transform: translateY(-50%);
+  animation: moveLine 5s linear infinite;
+}
+
+/* Different vertical positions */
+.line1 {
+  top: 82%;
+  width: 5%;
+  animation-delay: 0s;
+}
+.line2 {
+  top: 74%;
+  width: 5%;
+  animation-delay: 1s;
+}
+.line3 {
+  top: 76%;
+  width: 5%;
+  animation-delay: 2s;
+}
+.line4 {
+  top: 78%;
+  width: 5%;
+  animation-delay: 3s;
+}
+.line5 {
+  top: 80%;
+  width: 5%;
+  animation-delay: 4s;
 }

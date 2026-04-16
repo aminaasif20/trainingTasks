@@ -23,6 +23,17 @@ const CodeLine = ({
     className={`${w} ${h} ${color} ${mt} ${ml} rounded-sm pa-code-line`}
   ></div>
 );
+const mountainLine = ({
+  w,
+  h = "h-1.5",
+  color = "bg-[#455A64]",
+  mt = "mt-3",
+  ml = "ml-0",
+}) => (
+  <div
+    className={`${w} ${h} ${color} ${mt} ${ml} rounded-sm pa-code-line`}
+  ></div>
+);
 
 const ProductionAnimation = () => {
   return (
@@ -155,6 +166,14 @@ const ProductionAnimation = () => {
         </div>
       </div>
 
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="line line1"></div>
+        <div className="line line2"></div>
+        <div className="line line3"></div>
+        <div className="line line4"></div>
+        <div className="line line5"></div>
+      </div>
+
       {/* Left Middle: Tree/Jumar */}
       <div className="absolute top-[48%] left-[17%] z-20 ">
         <img
@@ -164,9 +183,43 @@ const ProductionAnimation = () => {
           onError={(e) => (e.target.style.display = "none")}
         />
         {/* Sample small floating boxes mimicking the Jumar */}
-        <div className="w-30 h-6 ml-[-18px]  bg-white border border-gray-900 shadow-sm mt-8 p-1 rounded-sm">
+        <div className="w-30 h-6 ml-[-18px]  bg-white border border-gray-900 shadow-sm mt-8 p-1">
           <div className="flex items-center mt-1">
             {/* <div className="w-10 h-1 bg-gray-200"></div> */}
+          </div>
+        </div>
+        {/* Document Card */}
+        <div className="w-[70%] ml-6 h-8 mt-3 border-1 border-gray-900  relative bg-gray-100 shadow-sm overflow-hidden">
+          {/* Top Left Dot */}
+          <div className="absolute top-2 left-2 w-2 h-2 bg-[#2ecc71] rounded-full"></div>
+          <div className="absolute bottom-2 left-2 right-2 h-8 overflow-hidden">
+            <svg
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+              className="w-full h-full mountain-move"
+            >
+              <polygon
+                points="0,40 35,22 55,28 75,12 100,20 100,40"
+                fill="#2ecc71"
+              />
+            </svg>
+          </div>
+        </div>
+        <div className="w-[70%] ml-6 h-8 mt-2 border-1 mb-4 border-gray-900  relative bg-gray-100 shadow-sm overflow-hidden">
+          {/* Top Left Dot */}
+          <div className="absolute top-2 left-2 w-2 h-2 bg-[#2ecc71] rounded-full"></div>
+
+          <div className="absolute bottom-2 left-2 right-2 h-8 overflow-hidden">
+            <svg
+              viewBox="0 0 100 40"
+              preserveAspectRatio="none"
+              className="w-full h-full mountain-move"
+            >
+              <polygon
+                points="0,40 35,22 55,28 75,12 100,20 100,40"
+                fill="#2ecc71"
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -243,23 +296,20 @@ const ProductionAnimation = () => {
 
           {/* Right Screen: Light UI Layout */}
           <div className="w-[50%] h-full bg-white relative p-3 flex flex-col items-center gap-3 z-10">
-            {/* Top Toolbar / Box */}
-            <div className="w-[90%] h-12 border border-gray-300 rounded-sm"></div>
+            <div className="w-[90%] h-12 border-black border-2 border-gray-300 rounded-sm"></div>
 
             {/* Document Card 1 */}
-            {/* Document Card */}
-            <div className="w-[90%] h-20 border border-gray-300 rounded-sm relative bg-gray-100 shadow-sm overflow-hidden">
-              {/* Top Left Dot */}
-              <div className="absolute top-2 left-2 w-3 h-3 bg-[#2ecc71] rounded-full"></div>
 
-              {/* Mountain Shape (separate) */}
-              <div className="absolute bottom-2 left-2 right-2 h-8">
+            <div className="w-[76%] h-20 border-2 border-black ml-4 border-gray-300 rounded-sm relative bg-gray-100 shadow-sm overflow-hidden">
+              <div className="absolute top-2 left-2 w-4 h-4 bg-[#2ecc71] rounded-full"></div>
+              <div className="absolute bottom-2 left-2 right-2 h-8 overflow-hidden">
                 <svg
                   viewBox="0 0 100 40"
                   preserveAspectRatio="none"
-                  className="w-full h-full paDocCardMove"
+                  className="w-18 h-full mountain-move"
                 >
                   <polygon
+                    className="w-14"
                     points="0,40 35,22 55,28 75,12 100,20 100,40"
                     fill="#2ecc71"
                   />
@@ -269,18 +319,16 @@ const ProductionAnimation = () => {
 
             {/* Document Card 2 */}
 
-            <div className="w-[90%] h-20 border border-gray-300 rounded-sm relative bg-gray-100 shadow-sm overflow-hidden">
-              {/* Top Left Dot */}
-              <div className="absolute top-2 left-2 w-3 h-3 bg-[#2ecc71] rounded-full"></div>
-
-              {/* Mountain Shape (separate) */}
-              <div className="absolute bottom-2 left-2 right-2 h-8">
+            <div className="w-[76%] ml-4 h-20 border-2 border-gray-300 rounded-sm relative bg-gray-100 shadow-sm overflow-hidden ">
+              <div className="absolute top-2 left-2 w-4 h-4 bg-[#2ecc71] rounded-full"></div>
+              <div className="absolute bottom-2 left-2 right-2 h-8 overflow-hidden">
                 <svg
                   viewBox="0 0 100 40"
                   preserveAspectRatio="none"
-                  className="w-full h-full"
+                  className="w-18 h-full mountain-move"
                 >
                   <polygon
+                    className="w-14"
                     points="0,40 35,22 55,28 75,12 100,20 100,40"
                     fill="#2ecc71"
                   />
@@ -288,7 +336,7 @@ const ProductionAnimation = () => {
               </div>
             </div>
             {/* The letter W indicator from image */}
-            <div className="absolute left-[-15px] top-[140px] text-lg font-extrabold text-[#1b2a33] z-30 drop-shadow-md">
+            <div className="absolute left-[-2px] top-[140px] text-lg font-extrabold text-[#1b2a33] z-30 drop-shadow-md">
               W
             </div>
           </div>

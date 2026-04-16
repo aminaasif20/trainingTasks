@@ -503,27 +503,6 @@
   flex-shrink: 0;
 }
 
-/* ── RIGHT panel: static layout — rows of [bar + dot] ── */
-.sda-db-right {
-  flex: 1;
-  background: #ceacf8;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 10px 8px;
-  position: relative;
-  border-radius: 0 8px 8px 0; /* Matches the right side of the server block */
-}
-
-.sda-db-row {
-  display: flex;
-  align-items: center;
-  position: relative;
-  height: 14px; /* Adjust height based on your design */
-  width: 100%;
-  margin-bottom: 4px;
-}
-
 /* THE ANIMATED BAR: Synchronized Grow and Retract */
 .sda-db-bar {
   position: absolute;
@@ -667,13 +646,13 @@
   animation: floatCloud 4s ease-in-out infinite;
 }
 
-.sda-db-right {
+.sda-db-right1 {
   flex: 1;
-  background: #ceacf8;
+  /* background: #2c1a42; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 10px 8px;
+  padding: 1px 3px;
   position: relative;
   border-radius: 0 8px 8px 0; /* Matches the right side of the server block */
 }
@@ -682,10 +661,10 @@
   display: flex;
   align-items: center;
   position: relative;
-  height: 2px; /* Adjust height based on your design */
+  height: 1px; /* Adjust height based on your design */
   width: 80%;
-  margin: 4px;
-  margin-bottom: 4px;
+  margin: 3px;
+  /* margin-bottom: 4px; */
 }
 
 /* THE ANIMATED BAR: Synchronized Grow and Retract */

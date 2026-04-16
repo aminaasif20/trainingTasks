@@ -11,6 +11,7 @@ import product from "../../assets/asset/product.svg";
 import roadmap from "../../assets/asset/roadmap.svg";
 import wireframe from "../../assets/asset/wireframe.svg";
 import design from "../../assets/asset/design.svg";
+import ProductionAnimation from "./ProductionAnimation";
 
 const Production = () => {
   return (
@@ -36,22 +37,11 @@ const Production = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex max-w-6xl w-full items-start">
-
-        
-          
-          
-           
-
-            
+      <div className="flex max-w-6xl w-full items-start justify-center pt-8">
+        <div className="relative w-full max-w-4xl h-[400px] lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
+          <ProductionAnimation />
         </div>
-
-
-        
-
-
-
-        
+      </div>
     </div>
   );
 };

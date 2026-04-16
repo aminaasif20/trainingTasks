@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import Logo from "../assets/asset/speectoLogo.png";
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -21,12 +22,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full min-h-screen bottom-0.5 flex flex-col font-sans text-gray-800">
-      <div className="pt-6 pb-8 px-20 gap-10">
-        <div className=" py-16 ">
-          <div className="w-auto  p-8">
+    <footer className="w-full min-h-screen bottom-0.5 flex flex-col font-montserrat  md:p-6 lg:px-20 text-gray-800">
+      <div className="pt-6 pb-8  gap-10">
+        <div className=" lg:py-16 ">
+          <div className="w-auto  lg:p-8 p-6">
             {/* Title */}
-            <h2 className="text-center text-blue-500 text-2xl font-bold mb-10">
+            <h2 className="text-center bg-gradient-to-r font-montserrat from-blue-600 to-blue-400 bg-clip-text text-transparent text-xl lg:text-2xl font-semibold lg:font-bold mb-10">
               Let's Get Started
             </h2>
 
@@ -91,21 +92,19 @@ const Footer = () => {
 
               {/* Button */}
               <div className="flex justify-center items-center">
-                <div className="relative  item-center w-28 mt-5  p-[1.6px] rounded-md bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
+                <div className="relative  item-center lg:w-28 w-25 mt-5  p-[1.6px] rounded-[10px] bg-gradient-to-r from-blue-600 to-blue-400 group overflow-hidden">
                   <button
-                    className="relative py-2 rounded-md bg-white text-blue-500 
+                    className="relative lg:py-2 py-2 rounded-[10px] bg-white text-blue-600 
                             transition-transform duration-300 hover:translate-x-1 w-full"
                   >
                     {/* Sliding background */}
                     <span
-                      className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 
-                           ransition-all 
+                      className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 transition-all 
                             duration-300 group-hover:w-full z-0"
                     ></span>
 
                     {/* Button text */}
                     <span className="relative font-bold z-10 group-hover:text-white">
-                      {/* <Link to>Our Team</Link> */}
                       Submit
                     </span>
                   </button>
@@ -118,18 +117,18 @@ const Footer = () => {
         {/* Logo Section */}
       </div>
 
-      <div className="flex flex-col mb-12 px-20 items-center w-full">
+      <div className="flex flex-col mb-12 px-6 md:px-6 lg:px-20 items-center w-full">
         {/* Logo */}
         <div className="mb-7 flex justify-center items-center">
           <img
             src={Logo}
             alt="Speecto Logo"
-            className="h-7 w-auto filter invert"
+            className="h-6 w-auto filter invert"
           />
         </div>
 
         {/* Newsletter Section */}
-        <h2 className="text-3xl font-medium mb-6 text-center">
+        <h2 className="text-1xl lg:font-semibold  lg:text-3xl  mb-6 text-center">
           Subscribe To Our Newsletter
         </h2>
 
@@ -168,11 +167,11 @@ const Footer = () => {
         </div>
 
         {/* Footer Links Grid */}
-        <div className="w-full grid lg:ml-12 grid-cols-1 md:grid-cols-3 gap-2 px-6 md:px-42">
+        <div className="w-full grid  grid-cols-1 md:grid-cols-3 gap-2 lg:px-36">
           {/* Explore */}
-          <div className="flex flex-col items-start px-2 mb-4 md:mb-0 text-left">
+          <div className="flex flex-col items-start mb-4 md:mb-0 text-left">
             <h3 className="font-semibold text-base mb-4">Explore</h3>
-            <ul className="flex flex-col  gap-3 text-sm text-gray-900">
+            <ul className="flex flex-col gap-3 font-semibold text-sm">
               <li>
                 <a href="#" className="hover:text-black">
                   Home
@@ -187,9 +186,9 @@ const Footer = () => {
           </div>
 
           {/* Resources */}
-          <div className="flex flex-col items-start px-2 mb-4 md:mb-0 text-left">
+          <div className="flex flex-col items-start mb-4 md:mb-0 text-left">
             <h3 className="font-semibold text-base mb-4">Resources</h3>
-            <ul className="flex flex-col gap-3 text-sm text-gray-900">
+            <ul className="flex flex-col font-semibold gap-3 text-sm">
               <li>
                 <a href="#" className="hover:text-black">
                   Contact
@@ -204,17 +203,18 @@ const Footer = () => {
           </div>
 
           {/* Get In Touch */}
-          <div className="flex flex-col items-start px-2 mb-4 md:mb-0 text-left">
-            <h3 className="font-semibold text-base mb-4">Get In Touch</h3>
-            <ul className="flex flex-col gap-4 text-sm text-gray-900">
-              <li className="flex items-start gap-3 justify-start">
+          <div className="flex flex-col items-start mb-4 md:mb-0 text-left">
+            <h3 className="font-semibold text-base  mb-4">GetIn Touch</h3>
+            <ul className="flex flex-col gap-4 text-sm">
+              <li className="flex items-center font-semibold gap-3 justify-start">
+                <FaMapMarkerAlt className="text-black text-lg flex-shrink-0" />
                 <span>
-                  71-75 Shelton Street, Covent <br />
-                  Garden, London, WC2H 9JQ
+                  71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
                 </span>
               </li>
 
-              <li className="flex items-center gap-3 justify-start">
+              <li className="flex items-center font-semibold gap-3 justify-start">
+                <FaEnvelope className="text-black text-lg flex-shrink-0" />
                 <a
                   href="mailto:contactus@speecto.com"
                   className="hover:text-black"
@@ -223,7 +223,8 @@ const Footer = () => {
                 </a>
               </li>
 
-              <li className="flex items-center gap-3 justify-start">
+              <li className="flex items-center font-semibold gap-3 justify-start">
+                <FaPhoneAlt className="text-black text-lg flex-shrink-0" />
                 <a href="tel:+442071757733" className="hover:text-black">
                   +442071757733
                 </a>
@@ -236,7 +237,7 @@ const Footer = () => {
       {/* Copyright Bar */}
       <div className="w-full bg-[#f1f3f4] py-4">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <p className="text-md text-gray-500">
+          <p className="text-sm text-gray-500">
             © 2023 Speecto Ltd is a company registered in England and Wales
             (Company No. 15060881)
           </p>

@@ -293,13 +293,13 @@
 }
 
 /* ── CARDS & PERSON ── */
-.sda-card {
+.sda-card-Pro {
   position: absolute;
   border-radius: 8px;
   overflow: hidden;
   z-index: 6;
 }
-.sda-card-hdr {
+.sda-card-hdr-Pro {
   background: linear-gradient(90deg, #8836f1, #ac6efa);
   height: 18px;
   display: flex;

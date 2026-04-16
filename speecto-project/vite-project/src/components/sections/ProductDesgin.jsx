@@ -61,7 +61,10 @@ const ProductDesign = () => {
               img: product,
             },
           ].map((item, index) => (
-            <div key={index} className="relative my-5 w-full flex flex-col items-center lg:items-end">
+            <div
+              key={index}
+              className="relative my-5 w-full flex flex-col items-center lg:items-end"
+            >
               {/* Image */}
               <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-auto lg:mr-0">
                 <img

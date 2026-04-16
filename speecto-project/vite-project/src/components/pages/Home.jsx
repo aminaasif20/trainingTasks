@@ -86,7 +86,7 @@ function Home() {
       <div className="bg-watermark-text">TECH</div>
 
       {/* 2. The Main Content */}
-      <div className="content-box flex flex-col w-full lg:w-1/2">
+      <div className="content-box w-full lg:w-[50%] z-10">
         <div className="order-1 lg:order-none header-group text-center lg:text-left w-full">
           <h2 className="hero-title">
             <span
@@ -123,9 +123,9 @@ function Home() {
         </p>
 
         {/* Buttons */}
-        <div className="order-4 lg:order-none button-group flex flex-col w-full px-2 mt-4 lg:mt-0 items-center">
+        <div className="order-4 lg:order-none button-group flex flex-col lg:flex-row w-full lg:w-auto px-2 lg:px-0 mt-4 lg:mt-0 items-center justify-center lg:justify-start lg:gap-[30px]">
           <button
-            className="btn-get-started w-full font-medium"
+            className="btn-get-started w-full lg:w-auto font-medium"
             style={{ "--btn-color": currentContent.themeColor }}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}

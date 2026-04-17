@@ -14,6 +14,7 @@ import { MdOutlineGroups2 } from "react-icons/md";
 import { MdOutlineContentPasteSearch } from "react-icons/md";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { VscVerified } from "react-icons/vsc";
+import v1 from '../../assets/asset/rs.mp4'
 
 const Requirments = () => {
   return (
@@ -25,9 +26,10 @@ const Requirments = () => {
           REQUIREMENTS ENGINEERING
         </h2>
       </div>
-      <div className="flex flex-col lg:flex-row items-center lg:items-start px-4 w-[300px]  lg:px-6 sm:px-2 lg:px-8">
-        <div className=" lg:w-1/2 relative lg:sticky top-32 lg:top-34 flex justify-center">
-          <div className="flex items-start justify-center  lg:mt-32 w-full lg:w-[500px]">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start px-4 w-full max-w-[1200px] mx-auto lg:px-6 sm:px-2 lg:px-8">
+        <div className="lg:w-1/2 relative lg:sticky lg:top-32 flex justify-center">
+        
+          <div className="flex items-start  justify-center lg:mt-32 w-full lg:w-[500px]">
             <div className="req-animation-scaler">
               <div className="scene-wrapper">
                 <div className="scene-container">
@@ -66,7 +68,7 @@ const Requirments = () => {
                     alt="chat"
                   />
 
-                  <div className="giant-clipboard">
+                  <div className=" giant-clipboard">
                     <img src={clip} className="clipboard-clip" alt="clip" />
 
                     <div className="clipboard-paper">
@@ -74,41 +76,41 @@ const Requirments = () => {
 
                       <div className="checklist-item">
                         <div className="lines">
-                          <div className="line"></div>
-                          <div className="line"></div>
+                          <div className="checklist-line"></div>
+                          <div className="checklist-line"></div>
                         </div>
                         <div className="checkbox checked">✓</div>
                       </div>
                       <div className="checklist-item">
                         <div className="lines">
-                          <div className="line"></div>
-                          <div className="line"></div>
+                          <div className="checklist-line"></div>
+                          <div className="checklist-line"></div>
                         </div>
                         <div className="checkbox checked">✓</div>
                       </div>
                       <div className="checklist-item">
                         <div className="lines">
-                          <div className="line"></div>
-                          <div className="line"></div>
+                          <div className="checklist-line"></div>
+                          <div className="checklist-line"></div>
                         </div>
-                        <div className="checkbox checked">✓</div>
+                        <div className="checkbox checked"></div>
                       </div>
                       <div className="checklist-item">
                         <div className="lines">
-                          <div className="line"></div>
-                          <div className="line"></div>
+                          <div className="checklist-line"></div>
+                          <div className="checklist-line"></div>
                         </div>
                         <div className="checkbox checked"></div>
                       </div>
 
-                      <div className="box placeholder-box-bottom"></div>
+                      {/* <div className="box placeholder-box-bottom"></div> */}
                     </div>
                   </div>
 
-                  <img src={man1} className="asset man1" alt="man1" />
+                  <img src={man1} className="w-32 z-30 ml-[-50px] lg:asset lg:man1" alt="man1" />
                   <img
                     src={womanStanding}
-                    className="asset woman-standing"
+                    className="ml-4 w-[200px] relative lg:asset lg:woman-standing"
                     alt="woman standing"
                   />
                   {/* <img src={deskTeam} className="asset desk-team" alt="team at desk" /> */}
@@ -166,7 +168,7 @@ const Requirments = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="relative my-5 w-[300px] lg:w-full flex flex-col items-center lg:items-start"
+              className="relative my-5 w-[360px] lg:w-full flex flex-col items-center lg:items-start"
             >
               {/* Image */}
               <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">

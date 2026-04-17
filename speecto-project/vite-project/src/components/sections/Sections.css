@@ -3,24 +3,87 @@
 ========================================= */
 .scene-wrapper {
   display: flex;
-  justify-content: top;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 500px;
   padding: 4px;
   background-color: #ffffff;
+  overflow: visible;
 }
 
 .scene-container {
-  top: -120px;
+  top: 0;
   position: relative;
-  /* margin-top: -60px; */
-  /* width: 10%; */
-  width: 500px;
-  /* align-items: flex-start; */
+  width: 100%;
+  max-width: 500px;
   height: 500px;
-  border: 2px dashed #ccc; /* Uncomment to debug boundaries */
+  min-height: 500px;
+  /* border: 2px dashed #ccc; Uncomment to debug boundaries */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.req-animation-scaler {
+  width: 100%;
+  max-width: 500px;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+}
+
+.req-animation-scaler video,
+.scene-wrapper video,
+.scene-container video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .req-animation-scaler,
+  .scene-wrapper,
+  .scene-container {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .req-animation-scaler,
+  .scene-wrapper {
+    transform: scale(0.72) !important;
+    transform-origin: top center !important;
+    margin-bottom: 0 !important;
+    overflow: visible !important;
+  }
+
+  .scene-wrapper {
+    min-height: 380px !important;
+  }
+
+  .scene-container {
+    top: 0 !important;
+    height: 420px !important;
+    min-height: 420px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .woman-standing {
+    left: 22% !important;
+    bottom: 20% !important;
+    height: 160px !important;
+  }
+
+  .man1 {
+    left: 12% !important;
+    bottom: 18% !important;
+    height: 220px !important;
+  }
 }
 
 /* Base style for absolute positioned assets */
@@ -240,7 +303,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 10px;
   padding: 40px 0;
   box-sizing: border-box;
 }
@@ -260,6 +323,7 @@
 }
 
 .checklist-item {
+  /* background-color: #f2f2f3; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -272,12 +336,14 @@
   flex-direction: column;
   gap: 5px;
   width: 70%;
+  /* background: #000; */
 }
 
-.line {
+.checklist-line {
   height: 2px;
   background-color: #0056ff;
   width: 100%;
+  margin-top: 5px;
 }
 
 .checkbox {
@@ -933,7 +999,7 @@
   .scene-wrapper {
     transform: scale(0.63);
     transform-origin: top center;
-    margin-bottom: -120px;
+    margin-bottom: 0;
   }
 
   .scene-container {

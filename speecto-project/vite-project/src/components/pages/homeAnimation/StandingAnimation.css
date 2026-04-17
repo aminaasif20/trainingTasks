@@ -28,9 +28,17 @@
 /* Base Platform */
 .platform-base {
   position: absolute;
-  bottom: 60px;
+  bottom: 80px;
   /* Moved the base down a bit to center the whole composition */
-  width: 380px;
+  width: 430px;
+  z-index: 10;
+  /* Removed floatBase because the whole container floats now! */
+}
+.platform-base-step {
+  position: absolute;
+  bottom: 20px;
+  /* Moved the base down a bit to center the whole composition */
+  width: 480px;
   z-index: 10;
   /* Removed floatBase because the whole container floats now! */
 }
@@ -45,7 +53,7 @@
 .standing-man {
   position: absolute;
   bottom: 120px;
-  z-index: 20;
+  z-index: 50;
   width: 145px;
 }
 
@@ -62,7 +70,16 @@
   width: 680px;
   height: 700px;
   transform: translate(-50%, -50%);
-  z-index: 30;
+  z-index: 70;
+}
+.orbiting-dashboards-base {
+  position: relative;
+  top: 28%;
+  left: 10%;
+  width: 680px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+  z-index: 20;
 }
 
 .dashboard {
@@ -92,9 +109,11 @@
 }
 
 .orbit-2 {
+  width: 200px;
   top: 50%;
-  left: 50%;
-  margin-top: -175px;
+  left: 85%;
+  z-index: 5;
+  margin-top: -105px;
   margin-left: -175px;
 }
 

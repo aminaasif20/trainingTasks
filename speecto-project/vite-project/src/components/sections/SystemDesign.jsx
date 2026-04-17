@@ -15,30 +15,32 @@ import SystemDesignAnimation from "./SystemDesignAnimation";
 
 const ProductDesign = () => {
   return (
-    <div className="flex flex-col items-center bg-white px-5 py-10">
+    <div className="flex flex-col items-center bg-white lg:px-5 py-10">
       {/* HEADER */}
       <div className="relative h-[50px] w-6 flex justify-center">
         <div className=" timeline-lineHeader3"></div>
       </div>
 
       <div className="flex flex-col items-center mb-10">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-[#7374c9] to-[#5759b3] text-white font-bold shadow-lg mb-4">
+        <div className="lg:w-12 lg:h-12 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#7374c9] to-[#9ca8e9] text-white  shadow-lg mb-4">
           3
         </div>
 
-        <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#5759b3] to-[#7374c9] bg-clip-text text-transparent">
+        <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#5759b3] to-[#9ca8e9] bg-clip-text text-transparent">
           SYSTEM DESIGN
         </h2>
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
+      <div className="flex flex-col lg:flex-row max-w-5xl w-full items-center lg:items-start relative">
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
-        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-24 self-start flex items-start justify-center pt-4 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full max-w-4xl h-[400px] lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
-            <SystemDesignAnimation />
+        <div className="lg:w-[480px] lg:w-[40%] order-first lg:order-none relative lg:sticky lg:top-24 w-[330px] self-start flex items-start justify-center lg:pt-[6px] lg:mt-0 productDesignIllustrationWrapper">
+          <div className="relative w-full max-w-4xl h-[400px] lg:w-[500px] lg:-ml-8 lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
+            <div className="sda-animation-scaler">
+              <SystemDesignAnimation />
+            </div>
           </div>
         </div>
 
@@ -63,7 +65,7 @@ const ProductDesign = () => {
         </div>
 
         {/*------------------- Right section----------------------- */}
-        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start text-center lg:text-left px-4">
+        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start text-center lg:items-start lg:text-left ">
           <div className="hidden lg:block bg-white w-auto h-28"></div>
 
           {[
@@ -93,7 +95,10 @@ const ProductDesign = () => {
               img: product,
             },
           ].map((item, index) => (
-            <div key={index} className="relative my-5 w-full flex flex-col items-center lg:items-start">
+            <div
+              key={index}
+              className="relative my-5 w-full flex flex-col items-center lg:items-start"
+            >
               {/* Image */}
               <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
                 <img
@@ -109,7 +114,9 @@ const ProductDesign = () => {
               </h3>
 
               {/* Text */}
-              <p className="text-gray-500 leading-relaxed">{item.text}</p>
+              <p className="lg:pt-1 lg:pr-1  text-[13.9px] font-semibold lg:mx-1 w-full lg:w-auto text-center lg:text-start text-gray-500 leading-relaxed">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>

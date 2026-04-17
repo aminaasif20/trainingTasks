@@ -22,11 +22,11 @@ const ProductDesign = () => {
       </div>
 
       <div className="flex flex-col items-center mb-10">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-pink-600 to-pink-400 text-white font-bold shadow-lg mb-4">
+        <div className="lg:w-12 lg:h-12 h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#f02cb1] to-[#f959cf] text-white  shadow-lg mb-4">
           2
         </div>
 
-        <h2 className="text-pink-600 tracking-[5px] text-xl font-semibold uppercase">
+        <h2 className="text-[#f02cb1] tracking-[5px] text-xl font-semibold uppercase">
           PRODUCT DESIGN
         </h2>
       </div>
@@ -41,23 +41,23 @@ const ProductDesign = () => {
 
           {[
             {
-              title: "Elicitation",
-              text: "This step involves identifying stakeholders and understanding their needs.",
+              title: "Wireframing",
+              text: "Wireframing is a method of creating a basic visual outline of a product or website's structure and features in order to convey and refine design ideas.",
               img: roadmap,
             },
             {
-              title: "Analysis & Suggestions",
-              text: "We analyze requirements and suggest trending ideas and features.",
+              title: "UI/UX Design",
+              text: "UI/UX design is the process of developing interfaces that are both aesthetically pleasing and easy to use, providing users with a seamless and enjoyable experience while interacting with a product or service.",
               img: wireframe,
             },
             {
-              title: "Document Requirements",
-              text: "Document requirements in a clear and concise manner.",
+              title: "Technical review",
+              text: "A roadmap for product development is a strategic document that defines the timeline, milestones, stages, and necessary resources for a product's development cycle in order to achieve its launch into the market.",
               img: design,
             },
             {
-              title: "Verification & Validation",
-              text: "Verify correctness and validate suitability of requirements.",
+              title: "Roadmap",
+              text: "A roadmap for product development is a strategic document that defines the timeline, milestones, stages, and necessary resources for a product's development cycle in order to achieve its launch into the market.",
               img: product,
             },
           ].map((item, index) => (
@@ -80,7 +80,9 @@ const ProductDesign = () => {
               </h3>
 
               {/* Text */}
-              <p className="text-gray-500 leading-relaxed">{item.text}</p>
+              <p className="lg:pt-1 lg:pr-1  text-[13.9px] font-semibold lg:mx-1 w-full lg:w-auto text-center lg:text-start text-gray-500 leading-relaxed">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>
@@ -89,11 +91,11 @@ const ProductDesign = () => {
           <div className="timeline-line1"></div>
 
           {/* dot */}
-          <div className="absolute top-32 w-4 h-4 bg-pink-600 rounded-full"></div>
-          <div className="absolute mt-[300px] w-4 h-4 bg-pink-600 rounded-full"></div>
-          <div className="absolute mt-[300px]  w-4 h-4 bg-pink-600 rounded-full"></div>
-          <div className="absolute top-[500px] w-4 h-4 bg-pink-600 rounded-full"></div>
-          <div className="absolute top-[700px] w-4 h-4 bg-pink-600 rounded-full"></div>
+          <div className="absolute top-32 w-4 h-4 bg-[#f02cb1] rounded-full"></div>
+          <div className="absolute mt-[300px] w-4 h-4 bg-[#f02cb1] rounded-full"></div>
+          <div className="absolute mt-[300px]  w-4 h-4 bg-[#f02cb1] rounded-full"></div>
+          <div className="absolute top-[500px] w-4 h-4 bg-[#f02cb1] rounded-full"></div>
+          <div className="absolute top-[700px] w-4 h-4 bg-[#f02cb1] rounded-full"></div>
         </div>
 
         {/*--------------- Right section------------- */}

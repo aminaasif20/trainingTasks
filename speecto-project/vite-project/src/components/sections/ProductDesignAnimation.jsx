@@ -168,9 +168,9 @@ const ProductDesignAnimation = () => {
         {/* <div className="w-48 h-4 bg-[#f052b0] rounded-full mt-2 shadow"></div> */}
       </div>
       {/* Small Pink Box (Left) */}
-      <div className="absolute bottom-44 left-[25%] z-20">
+      <div className="absolute bottom-20 lg:bottom-44 left-[25%] z-20">
         <div className="w-12 h-10 bg-[#f12eb3] border-5 border-[#f8a5dc] shadow-lg">
-          <div className="sda-db-right1">
+          <div className=" sda-db-right1">
             {[0, 1, 2, 3].map((i) => (
               <div key={i} className="sda-db-row1">
                 {/* Scanner bar — slides left→right over the dots */}

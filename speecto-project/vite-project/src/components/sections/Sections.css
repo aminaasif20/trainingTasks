@@ -293,6 +293,8 @@
   font-weight: bold;
 }
 
+/* media requirmnets*/
+
 /* =========================================
    FOREGROUND ELEMENTS
 ========================================= */
@@ -394,6 +396,7 @@
   letter-spacing: 5px;
   text-transform: uppercase;
   margin: 0;
+  padding-top: 20px;
 }
 
 .product-design-section {
@@ -699,6 +702,21 @@
     /* bright */ #de0ba3 100% /* solid */
   );
 }
+.timeline-line-r {
+  position: absolute;
+  top: 0;
+  height: 700px;
+  bottom: 0;
+  width: 1.5px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    /* faded start */ #dce8ff 10%,
+    /* light blue */ #2563eb 20%,
+    /* bright */ #2563eb 100% /* solid */
+  );
+}
 
 .timeline-linee4 {
   position: absolute;
@@ -943,5 +961,49 @@
 @media (max-width: 640px) {
   .production-animation-scaler {
     transform: scale(0.65);
+  }
+}
+
+/* =========================================
+   SYSTEM DESIGN ANIMATION SCALER
+========================================= */
+.sda-animation-scaler {
+  transform-origin: top center;
+  transition: transform 0.2s ease;
+}
+
+/* Tablet (641px – 1024px) */
+
+/* Mobile (≤ 640px) */
+@media (max-width: 640px) {
+  .sda-animation-scaler {
+    transform: scale(0.7);
+    margin-bottom: -100px;
+    margin-right: 18px;
+  }
+}
+
+/* =========================================
+   DEVELOPMENT ANIMATION SCALER
+========================================= */
+.dev-animation-scaler {
+  transform-origin: top center;
+  transition: transform 0.2s ease;
+}
+
+/* Tablet (641px – 1024px) */
+@media (max-width: 1024px) {
+  .dev-animation-scaler {
+    transform: scale(0.8);
+    padding: 12px;
+    /* margin-left: 10px; */
+  }
+}
+
+/* Mobile (≤ 640px) */
+@media (max-width: 640px) {
+  .dev-animation-scaler {
+    transform: scale(12);
+    margin-bottom: -160px;
   }
 }

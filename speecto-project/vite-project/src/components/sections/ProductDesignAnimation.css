@@ -504,16 +504,6 @@
 }
 
 /* ── RIGHT panel: static layout — rows of [bar + dot] ── */
-.sda-db-right1 {
-  flex: 1;
-  background: #ceacf8;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 10px 8px;
-  position: relative;
-  border-radius: 0 8px 8px 0; /* Matches the right side of the server block */
-}
 
 .sda-db-row {
   display: flex;
@@ -680,12 +670,12 @@
 
 .sda-db-row1 {
   display: flex;
-  align-items: center;
+  align-items: start;
   position: relative;
-  height: 2px; /* Adjust height based on your design */
-  width: 80%;
-  margin: 4px;
-  margin-bottom: 4px;
+  height: 1px; /* Adjust height based on your design */
+  width: 90%;
+  /* margin: 4px; */
+  margin-bottom: 3px;
 }
 
 /* THE ANIMATED BAR: Synchronized Grow and Retract */

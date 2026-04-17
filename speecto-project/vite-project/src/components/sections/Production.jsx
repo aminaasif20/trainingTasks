@@ -11,6 +11,7 @@ import product from "../../assets/asset/product.svg";
 import roadmap from "../../assets/asset/roadmap.svg";
 import wireframe from "../../assets/asset/wireframe.svg";
 import design from "../../assets/asset/design.svg";
+import v1 from "../../assets/asset/ps1.mp4";
 import ProductionAnimation from "./ProductionAnimation";
 
 const Production = () => {
@@ -40,8 +41,20 @@ const Production = () => {
 
       {/* MAIN CONTENT */}
       <div className="flex max-w-6xl w-full items-start justify-center pt-8">
-        <div className="relative w-full max-w-4xl h-[520px] lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
-          <ProductionAnimation />
+        <div className="relative w-full max-w-4xl h-[520px] lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans ">
+          <div className="hidden md:flex w-full h-full items-center justify-center">
+            <ProductionAnimation />
+          </div>
+
+          {/* 🔹 MOBILE VIDEO */}
+          <video
+            src={v1}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="block md:hidden w-[600px] h-[600px]  object-contain"
+          />
         </div>
       </div>
     </div>

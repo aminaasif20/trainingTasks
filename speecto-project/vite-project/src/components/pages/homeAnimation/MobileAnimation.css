@@ -1,14 +1,14 @@
 .mobile-wrapper {
-  perspective: 1200px;
+  perspective: 500px;
 }
 
 .mobile-animation-container {
   /* Provide space for floating shapes */
   transform-style: preserve-3d;
   opacity: 1;
-  animation: seqScaleMobile 12s ease-in-out infinite;
+  /* animation: seqScaleMobile 12s ease-in-out infinite;
   animation-delay: -4s;
-  animation-fill-mode: both;
+  animation-fill-mode: both; */
 }
 
 .mobile-scene {
@@ -171,4 +171,49 @@
   100% {
     opacity: 1;
   }
+}
+
+/* lines */
+.lines-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* margin-top: 20px; */
+  transform: rotate(-25deg); /* makes lines diagonal */
+}
+
+/* Base line */
+.line {
+  display: flex;
+  flex-direction: column;
+  height: 6px;
+  border-radius: 999px;
+  /* margin: 8px 3px; */
+}
+
+/* Individual lines (different lengths + colors) */
+.l1 {
+  width: 60px;
+  margin-bottom: 3px;
+  background: #ff6a3d;
+}
+
+.l2 {
+  width: 45px;
+  background: #ff3d6b;
+}
+
+.l3 {
+  width: 70px;
+  background: #ff6a3d;
+}
+
+.l4 {
+  width: 50px;
+  background: #ff8c42;
+}
+
+.l5 {
+  width: 40px;
+  background: #b04dff;
 }

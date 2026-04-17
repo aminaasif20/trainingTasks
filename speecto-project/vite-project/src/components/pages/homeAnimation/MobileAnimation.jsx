@@ -4,8 +4,8 @@ import "./MobileAnimation.css";
 
 const MobileAnimation = () => {
   return (
-    <div className="mobile-wrapper relative w-full h-full flex items-center justify-center">
-      <div className="mobile-animation-container relative flex items-center justify-center mb-80   w-[400px] h-[500px]">
+    <div className="mobile-wrapper relative w-full lg:mb-[1400px] h-full flex items-center justify-center">
+      <div className="mobile-animation-container relative flex items-center justify-center mb-80   w-[360px] h-[400px]">
         {/* Floating Geometric Background Shapes */}
         <div className="mobile-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">
           {/* Top Left Dashes */}
@@ -36,6 +36,15 @@ const MobileAnimation = () => {
             className="mobile-img w-full max-w-[500px]"
           />
         </div>
+        {/* <div class="absolute top-80 left-30 w-[100px] h-[100px] bg-white overflow-hidden">
+          <div class="lines-wrapper">
+            <span class="line l1"></span>
+            <span class="line l2"></span>
+            <span class="line l3"></span>
+            <span class="line l4"></span>
+            <span class="line l5"></span>
+          </div>
+        </div> */}
       </div>
     </div>
   );

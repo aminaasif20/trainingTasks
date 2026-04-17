@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../../App.css";
 
 import StandingAnimation from "./homeAnimation/StandingAnimation.jsx";
+import MobileAnimation from "./homeAnimation/MobileAnimation.jsx";
+import ManLaptop from "./homeAnimation/ManLaptop.jsx";
+import LaptopAnimation from "./homeAnimation/LaptopAnimation.jsx";
 
 const CONTENT_VARIATIONS = [
   {
@@ -125,9 +128,12 @@ function Home() {
       </div>
 
       {/* 3. Right Side Animation - Stays low and centered */}
-      <div className="hidden lg:flex relative flex-1 items-center justify-center pt-40">
+      <div className="hidden lg:flex relative flex-1 items-center justify-center lg:pt-30">
         <div className="scale-125">
-          <StandingAnimation />
+          {/* <StandingAnimation /> */}
+          {/* <MobileAnimation /> */}
+          {/* <ManLaptop /> */}
+          <LaptopAnimation />
         </div>
       </div>
     </section>

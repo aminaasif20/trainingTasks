@@ -66,7 +66,7 @@ const DevelopmentAnimation = () => {
         </div>
       </div>
       {/* The empty panels layer */}
-      <div className="w-[350px] h-[400px]">
+      <div className="lg:w-[350px] lg:h-[400px]">
         <img
           src={bgImage}
           alt="Workspace Background"

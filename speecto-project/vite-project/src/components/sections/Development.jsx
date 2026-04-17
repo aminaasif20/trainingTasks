@@ -15,7 +15,7 @@ import DevelopmentAnimation from "./DevelopmentAnimation";
 
 const Development = () => {
   return (
-    <div className="flex flex-col items-center bg-white px-5 py-10">
+    <div className="flex flex-col items-center bg-white px2 lg:px-5 py-3 lg:py-10">
       {/* HEADER */}
       <div className="relative h-[50px] w-6 flex justify-center">
         <div className="timeline-lineHeader4"></div>
@@ -50,9 +50,12 @@ const Development = () => {
               img: wireframe,
             },
           ].map((item, index) => (
-            <div key={index} className="relative my-5 w-full flex flex-col items-center lg:items-end">
+            <div
+              key={index}
+              className="relative my-5 w-full flex flex-col items-center lg:items-end"
+            >
               {/* Image */}
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-auto lg:mr-0">
+              <div className="lg:w-12 lg:h-12 w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-auto lg:mr-0">
                 <img
                   src={item.img}
                   alt={item.title}
@@ -66,7 +69,9 @@ const Development = () => {
               </h3>
 
               {/* Text */}
-              <p className="text-gray-500 leading-relaxed">{item.text}</p>
+              <p className=" lg:pt-1 lg:pr-1 pl-4 pr-4 text-[13.9px] font-semibold lg:mx-1 w-full lg:w-auto text-center lg:text-end text-gray-500 leading-relaxed">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>
@@ -83,8 +88,8 @@ const Development = () => {
         </div>
 
         {/* -------------------Right section---------------- */}
-        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-24 flex items-start justify-center pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full max-w-4xl h-[400px] lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
+        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky mb-[px] lg:top-24 flex items-start justify-center pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
+          <div className="relative w-full max-w-4xl h-[550px] mb-[-10px] lg:h-[600px] mx-auto item-end bg-white overflow-hidden flex items-end md:items-center justify-center font-sans">
             <DevelopmentAnimation />
           </div>
         </div>

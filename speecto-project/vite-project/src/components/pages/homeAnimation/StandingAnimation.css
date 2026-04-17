@@ -2,10 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 500px;
-  padding-top: 0px;
-  padding-bottom: 100px;
+  width: 78%;
+  height: 400px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 100px; */
   background-color: transparent;
   position: relative;
   overflow: visible;
@@ -14,20 +14,22 @@
 
 .isometric-scene {
   position: relative;
-  width: 300px;
+  width: 280px;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   /* TimeLine Sequencer */
   opacity: 1;
-  transform: scale(0.7); /* Adjust size overall */
+  transform: scale(0.7);
+  /* Adjust size overall */
 }
 
 /* Base Platform */
 .platform-base {
   position: absolute;
-  bottom: 60px; /* Moved the base down a bit to center the whole composition */
+  bottom: 60px;
+  /* Moved the base down a bit to center the whole composition */
   width: 380px;
   z-index: 10;
   /* Removed floatBase because the whole container floats now! */
@@ -80,9 +82,11 @@
 .orbit-1 {
   top: 50%;
   left: 50%;
-  margin-top: -100px; /* Adjusting for wider 500px dashboard */
+  margin-top: -100px;
+  /* Adjusting for wider 500px dashboard */
   margin-left: -200px;
 }
+
 .orbit-1 img {
   animation: none;
 }
@@ -93,6 +97,7 @@
   margin-top: -175px;
   margin-left: -175px;
 }
+
 .orbit-2 img {
   animation: none;
 }
@@ -103,6 +108,7 @@
   margin-top: -175px;
   margin-left: -175px;
 }
+
 .orbit-3 img {
   animation: none;
 }
@@ -113,8 +119,9 @@
   100% {
     transform: translateY(0px);
   }
+
   60% {
-    transform: translateY(-40px);
+    transform: translateY(-45px);
   }
 }
 
@@ -125,18 +132,22 @@
     transform: scale(0);
     opacity: 0;
   }
+
   8.33% {
     transform: scale(1);
     opacity: 1;
   }
+
   25% {
     transform: scale(1);
     opacity: 1;
   }
+
   33.33% {
     transform: scale(0);
     opacity: 0;
   }
+
   100% {
     transform: scale(0);
     opacity: 0;

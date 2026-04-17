@@ -1,18 +1,18 @@
 @import "tailwindcss";
-/* Parent toggle div should have relative positioning */
+
+/* ================= TOGGLE ================= */
 .toggle {
   position: relative;
-  width: 60px; /* example width */
-  height: 30px; /* example height */
+  width: 60px;
+  height: 30px;
   background: gray;
   border-radius: 9999px;
 }
 
-/* Cloud moves inside the toggle */
 .cloud {
   position: absolute;
-  top: 50%; /* vertical center */
-  transform: translateY(-50%); /* vertically center exactly */
+  top: 50%;
+  transform: translateY(-50%);
   width: 20px;
   height: 20px;
   font-size: 20px;
@@ -22,128 +22,115 @@
 @keyframes moveCloud {
   0% {
     left: 2px;
-  } /* left inside toggle */
-  20% {
-    opacity: 1; /* appear quickly */
   }
+  20%,
   80% {
-    opacity: 1; /* stay visible while moving */
+    opacity: 1;
   }
   100% {
     left: calc(100% - 22px);
-  } /* right inside toggle */
+  }
 }
 
-/* Home section  */
-/* Container styling */
+/* ================= WEATHER ================= */
+.weather-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.cloud-top {
+  position: absolute;
+  z-index: 20;
+  top: 7px;
+  animation: cloudSlideFade 7s linear infinite;
+}
+
+@keyframes cloudSlideFade {
+  0% {
+    left: -35px;
+    opacity: 0;
+  }
+  45%,
+  55% {
+    opacity: 0.8;
+  }
+  100% {
+    left: 75px;
+    opacity: 0;
+  }
+}
+
+.cloud-bottom {
+  position: absolute;
+  z-index: 10;
+  bottom: 0 !important;
+  animation: cloudPingPong 4s ease-in-out infinite;
+}
+
+@keyframes cloudPingPong {
+  0%,
+  100% {
+    left: 4px;
+  }
+  50% {
+    left: 30px;
+  }
+}
+
+/* ================= HERO SECTION ================= */
 .hero-wrapper {
   position: relative;
   background-color: #081533;
   padding: 7% 2%;
   min-height: 90vh;
-  height: auto;
   display: flex;
-  width: auto;
-  /* align-items: center; */
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
 }
 
-/* --- Faded Background Text --- */
 .bg-watermark-text {
   position: absolute;
-  top: 0;
-  padding-top: none;
+  top: -23px;
   left: 0;
-  width: 50%;
+  width: 90%;
+  font-size: 9rem;
+  font-weight: 900;
+  line-height: 1;
 
-  font-size: 9rem; /* Make it HUGE */
-  font-weight: 800;
-  line-height: 0.8;
-  /* background-color: #ffffff; */
-  /* The color and fade effect */
-  color: white;
-  opacity: 0.04; /* Extremely faded! (4% visible) */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0)
+  );
 
-  z-index: 0; /* Puts it behind everything else */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-  /* Pro-tips for background text: */
-  pointer-events: none; /* Prevents it from blocking clicks on buttons below */
-  user-select: none; /* Prevents the user from accidentally highlighting it */
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Responsive Media Queries for Home Page */
-@media (max-width: 1024px) {
-  .hero-wrapper {
-    padding: 120px 5% 50px 5%;
-  }
-  .bg-watermark-text {
-    width: 100%;
-    text-align: center;
-    font-size: clamp(4rem, 15vw, 6rem);
-    top: 5%;
-  }
-  .content-box {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    width: 100%;
-  }
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-description {
-    width: 100%;
-    max-width: 600px;
-    padding: 0 10px;
-    font-size: 1rem;
-    margin-bottom: 30px;
-  }
-  .button-group {
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-wrapper {
-    padding-top: 100px;
-  }
-  .bg-watermark-text {
-    font-size: clamp(3.5rem, 12vw, 4.5rem);
-  }
-  .hero-title {
-    font-size: 1.35rem; /* Reduced to ensure "HIGH-PERFORMANCE" stays on one line */
-  }
-  .hero-description {
-    font-size: 0.95rem;
-  }
-}
-
-/* --- Foreground Content --- */
-.content-box {
-  position: relative;
-  z-index: 1;
-  height: 60%;
-  /* background:white; */
-  height: 60%;
-  max-width: 700px;
-}
-
+/* ================= TEXT ================= */
 .hero-title {
-  left: 0;
-  /* margin-top: 15px; */
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 650;
   color: white;
   line-height: 1.1;
   text-transform: uppercase;
 }
 
-/* Blinking cursor for the typewriter effect */
+.hero-description {
+  color: #7a87a0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  width: 700px;
+  margin-bottom: 40px;
+  min-height: 80px;
+}
+
+/* ================= CURSOR ================= */
 .cursor {
   font-weight: 300;
   color: white;
@@ -160,24 +147,7 @@
   }
 }
 
-.hero-description {
-  color: #7a87a0;
-
-  font-weight: 600;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  width: 700px;
-  margin-bottom: 40px;
-  min-height: 80px; /* Prevents button jump */
-}
-
-/* --- Buttons --- */
-.button-group {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  height: 40px; /* Fixed height for button row */
-}
+/* ================= BUTTONS ================= */
 .button-group {
   display: flex;
   gap: 30px;
@@ -187,60 +157,46 @@
 
 .btn-get-started {
   background: transparent;
-  /* Use a CSS variable for dynamic colors, fallback to blueviolet if none provided */
   border: 2px solid var(--btn-color, blueviolet);
   color: var(--btn-color, blueviolet);
-
   padding: 12px 28px;
   border-radius: 8px;
-  font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-
-  /* Creates a new stacking context so the ::before element doesn't hide behind the page background */
+  transition: 0.3s;
   z-index: 1;
 }
 
 .btn-get-started::before {
   content: "";
   position: absolute;
-  top: 0;
   left: -100%;
+  top: 0;
   width: 100%;
   height: 100%;
-
-  /* The sliding background now matches the dynamic border/text color */
   background-color: var(--btn-color, blueviolet);
-
-  transition: left 0.4s ease;
-  z-index: -1; /* Keeps the background color strictly behind the text */
+  transition: 0.4s;
+  z-index: -1;
 }
 
-/* Hover States */
 .btn-get-started:hover {
-  /* Change text to white (or your preferred color) so it's readable over the filled background */
-  color: #ffffff;
+  color: #fff;
   transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-get-started:hover::before {
   left: 0;
 }
+
 .btn-learn-more {
   background: transparent;
   border: none;
   color: white;
-  font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
   display: flex;
-  align-items: center;
   gap: 8px;
-  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .btn-learn-more:hover {
@@ -248,10 +204,9 @@
   text-decoration: underline;
 }
 
-/* Arrow animation - moves side to side */
+/* ================= ARROW ================= */
 .arrow-icon {
-  display: inline-block;
-  animation: arrowSlide 0.8s ease-in-out infinite;
+  animation: arrowSlide 0.8s infinite;
 }
 
 @keyframes arrowSlide {
@@ -264,12 +219,15 @@
   }
 }
 
-/* Pause arrow animation on button hover */
 .btn-learn-more:hover .arrow-icon {
   animation-play-state: paused;
 }
 
-/* ------------------Home Amination---------------- */
+/* ================= EXTRA ANIMATIONS ================= */
+.spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
 @keyframes spinSlow {
   from {
     transform: rotate(0deg);
@@ -279,11 +237,6 @@
   }
 }
 
-.spin-slow {
-  animation: spinSlow 40s linear infinite;
-}
-
-/* button */
 @keyframes slideIn {
   from {
     transform: translateX(-40px);
@@ -292,5 +245,49 @@
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    padding: 120px 5% 50px;
+  }
+
+  .bg-watermark-text {
+    width: 100%;
+    font-size: clamp(3rem, 10vw, 5rem);
+    top: 5%;
+  }
+
+  .hero-title {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .button-group {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    padding-top: 100px;
+  }
+
+  .bg-watermark-text {
+    font-size: clamp(3.5rem, 12vw, 4.5rem);
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
   }
 }

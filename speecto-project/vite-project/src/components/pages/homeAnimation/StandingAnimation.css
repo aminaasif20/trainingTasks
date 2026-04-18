@@ -55,7 +55,7 @@
   /* Moved the base down a bit to center the whole composition */
   width: 430px;
   z-index: 10;
-  /* Removed floatBase because the whole container floats now! */
+  animation: floatBase 6s ease-in-out infinite;
 }
 .platform-base-step {
   position: absolute;
@@ -63,7 +63,7 @@
   /* Moved the base down a bit to center the whole composition */
   width: 480px;
   z-index: 10;
-  /* Removed floatBase because the whole container floats now! */
+  animation: floatBase 6s ease-in-out infinite;
 }
 
 .platform-img {
@@ -78,6 +78,7 @@
   bottom: 120px;
   z-index: 50;
   width: 145px;
+  animation: floatBase 6s ease-in-out infinite;
 }
 
 .man-img {
@@ -128,7 +129,7 @@
 }
 
 .orbit-1 img {
-  animation: none;
+  animation: floatBase 6s ease-in-out infinite;
 }
 
 .orbit-2 {
@@ -141,7 +142,7 @@
 }
 
 .orbit-2 img {
-  animation: none;
+  animation: floatBase 6s ease-in-out infinite;
 }
 
 .orbit-3 {
@@ -152,7 +153,7 @@
 }
 
 .orbit-3 img {
-  animation: none;
+  animation: floatBase 6s ease-in-out infinite;
 }
 
 /* Keyframes (no longer using translateZ) */

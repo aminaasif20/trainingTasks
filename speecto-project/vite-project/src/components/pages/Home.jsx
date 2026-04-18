@@ -41,6 +41,25 @@ function Home() {
     return () => clearInterval(ticker);
   }, [typedText, isDeleting, loopNum, typingSpeed]);
 
+  const myComponents = [
+    {
+      component: <LaptopAnimation />,
+      delay: 0,
+    },
+    {
+      component: <ManLaptop />,
+      delay: 2,
+    },
+    {
+      component: <MobileAnimation />,
+      delay: 4,
+    },
+    {
+      component: <StandingAnimation />,
+      delay: 6,
+    },
+  ];
+
   const handleTyping = () => {
     const currentVariantIndex = loopNum % CONTENT_VARIATIONS.length;
     const fullText = CONTENT_VARIATIONS[currentVariantIndex].typewriterText;
@@ -130,10 +149,24 @@ function Home() {
       {/* 3. Right Side Animation - Stays low and centered */}
       <div className="hidden lg:flex relative flex-1 items-center justify-center lg:pt-30">
         <div className="scale-125">
+          {myComponents.map((item, index) => (
+            <div
+              key={item.id}
+              // The CSS class that holds your animation logic
+              className={`staggered-item w-80 p-6 rounded-lg text-white font-bold text-center shadow-lg ${item.color}`}
+              style={{
+                // THE TRICK: Multiply the array index by a set time (e.g., 0.4 seconds)
+                // Item 0 gets 0s delay. Item 1 gets 0.4s. Item 2 gets 0.8s, etc.
+                animationDelay: `${index * 0.4}s`,
+              }}
+            >
+              {item.title}
+            </div>
+          ))}
           {/* <StandingAnimation /> */}
           {/* <MobileAnimation /> */}
           {/* <ManLaptop /> */}
-          <LaptopAnimation />
+          {/* <LaptopAnimation /> */}
         </div>
       </div>
     </section>

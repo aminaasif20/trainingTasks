@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* slides ky liy */
+/* Start the element as hidden so it doesn't show before its delay finishes */
+.staggered-item {
+  opacity: 0;
+  /* Use your fadeIn keyframes, set duration, and use 'forwards' to keep it visible */
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* ================= TOGGLE ================= */
 .toggle {
   position: relative;

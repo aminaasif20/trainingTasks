@@ -7,6 +7,31 @@
 .man-laptop-scene {
   position: relative;
   /* width: 90%; */
+  animation: seqScaleMobile 12s ease-in-out infinite;
+  animation-delay: -4s;
+  animation-fill-mode: both;
+}
+@keyframes seqScaleMobile {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  8.33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  33.33% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 
 /* Common image properties for absolute positioning */
@@ -90,7 +115,7 @@
   top: 43%;
   left: 100%;
   z-index: 7;
-  /* animation: mlFloat 5s ease-in-out infinite alternate-reverse; */
+  animation: mlFloat 5s ease-in-out infinite alternate-reverse;
 }
 .ml-frame {
   width: 30%;
@@ -104,7 +129,7 @@
   top: 18%;
   left: 35%;
   z-index: 7;
-  /* animation: mlFloat 5s ease-in-out infinite alternate-reverse; */
+  animation: mlFloat 5s ease-in-out infinite alternate-reverse;
 }
 .ml-framecode {
   width: 10%;
@@ -178,7 +203,7 @@
   left: 55%;
   z-index: 9;
   filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.4));
-  animation: mlFloat 6s ease-in-out infinite alternate;
+  animation: mlFloat 8s ease-in-out infinite alternate;
 }
 
 /* Gentle floating animations for depth */

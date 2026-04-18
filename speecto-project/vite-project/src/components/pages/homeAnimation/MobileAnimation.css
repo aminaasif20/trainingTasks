@@ -6,9 +6,9 @@
   /* Provide space for floating shapes */
   transform-style: preserve-3d;
   opacity: 1;
-  /* animation: seqScaleMobile 12s ease-in-out infinite;
-  animation-delay: -4s;
-  animation-fill-mode: both; */
+  animation: seqScaleMobile 12s ease-in-out infinite;
+  animation-delay: -3s;
+  animation-fill-mode: both;
 }
 
 .mobile-scene {

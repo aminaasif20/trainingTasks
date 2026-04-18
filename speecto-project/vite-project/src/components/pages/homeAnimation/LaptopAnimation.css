@@ -1,13 +1,11 @@
 .wrapper {
-  height: 60vh;
-  /* background: #050a18; */
+  height: 400px;
+  width: 360px;
   display: flex;
   justify-content: center;
   perspective: 1200px;
   align-items: center;
-  animation: seqScaleMobile 15s ease-in-out infinite;
-  animation-delay: -1s;
-  animation-fill-mode: both;
+  /* Remove self-scale - parent cycle */
 }
 @keyframes seqScaleMobile {
   0% {

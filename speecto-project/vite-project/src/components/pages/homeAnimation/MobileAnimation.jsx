@@ -5,7 +5,7 @@ import "./MobileAnimation.css";
 const MobileAnimation = () => {
   return (
     <div className="mobile-wrapper relative w-full lg:mb-[1400px] h-full flex items-center justify-center">
-      <div className="mobile-animation-container relative flex items-center justify-center mb-80   w-[360px] h-[400px]">
+      <div className="mobile-animation-container relative flex items-center justify-center   lg:w-[360px] lg:h-[400px]">
         {/* Floating Geometric Background Shapes */}
         <div className="mobile-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">
           {/* Top Left Dashes */}

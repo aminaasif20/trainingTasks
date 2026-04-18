@@ -33,6 +33,15 @@ function Home() {
   const [typedText, setTypedText] = useState("");
   const [typingSpeed, setTypingSpeed] = useState(100);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
+  // New animation cycle state
+  const [currentAnimIndex, setCurrentAnimIndex] = useState(0);
+
+  const myComponents = [
+    { component: <LaptopAnimation />, delay: 0 },
+    { component: <ManLaptop />, delay: 1 },
+    { component: <MobileAnimation />, delay: 2 },
+    { component: <StandingAnimation />, delay: 3 },
+  ];
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -41,24 +50,18 @@ function Home() {
     return () => clearInterval(ticker);
   }, [typedText, isDeleting, loopNum, typingSpeed]);
 
-  const myComponents = [
-    {
-      component: <LaptopAnimation />,
-      delay: 0,
-    },
-    {
-      component: <ManLaptop />,
-      delay: 2,
-    },
-    {
-      component: <MobileAnimation />,
-      delay: 4,
-    },
-    {
-      component: <StandingAnimation />,
-      delay: 6,
-    },
-  ];
+  // New: Animation cycle every 4 seconds
+  useEffect(() => {
+    const animInterval = setInterval(() => {
+      setCurrentAnimIndex((prev) => (prev + 1) % myComponents.length);
+    }, 5000); // 4s cycle to match staggered feel
+    return () => clearInterval(animInterval);
+  }, []);
+
+  // Optional sync: Reset anim on typewriter loop
+  // useEffect(() => {
+  //   setCurrentAnimIndex(loopNum % myComponents.length);
+  // }, [loopNum]);
 
   const handleTyping = () => {
     const currentVariantIndex = loopNum % CONTENT_VARIATIONS.length;
@@ -84,16 +87,17 @@ function Home() {
   const currentContent =
     CONTENT_VARIATIONS[loopNum % CONTENT_VARIATIONS.length];
 
+  const ActiveAnimation = myComponents[currentAnimIndex].component;
+
   return (
-    <section className="relative flex flex-col lg:flex-row hero-wrapper items-start justify-between px-6  lg:h-[600px] overflow-hidden pt-20">
+    <section className="relative flex flex-col lg:flex-row hero-wrapper items-start justify-between px-6 lg:h-[600px] overflow-hidden pt-20">
       {/* 1. Background Watermark */}
-      <div className=" bg-watermark-text select-none">TECH</div>
+      <div className="bg-watermark-text select-none">TECH</div>
 
       {/* 2. Main Content Box */}
-      {/* Increased lg:w to 60% to give text more room to stay on one line */}
-      <div className="relative z-10 w-full lg:w-[60%] lg:mt-[1px] ">
+      <div className="relative z-10 w-full lg:w-[60%] lg:mt-[1px]">
         <div className="header-group text-left text-2xl lg:w-[700px]">
-          <h2 className="hero-title lg:text-2xl text-2xl   tracking-tight leading-[1.1] uppercase">
+          <h2 className="hero-title lg:text-2xl text-2xl tracking-tight leading-[1.1] uppercase">
             <span
               className="inline-block"
               style={{
@@ -103,7 +107,6 @@ function Home() {
             >
               WE DEVELOP
             </span>{" "}
-            {/* whitespace-nowrap ensures WE DEVELOP + HIGHLIGHT stay on Line 1 */}
             <span
               className="whitespace-nowrap"
               style={{ color: currentContent.themeColor }}
@@ -111,13 +114,12 @@ function Home() {
               {currentContent.highlight}
             </span>
             <br />
-            {/* Line 2: Suffix */}
             <span className="text-white inline-block mt-1">
               {currentContent.suffix}
             </span>
           </h2>
 
-          {/* Line 3: Typewriter */}
+          {/* Typewriter */}
           <h2
             className="hero-title text-3xl lg:text-5xl font-bold mt-1"
             style={{ color: currentContent.themeColor }}
@@ -127,7 +129,7 @@ function Home() {
           </h2>
         </div>
 
-        <p className="hero-description text-left  lg:w-[690px] lg:mt-2 mt-8 text-gray-400 font-medium leading-6 ">
+        <p className="hero-description text-left lg:w-[690px] lg:mt-2 mt-8 text-gray-400 font-medium leading-6">
           We are a team of tech enthusiasts dedicated to developing world-class
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.
@@ -137,6 +139,8 @@ function Home() {
           <button
             className="btn-get-started px-8 py-3 rounded-lg font-bold"
             style={{ "--btn-color": currentContent.themeColor }}
+            onMouseEnter={() => setIsButtonHovered(true)}
+            onMouseLeave={() => setIsButtonHovered(false)}
           >
             Get Started
           </button>
@@ -146,28 +150,20 @@ function Home() {
         </div>
       </div>
 
-      {/* 3. Right Side Animation - Stays low and centered */}
-      <div className="hidden lg:flex relative flex-1 items-center justify-center lg:pt-30">
+      {/* 3. Right Side Animation - Cycling w/ transitions */}
+      <div className="hidden lg:flex relative flex-1 items-center justify-center lg:pt-30 hero-anim-cycle">
         <div className="scale-125">
-          {myComponents.map((item, index) => (
-            <div
-              key={item.id}
-              // The CSS class that holds your animation logic
-              className={`staggered-item w-80 p-6 rounded-lg text-white font-bold text-center shadow-lg ${item.color}`}
-              style={{
-                // THE TRICK: Multiply the array index by a set time (e.g., 0.4 seconds)
-                // Item 0 gets 0s delay. Item 1 gets 0.4s. Item 2 gets 0.8s, etc.
-                animationDelay: `${index * 0.4}s`,
-              }}
-            >
-              {item.title}
-            </div>
-          ))}
-          {/* <StandingAnimation /> */}
-          {/* <MobileAnimation /> */}
-          {/* <ManLaptop /> */}
-          {/* <LaptopAnimation /> */}
+          <div
+            className="anim-container opacity-100"
+            style={{
+              transitionDelay: `${myComponents[currentAnimIndex].delay * 0.3}s`,
+            }}
+          >
+            {ActiveAnimation}
+          </div>
         </div>
+        {/* Debug: Show current index */}
+        {/* <div className="text-xs text-white absolute bottom-0">Anim: {currentAnimIndex}</div> */}
       </div>
     </section>
   );

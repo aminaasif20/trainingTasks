@@ -2,19 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 78%;
+  width: 100%;
   height: 400px;
-  /* padding-top: 10px; */
-  /* padding-bottom: 100px; */
   background-color: transparent;
   position: relative;
   overflow: visible;
-  animation: floatBase 4s ease-in-out infinite;
-  /* animation: seqScaleStanding 12s ease-in-out infinite; */
-  transform: scale(0.7);
-  animation: seqScaleMobile 12s ease-in-out infinite;
-  animation-delay: -4s;
-  animation-fill-mode: both;
+  /* Remove self-scale animations - parent controls cycle */
+  transform: scale(1);
+  animation: seqScaleStanding 12s ease-in-out infinite;
 }
 @keyframes seqScaleMobile {
   0% {
@@ -49,7 +44,6 @@
   /* TimeLine Sequencer */
   opacity: 1;
   transform: scale(0.7);
-  /* animation: seqScaleStanding 12s ease-in-out infinite; */
 
   /* Adjust size overall */
 }

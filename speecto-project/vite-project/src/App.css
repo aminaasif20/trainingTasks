@@ -241,6 +241,56 @@
   animation-play-state: paused;
 }
 
+/* ================= ANIMATION CYCLE ================= */
+.hero-anim-cycle {
+  position: relative;
+}
+
+@keyframes centerPulse {
+  0% {
+    transform: scale(0.3) translateY(0);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.laptop-active .animation-container,
+.laptop-active .man-laptop-scene,
+.laptop-active .mobile-animation-container,
+.laptop-active .standing-animation-container,
+.laptop-active .wrapper {
+  animation: centerPulse 1s ease-out forwards !important;
+}
+
+.anim-container {
+  opacity: 0;
+  transform: scale(0.7) translateY(30px);
+  transition: all 1.2s cubic-bezier(0.34, 0.16, 0.25, 1);
+}
+
+.anim-container.opacity-100 {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+@keyframes animCycleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
 /* ================= EXTRA ANIMATIONS ================= */
 .spin-slow {
   animation: spinSlow 40s linear infinite;

@@ -1,14 +1,14 @@
 .mobile-wrapper {
   perspective: 500px;
+  height: 400px;
+  width: 360px;
+  animation: seqScaleMobile 12s ease-in-out infinite;
 }
 
 .mobile-animation-container {
   /* Provide space for floating shapes */
   transform-style: preserve-3d;
-  opacity: 1;
-  animation: seqScaleMobile 12s ease-in-out infinite;
-  animation-delay: -3s;
-  animation-fill-mode: both;
+  /* Remove self-animation - controlled by parent cycle */
 }
 
 .mobile-scene {

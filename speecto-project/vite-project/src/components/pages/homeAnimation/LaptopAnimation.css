@@ -11,8 +11,8 @@
   width: 350px;
   height: 350px;
   perspective: 1500px;
-  /* animation: zoomIn 2s ease forwards;
-  z-index: 10; */
+  animation: zoomIn 3s ease forwards;
+  z-index: 10;
 }
 
 /* Floating Geometric Shapes */
@@ -31,7 +31,7 @@
 .pos1 {
   top: 15%;
   left: 20%;
-  width: 90px;
+  width: 10%;
   animation-duration: 5s;
   animation-delay: 0s;
   filter: drop-shadow(0 0 10px rgba(255, 69, 58, 0.6));
@@ -39,8 +39,8 @@
 
 .pos2 {
   top: 45%;
-  right: 15%;
-  width: 100px;
+  right: 25%;
+  width: 8%;
   animation-duration: 7s;
   animation-delay: -2s;
   filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.6));
@@ -49,36 +49,49 @@
 .pos3 {
   top: 10%;
   left: 45%;
-  width: 40px;
+  width: 20%;
+  animation-duration: 4s;
+  animation-delay: -1s;
+}
+.pos9 {
+  top: 50%;
+  left: 25%;
+  width: 20%;
   animation-duration: 4s;
   animation-delay: -1s;
 }
 
 .pos4 {
-  top: 25%;
-  right: 25%;
-  width: 30px;
+  top: 20%;
+  right: 10%;
+  width: 16%;
   animation-duration: 5.5s;
 }
 
 .pos5 {
-  bottom: 25%;
-  right: 35%;
-  width: 30px;
+  bottom: 35%;
+  right: 45%;
+  width: 20%;
+  animation-duration: 6.5s;
+}
+.pos10 {
+  bottom: 75%;
+  left: 16%;
+  width: 16%;
   animation-duration: 6.5s;
 }
 
 .pos6 {
   top: 45%;
-  left: 15%;
-  width: 20px;
+  left: 10%;
+  width: 4%;
   animation-duration: 3s;
 }
 
 .pos7 {
   bottom: 25%;
   left: 45%;
-  width: 15px;
+  width: 5%;
   animation-duration: 4.5s;
   filter: hue-rotate(180deg); /* Turn the remaining small circle to blue/cyan */
 }
@@ -86,7 +99,7 @@
 .pos8 {
   top: 15%;
   right: 45%;
-  width: 25px;
+  width: 14%;
   animation-duration: 5s;
 }
 
@@ -101,8 +114,18 @@
 
 @keyframes zoomIn {
   from {
-    transform: scale(0.8);
-    opacity: 0;
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes zoomInlid {
+  from {
+    transform: scale(0.5);
+    opacity: 1;
   }
   to {
     transform: scale(1);
@@ -112,9 +135,12 @@
 
 /* ONLY place where 3D happens */
 .laptop {
+  /* background-color: #050a18; */
+  left: 10%;
+  top: 6%;
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 75%;
+  height: 75%;
   transform: rotateX(40deg) rotateZ(-15deg);
   transform-style: preserve-3d;
 }
@@ -122,8 +148,8 @@
 /* BASE */
 .base {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 93%;
+  height: 92%;
 }
 
 /* LID */
@@ -131,11 +157,9 @@
   position: absolute;
   width: 100%;
   height: 100%;
-
+  animation: zoomInlid 3s ease forwards;
+  z-index: 10;
   transform-origin: bottom center;
-  /* transform: rotateX(-100deg);
-
-  animation: seqLaptopLid 12s infinite; */
 }
 
 @keyframes seqLaptopLid {
@@ -217,13 +241,46 @@
   left: 70%;
   transform: translate(-50%, 15%);
 }
-.imgLid {
+.imgLidScreen {
   position: relative;
-  width: 75%;
-  height: 100%;
-  top: -55%;
-  left: 72%;
-  transform: translate(-50%, 15%);
+  width: 66%;
+  height: 90%;
+  top: -61%;
+  left: 69%;
+  z-index: 5;
+  transform: translate(-55%, 25%);
+}
+.imgLidBack {
+  position: absolute;
+  width: 66%;
+  height: 90%;
+  top: -63%;
+  left: 71%;
+  z-index: 2;
+  transform: translate(-55%, 25%);
+}
+.imgLidUpperBack {
+  position: absolute;
+  width: 68%;
+  height: 90%;
+  top: -62%;
+  left: 69.5%;
+  z-index: 2;
+  transform: translate(-55%, 25%);
+}
+
+.imgLidText {
+  position: absolute;
+  width: 60%;
+  height: 66%;
+  top: -44%;
+  left: 70.5%;
+  z-index: 10;
+  transform: translate(-56%, 25%);
+  filter: drop-shadow(0 0 10px rgba(255, 69, 58, 0.6));
+  /* wait 4 sec to come */
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 2.5s;
 }
 .imgLidLine {
   display: none; /* Removing the broken zigzag outline */
@@ -288,31 +345,32 @@
 }
 
 /* TimeLine Sequencer */
-.animation-container {
-  /* opacity: 0;
-  animation: seqScaleLaptop 12s ease-in-out infinite;
-  animation-fill-mode: both; */
-}
-
-@keyframes seqScaleLaptop {
+@keyframes open-screen {
   0% {
-    transform: scale(0);
+    transform: rotateX(70deg) rotateY(20deg) translateY(30px) scale(0.9);
     opacity: 0;
   }
-  8.33% {
-    transform: scale(1);
+  60% {
+    transform: rotateX(-10deg) rotateY(5deg) translateY(0);
     opacity: 1;
-  }
-  25% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  33.33% {
-    transform: scale(0);
-    opacity: 0;
   }
   100% {
-    transform: scale(0);
-    opacity: 0;
+    transform: rotateX(0deg) rotateY(0deg) translateY(0) scale(1);
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shadow {
+  opacity: 0.3;
+  animation: shadow-grow 2.5s ease-out forwards;
 }

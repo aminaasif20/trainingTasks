@@ -6,6 +6,7 @@ import laptopBase from "../../../assets/asset/laptopBase.webp";
 import laptopBaseOutline from "../../../assets/asset/laptopBaseOutline.svg";
 import laptopBaseUpper from "../../../assets/asset/laptopBaseUpper.webp";
 import laptopShadow from "../../../assets/asset/laptopShadow.webp";
+import laptopScreen from "../../../assets/asset/laptopScreen.svg";
 import laptopScreenBack from "../../../assets/asset/laptopScreenBack.svg";
 import laptopScreenUppeback from "../../../assets/asset/laptopScreenUppeback.svg";
 import seondLaptopScreenText from "../../../assets/asset/seondLaptopScreenText.webp";
@@ -22,7 +23,7 @@ const LaptopAnimation = () => {
     let value = 30;
 
     const interval = setInterval(() => {
-      value += 1.5;
+      value += 3;
       if (value >= 100) clearInterval(interval);
       setBrightness(value);
     }, 20);
@@ -48,7 +49,7 @@ const LaptopAnimation = () => {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#2dd4bf"
+              stroke="#52b7aaff"
               strokeWidth="4"
               className="rounded-full"
             >
@@ -85,10 +86,35 @@ const LaptopAnimation = () => {
               <polygon points="12,2 22,12 12,22 2,12" />
             </svg>
           </div>
+          <div className="shape pos10">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#2dd4bf"
+              strokeWidth="4"
+            >
+              <polygon points="12,2 22,12 12,22 2,12" />
+            </svg>
+          </div>
+          <div className="shape pos9">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#52b7aaff"
+              strokeWidth="4"
+              className="rounded-full"
+            >
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
 
           {/* Small Cyan Dot */}
           <div className="shape pos8">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#2dd4bf">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#77efddff">
               <circle cx="12" cy="12" r="12" />
             </svg>
           </div>
@@ -110,7 +136,10 @@ const LaptopAnimation = () => {
 
             {/* LID */}
             <div className="lid">
-              <img src={laptopScreenBack} className="imgLid" />
+              <img src={laptopScreenBack} className="imgLidBack" />
+              <img src={laptopScreen} className="imgLidScreen" />
+              <img src={seondLaptopScreenText} className="imgLidText glow" />
+              <img src={laptopScreenUppeback} className="imgLidUpperBack" />
               {/* <img src={keyboardBase} className="img" /> */}
             </div>
           </div>

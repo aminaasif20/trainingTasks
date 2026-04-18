@@ -289,9 +289,9 @@
 
 /* TimeLine Sequencer */
 .animation-container {
-  opacity: 0;
+  /* opacity: 0;
   animation: seqScaleLaptop 12s ease-in-out infinite;
-  animation-fill-mode: both;
+  animation-fill-mode: both; */
 }
 
 @keyframes seqScaleLaptop {

@@ -90,7 +90,7 @@ function Home() {
   const ActiveAnimation = myComponents[currentAnimIndex].component;
 
   return (
-    <section className="relative flex flex-col lg:flex-row hero-wrapper items-start justify-between px-6 lg:h-[600px] overflow-hidden pt-20">
+    <section className="relative flex flex-col lg:flex-row hero-wrapper items-start justify-between px-6 min-h-screen overflow-hidden pt-16 lg:pt-20">
       {/* 1. Background Watermark */}
       <div className="bg-watermark-text select-none">TECH</div>
 
@@ -129,42 +129,43 @@ function Home() {
           </h2>
         </div>
 
-        <p className="hero-description text-left lg:w-[690px] lg:mt-2 mt-8 text-gray-400 font-medium leading-6">
+        <p className="hero-description text-left w-full lg:w-[690px] mt-8 lg:mt-2 text-gray-400 font-medium leading-6 text-sm lg:text-base">
           We are a team of tech enthusiasts dedicated to developing world-class
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.
         </p>
 
-        <div className="button-group flex gap-6 mt-10">
+        <div className="button-group flex flex-col lg:flex-row gap-4 lg:gap-6 mt-10 w-full lg:w-auto">
           <button
-            className="btn-get-started px-8 py-3 rounded-lg font-bold"
+            className="btn-get-started1 h-14 order-2 lg:btn-get-started lg:px-8 lg:py-3 lg:rounded-lg lg:font-bold lg:w-full lg:w-auto"
             style={{ "--btn-color": currentContent.themeColor }}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
           >
             Get Started
           </button>
-          <button className="btn-learn-more flex items-center text-white font-bold gap-2">
-            Learn more <span className="arrow-icon">→</span>
+          <button className="hidden lg:btn-learn-more lg:flex lg:items-center lg:text-white lg:font-bold lg:gap-2 lg:ml-0 lg:ml-0">
+            Learn more <span className="hidden lg:arrow-icon">→</span>
           </button>
         </div>
       </div>
 
       {/* 3. Right Side Animation - Cycling w/ transitions */}
-      <div className="hidden lg:flex relative flex-1 items-center justify-center lg:pt-30 hero-anim-cycle">
-        <div className="scale-125">
+      <div className="mt-12 sm:order-1 lg:mt-0 lg:flex relative flex-1 items-center justify-center h-[500px] lg:h-auto hero-anim-cycle">
+        <div className="scale-75 lg:scale-100 w-full h-full flex items-center justify-center">
           <div
-            className="anim-container opacity-100"
+            className="anim-container w-full h-full flex items-center justify-center"
             style={{
+              transition: 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)',
+              opacity: 1,
               transitionDelay: `${myComponents[currentAnimIndex].delay * 0.3}s`,
             }}
           >
             {ActiveAnimation}
           </div>
         </div>
-        {/* Debug: Show current index */}
-        {/* <div className="text-xs text-white absolute bottom-0">Anim: {currentAnimIndex}</div> */}
       </div>
+      {/* Mobile buttons unified above, removed duplicate */}
     </section>
   );
 }

@@ -172,6 +172,13 @@
   align-items: center;
   height: 40px;
 }
+.button-group1 {
+  display: flex;
+  gap: 30px;
+  width: 380px;
+  align-items: center;
+  height: 40px;
+}
 
 .btn-get-started {
   background: transparent;
@@ -180,6 +187,19 @@
   padding: 12px 28px;
   border-radius: 8px;
   font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 1;
+}
+.btn-get-started1 {
+  background: transparent;
+  border: 2px solid var(--btn-color, blueviolet);
+  color: var(--btn-color, blueviolet);
+  /* padding: 12px 28px; */
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
   position: relative;
   overflow: hidden;
   transition: 0.3s;
@@ -242,7 +262,8 @@
 }
 
 /* ================= ANIMATION CYCLE ================= */
-.hero-anim-cycle {
+.hero-anim-cycle,
+.hero-anim-cycle-mobile {
   position: relative;
 }
 
@@ -269,15 +290,21 @@
   animation: centerPulse 1s ease-out forwards !important;
 }
 
-.anim-container {
-  opacity: 0;
-  transform: scale(0.7) translateY(30px);
-  transition: all 1.2s cubic-bezier(0.34, 0.16, 0.25, 1);
-}
+/* Mobile Animation Visibility - Smooth Cycle */
+@media (max-width: 1023px) {
+  .hero-anim-cycle-mobile .wrapper,
+  .hero-anim-cycle-mobile .mobile-wrapper,
+  .hero-anim-cycle-mobile .man-laptop-wrapper,
+  .hero-anim-cycle-mobile .standing-animation-container {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    animation: none !important;
+  }
 
-.anim-container.opacity-100 {
-  opacity: 1;
-  transform: scale(1) translateY(0);
+  .anim-container-mobile {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes animCycleIn {

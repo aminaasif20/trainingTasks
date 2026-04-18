@@ -9,7 +9,7 @@
   overflow: visible;
   /* Remove self-scale animations - parent controls cycle */
   transform: scale(1);
-  animation: seqScaleStanding 12s ease-in-out infinite;
+/* animation: seqScaleStanding 12s ease-in-out infinite; Parent handles cycle */
 }
 @keyframes seqScaleMobile {
   0% {
@@ -170,29 +170,4 @@
 
 /* TimeLine Sequencer */
 
-@keyframes seqScaleStanding {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  8.33% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  25% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  33.33% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
+/* Removed seqScaleStanding - parent cycle handles scaling */

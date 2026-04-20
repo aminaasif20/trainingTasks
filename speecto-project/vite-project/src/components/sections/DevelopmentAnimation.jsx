@@ -21,7 +21,7 @@ const GearSVG = ({ size = 40, color = "#c5c4c7ff" }) => (
 const DevelopmentAnimation = () => {
   const barHeights = ["40%", "70%", "60%", "90%", "50%", "75%"];
   return (
-    <section className="hero-container fade-in">
+    <section className="hero-container sm:hero-container1 fade-in">
       <div className="floating-card card-top-left">
         {/* Dark header with 3 white dots */}
         <div className="sda-cloud-hdr1">

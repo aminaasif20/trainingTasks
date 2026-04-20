@@ -6,6 +6,14 @@
   height: 500px;
   /* margin-right: -12px; */
 }
+.hero-container1 {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 400px;
+  /* margin-right: -12px; */
+}
 
 .bg-layer {
   margin-left: 34px;

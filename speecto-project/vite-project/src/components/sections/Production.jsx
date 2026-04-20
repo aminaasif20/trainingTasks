@@ -23,14 +23,14 @@ const Production = () => {
       </div>
 
       <div className="flex flex-col items-center mb-10">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-[#22bf86] to-[#22bf86] text-white font-bold shadow-lg mb-4">
+        <div className="w-12 h-12 lg:w-15 lg:h-15 flex items-center justify-center rounded-full bg-gradient-to-r from-[#18a98a] to-[#2ed981] text-white font-bold shadow-lg mb-4">
           6
         </div>
 
-        <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#22bf86] to-[#22bf86] bg-clip-text text-transparent">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] text-center lg:tracking-[5px] tracking-[2px] font-semibold uppercase bg-gradient-to-r font-Nunito from-[#18a98a] to-[#2ed981] bg-clip-text text-transparent">
           PRODUCTION
         </h2>
-        <p className="pt-4 pl-4 pr-4 text-[13.9px] font-semibold lg:mx-4 w-full lg:w-auto lg:mx-32 text-center text-gray-500 leading-relaxed">
+        <p className="pt-4 pl-5 pr-5 font-semibold 2xl:text-xl xl:text-[16.5px] font-medium w-full lg:w-auto lg:mx-12 text-center text-gray-500 font-Nunito ">
           Taking a product into production involves finalizing development,
           testing, preparing for deployment, and coordinating with operations
           and support teams. The process may vary based on the product and the

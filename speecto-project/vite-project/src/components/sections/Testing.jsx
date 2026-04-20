@@ -15,21 +15,21 @@ import design from "../../assets/asset/design.svg";
 
 const Testins = () => {
   return (
-    <div className="flex flex-col items-center bg-white px-5 py-10">
+    <div className="flex flex-col items-center bg-white px-3 py-10">
       {/* HEADER */}
       <div className="relative h-[50px] w-6 flex justify-center">
         <div className=" timeline-lineHeader5"></div>
       </div>
 
-      <div className="flex flex-col items-center mb-10">
-        <div className="lg:w-12 lg:h-12 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#57c126] to-[#a5eb84] text-white font-bold shadow-lg mb-4">
+      <div className="flex flex-col items-center mb-6">
+        <div className="lg:w-14 font-nunito lg:h-14 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#57c126] to-[#a5eb84] text-white font-bold shadow-lg mb-4">
           5
         </div>
 
-        <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#57c126] to-[#a5eb84] bg-clip-text text-transparent">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#57c126] to-[#a5eb84] bg-clip-text text-transparent">
           TESTING
         </h2>
-        <p className="pt-4 pl-4 pr-4 text-[13.9px] font-semibold lg:mx-4 w-full lg:w-auto lg:mx-32 text-center text-gray-500 leading-relaxed">
+        <p className="pt-4 pl-5 pr-5 font-semibold 2xl:text-xl xl:text-[16.5px] font-medium w-full lg:w-auto lg:mx-2 text-center text-gray-500 font-Nunito">
           By employing various testing strategies such as unit, integration,
           integration testing, and end-to-end testing, we identify and fix
           defects early in the development process, leading to a highly reliable
@@ -43,7 +43,7 @@ const Testins = () => {
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
-        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky lg:top-24 self-start flex items-start justify-center lg:pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
+        <div className="w-full lg:w-[52%] order-first lg:order-none relative lg:sticky lg:top-24 self-start flex items-start justify-center lg:pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
           <video
             src={v1}
             autoPlay
@@ -57,18 +57,18 @@ const Testins = () => {
         </div>
 
         {/* -------------------------Middle dots--------------- */}
-        <div className="hidden lg:flex relative h-[750px] w-16 justify-center">
+        <div className="hidden lg:flex relative h-[780px] w-16 justify-center">
           <div className="timeline-line5"></div>
 
           {/* dot */}
-          <div className="absolute top-36 w-4 h-4 bg-[#57c126] rounded-full"></div>
-          <div className="absolute mt-[630px] w-4 h-4 bg-[#57c126] rounded-full"></div>
-          <div className="absolute mt-[380px]  w-4 h-4 bg-[#57c126] rounded-full"></div>
-          <div className="absolute mt-[880px]  w-4 h-4 bg-[#57c126] rounded-full"></div>
+          <div className="absolute top-36 bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
+          <div className="absolute mt-[580px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
+          <div className="absolute mt-[350px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
+          <div className="absolute mt-[835px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
         </div>
 
         {/* Right section */}
-        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start text-center lg:text-left ">
+        <div className="w-full lg:w-[50%] lg:ml-4 flex flex-col items-center lg:items-start text-center lg:text-left ">
           <div className="hidden lg:block bg-white w-auto h-28"></div>
 
           {[
@@ -98,7 +98,7 @@ const Testins = () => {
               className="relative mt-3 lg:my-5 w-full flex flex-col items-center lg:items-start"
             >
               {/* Image */}
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
+              <div className="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
                 <img
                   src={item.img}
                   alt={item.title}
@@ -107,12 +107,12 @@ const Testins = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-xl sm:text-lg font-semibold text-gray-900 mb-1">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className="pt-2 pl-1 pr-4 text-[13.9px] font-semibold lg:mx-4 w-full lg:w-auto lg:ml-1 lg:mr-1  text-gray-500 leading-relaxed">
+              <p className=" font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left   mt-[10px] text-gray-500">
                 {item.text}
               </p>
             </div>

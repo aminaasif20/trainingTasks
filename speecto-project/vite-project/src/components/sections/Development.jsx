@@ -21,12 +21,12 @@ const Development = () => {
         <div className="timeline-lineHeader4"></div>
       </div>
 
-      <div className="flex flex-col items-center mb-10">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-[#f46b48] to-[#f46b48] text-white font-bold shadow-lg mb-4">
+      <div className="flex flex-col items-center">
+        <div className="lg:w-15 lg:h-15 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#ee5228] to-[#f77959] text-white font-bold shadow-lg mb-4">
           4
         </div>
 
-        <h2 className="text-[#f46b48] tracking-[5px] text-xl font-semibold uppercase">
+        <h2 className="text-[#ee5228] lg:text-[28px] font-nunito z-20 sm:text-2xl 2xl:text-[32px] tracking-[5px] bg-gradient-to-r from-[#ee5228] to-[#f77959] bg-clip-text text-transparent font-semibold uppercase">
           DEVELOPMENT
         </h2>
       </div>
@@ -88,8 +88,8 @@ const Development = () => {
         </div>
 
         {/* -------------------Right section---------------- */}
-        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky mb-[px] lg:top-24 flex items-start justify-center pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full max-w-4xl h-[550px] mb-[-10px] lg:h-[600px] mx-auto item-end bg-white overflow-hidden flex items-end md:items-center justify-center font-sans">
+        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky mb-[2px] lg:pl-26 flex items-start justify-center pt-8 lg:pt-[0px] lg:mt-0 productDesignIllustrationWrapper">
+          <div className="relative w-full max-w-5xl h-[550px] z-5 lg:mt-[-40px] lg:h-[600px] mx-auto item-end bg-white overflow-hidden flex items-end md:items-center justify-center font-sans">
             <DevelopmentAnimation />
           </div>
         </div>

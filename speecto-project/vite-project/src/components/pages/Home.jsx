@@ -90,14 +90,14 @@ function Home() {
   const ActiveAnimation = myComponents[currentAnimIndex].component;
 
   return (
-    <section className="relative flex flex-col lg:flex-row hero-wrapper items-center lg:items-start justify-between px-6 min-h-screen overflow-hidden pt-16 lg:pt-20">
+    <section className="relative flex flex-col lg:flex-row hero-wrapper items-stretch lg:items-start justify-between px-6 min-h-screen overflow-hidden pt-16 lg:pt-20">
       {/* 1. Background Watermark */}
       <div className="bg-watermark-text select-none">TECH</div>
 
       {/* 2. Main Content Box */}
-      <div className="relative z-10 w-full lg:w-[48%] max-w-3xl mx-auto lg:mx-0">
-        <div className="header-group text-center lg:text-left">
-          <h2 className="hero-title text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.05] uppercase">
+      <div className="relative z-10 w-full lg:w-[60%] lg:mt-[1px]">
+        <div className="header-group text-left text-2xl lg:w-[700px]">
+          <h2 className="hero-title lg:text-2xl text-2xl tracking-tight leading-[1.1] uppercase">
             <span
               className="inline-block"
               style={{
@@ -121,7 +121,7 @@ function Home() {
 
           {/* Typewriter */}
           <h2
-            className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold mt-4"
+            className="hero-title text-3xl lg:text-5xl font-bold mt-1"
             style={{ color: currentContent.themeColor }}
           >
             {typedText}
@@ -129,44 +129,21 @@ function Home() {
           </h2>
         </div>
 
-        {/* Mobile animation below headline */}
-        <div className="mt-10 w-full lg:hidden flex justify-center">
-          <div className="w-full max-w-sm">
-            {ActiveAnimation}
-          </div>
-        </div>
-
-        <p className="hero-description  text-center lg:text-left mt-8 text-gray-400 font-medium leading-7 text-sm sm:text-base">
+        <p className="hero-description text-left w-full lg:w-[690px] mt-8 lg:mt-2 text-gray-400 font-medium leading-6 text-sm lg:text-base">
           We are a team of tech enthusiasts dedicated to developing world-class
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.
         </p>
-
-        <div className="button-group flex flex-col sm:flex-row sm:items-center gap-4 mt-10 w-full justify-center lg:justify-start">
-          <button
-            className="btn-get-started h-14 px-8 py-3 rounded-lg font-bold w-full sm:w-auto max-w-xl"
-            style={{ "--btn-color": currentContent.themeColor }}
-            onMouseEnter={() => setIsButtonHovered(true)}
-            onMouseLeave={() => setIsButtonHovered(false)}
-          >
-            Get Started
-          </button>
-          <button className="btn-learn-more flex items-center text-white font-bold gap-2">
-            Learn more <span className="arrow-icon">→</span>
-          </button>
-        </div>
       </div>
 
-      {/* 3. Right Side Animation - Cycling w/ transitions */}
-      <div
-        className="hidden lg:flex mt-12 lg:mt-0 relative flex-1 items-center justify-center lg:h-auto hero-anim-cycle"
-        style={{ minHeight: "500px" }}
-      >
+      {/* Animation - FIRST on mobile */}
+      <div className="  mt-12 lg:mt-0 lg:flex-1 relative flex items-center justify-center h-[500px] lg:h-auto hero-anim-cycle">
         <div className="scale-75 lg:scale-100 w-full h-full flex items-center justify-center">
           <div
             className="anim-container w-full h-full flex items-center justify-center"
             style={{
-              transition: 'opacity 0.8s ease, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)',
+              transition:
+                "opacity 0.8s ease, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)",
               opacity: 1,
               transitionDelay: `${myComponents[currentAnimIndex].delay * 0.3}s`,
             }}
@@ -175,8 +152,22 @@ function Home() {
           </div>
         </div>
       </div>
+
+      {/* Button LAST below animation on mobile, with delay */}
+      <div className=" mt-8 w-full lg:w-auto flex justify-center lg:justify-start lg:ml-auto gap-6 lg:mt-10">
+        <button
+          className="btn-get-started1 h-14 lg:btn-get-started px-8 py-3 rounded-lg font-bold opacity-0 lg:opacity-100 [animation-delay:1.5s] lg:[animation-delay:0s]"
+          style={{ "--btn-color": currentContent.themeColor }}
+          onMouseEnter={() => setIsButtonHovered(true)}
+          onMouseLeave={() => setIsButtonHovered(false)}
+        >
+          Get Started
+        </button>
+        <button className="hidden lg:flex lg:items-center lg:text-white lg:font-bold lg:gap-2 btn-learn-more">
+          Learn more <span className="arrow-icon">→</span>
+        </button>
+      </div>
     </section>
   );
 }
-
 export default Home;

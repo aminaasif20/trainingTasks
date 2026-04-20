@@ -35,7 +35,7 @@ const Development = () => {
       <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
         {/* LEFT COLUMN */}
         {/* LEFT COLUMN */}
-        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-end text-center lg:text-right px-4">
+        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-end text-center lg:text-right px-2 lg:pr-4">
           <div className="hidden lg:block bg-white w-auto h-28"></div>
 
           {[
@@ -55,7 +55,7 @@ const Development = () => {
               className="relative my-5 w-full flex flex-col items-center lg:items-end"
             >
               {/* Image */}
-              <div className="lg:w-12 lg:h-12 w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-auto lg:mr-0">
+              <div className="lg:w-10 lg:h-10 w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-auto lg:mr-0">
                 <img
                   src={item.img}
                   alt={item.title}
@@ -69,7 +69,7 @@ const Development = () => {
               </h3>
 
               {/* Text */}
-              <p className=" lg:pt-1 lg:pr-1 pl-4 pr-4 text-[13.9px] font-semibold lg:mx-1 w-full lg:w-auto text-center lg:text-end text-gray-500 leading-relaxed">
+              <p className=" font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left  mt-[10px] text-gray-500 lg:text-end  leading-relaxed">
                 {item.text}
               </p>
             </div>
@@ -88,7 +88,7 @@ const Development = () => {
         </div>
 
         {/* -------------------Right section---------------- */}
-        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky mb-[2px] lg:pl-26 flex items-start justify-center pt-8 lg:pt-[0px] lg:mt-0 productDesignIllustrationWrapper">
+        <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky mb-[2px] lg:pl-26 flex items-start justify-center pt-2 lg:pt-[0px] lg:mt-0 productDesignIllustrationWrapper">
           <div className="relative w-full max-w-5xl h-[550px] z-5 lg:mt-[-40px] lg:h-[600px] mx-auto item-end bg-white overflow-hidden flex items-end md:items-center justify-center font-sans">
             <DevelopmentAnimation />
           </div>

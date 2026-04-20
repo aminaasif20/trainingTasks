@@ -15,24 +15,24 @@ import ProductDesignAnimation from "./ProductDesignAnimation";
 
 const ProductDesign = () => {
   return (
-    <div className="flex flex-col items-center bg-white px-5 py-10">
+    <div className="flex flex-col lg:mt-10 items-center bg-white px-5 py-10">
       {/* HEADER */}
-      <div className="relative h-[50px] w-6 flex justify-center">
-        <div className="timeline-lineHeader"></div>
+      <div className="relative h-[70px] w-6 flex justify-center">
+        <div className="timeline-lineHeader1"></div>
       </div>
 
       <div className="flex flex-col items-center mb-10">
-        <div className="lg:w-12 lg:h-12 h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#f02cb1] to-[#f959cf] text-white  shadow-lg mb-4">
+        <div className="lg:w-14 font-Nunito lg:h-14 h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#f02cb1] to-[#f959cf] text-white  shadow-lg mb-4">
           2
         </div>
 
-        <h2 className="text-[#f02cb1] tracking-[5px] text-xl font-semibold uppercase">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#f02cb1] to-[#f959cf] bg-clip-text text-transparent">
           PRODUCT DESIGN
         </h2>
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
+      <div className="flex flex-col lg:flex-row max-w-7xl w-full items-center lg:items-start relative">
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
@@ -66,7 +66,7 @@ const ProductDesign = () => {
               className="relative my-5 w-full flex flex-col items-center lg:items-end"
             >
               {/* Image */}
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-auto lg:mr-0">
+              <div className="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-auto lg:mr-0">
                 <img
                   src={item.img}
                   alt={item.title}
@@ -75,27 +75,27 @@ const ProductDesign = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-xl sm:text-lg font-semibold text-gray-900 mb-1">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className="lg:pt-1 lg:pr-1  text-[13.9px] font-semibold lg:mx-1 w-full lg:w-auto text-center lg:text-start text-gray-500 leading-relaxed">
+              <p className="font-Nunito 2xl:text-xl xl:text-[16px] text-base text-center font-semibold lg:text-right md:text-right   mt-[10px] text-gray-500">
                 {item.text}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="hidden lg:flex relative h-[700px] w-6 justify-center">
+        <div className="hidden lg:flex relative h-[750px] w-8 justify-center">
           <div className="timeline-line1"></div>
 
           {/* dot */}
-          <div className="absolute top-32 w-4 h-4 bg-[#f02cb1] rounded-full"></div>
-          <div className="absolute mt-[300px] w-4 h-4 bg-[#f02cb1] rounded-full"></div>
-          <div className="absolute mt-[300px]  w-4 h-4 bg-[#f02cb1] rounded-full"></div>
-          <div className="absolute top-[500px] w-4 h-4 bg-[#f02cb1] rounded-full"></div>
-          <div className="absolute top-[700px] w-4 h-4 bg-[#f02cb1] rounded-full"></div>
+          <div className="absolute top-36 w-5 h-5 bg-[#f02cb1] rounded-full"></div>
+          <div className="absolute mt-[350px] w-5 h-5 bg-[#f02cb1] rounded-full"></div>
+          {/* <div className="absolute mt-[300px]  w-4 h-4 bg-[#f02cb1] rounded-full"></div> */}
+          <div className="absolute top-[570px] w-5 h-5 bg-[#f02cb1] rounded-full"></div>
+          <div className="absolute top-[810px] w-5 h-5 bg-[#f02cb1] rounded-full"></div>
         </div>
 
         {/*--------------- Right section------------- */}

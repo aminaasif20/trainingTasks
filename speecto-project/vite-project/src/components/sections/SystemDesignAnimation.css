@@ -1,9 +1,13 @@
 .sda-scene {
   position: relative;
-  width: 490px;
+  width: 500px;
   height: 505px;
   flex-shrink: 0;
   user-select: none;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* padding-left: 12px; */
 }
 
 .sda-connectors {
@@ -353,7 +357,7 @@
 }
 
 .sda-code-card {
-  right: -7px;
+  right: 7px;
   top: 195px;
   width: 109px;
   height: 90px;
@@ -459,7 +463,7 @@
 /* ═══════════════ DATABASE CARD ═══════════════ */
 .sda-db-card {
   position: absolute;
-  right: -8px;
+  right: 6px;
   top: 318px;
   width: 100px;
   height: 118px;

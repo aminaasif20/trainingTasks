@@ -15,18 +15,18 @@ import SystemDesignAnimation from "./SystemDesignAnimation";
 
 const ProductDesign = () => {
   return (
-    <div className="flex flex-col items-center bg-white lg:px-5 py-10">
+    <div className="flex flex-col items-center bg-white lg:px-1 py-5">
       {/* HEADER */}
       <div className="relative h-[50px] w-6 flex justify-center">
         <div className=" timeline-lineHeader3"></div>
       </div>
 
-      <div className="flex flex-col items-center mb-10">
-        <div className="lg:w-12 lg:h-12 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#7374c9] to-[#9ca8e9] text-white  shadow-lg mb-4">
+      <div className="flex flex-col items-center mb-2">
+        <div className="lg:w-14 font-Nunito lg:h-14 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#554bac] to-[#8c99e3] text-white font-bold shadow-lg mb-4">
           3
         </div>
 
-        <h2 className="text-xl tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#5759b3] to-[#9ca8e9] bg-clip-text text-transparent">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-Nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#554bac] to-[#8c99e3] bg-clip-text text-transparent">
           SYSTEM DESIGN
         </h2>
       </div>
@@ -36,8 +36,8 @@ const ProductDesign = () => {
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
-        <div className="lg:w-[480px] lg:w-[40%] order-first lg:order-none relative lg:sticky lg:top-24 w-[330px] self-start flex items-start justify-center lg:pt-[6px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full max-w-4xl h-[400px] lg:w-[500px] lg:-ml-8 lg:h-[600px] mx-auto bg-white overflow-hidden flex items-center justify-center font-sans">
+        <div className="lg:w-[480px] lg:w-[40%] order-first lg:order-none relative lg:sticky lg:top-12 w-[330px] self-start flex items-start justify-center lg:pt-[px] lg:mt-0 productDesignIllustrationWrapper">
+          <div className="relative w-full  h-[400px] lg:w-[500px] lg:-ml-8 lg:h-[600px] mx-auto ml-3 overflow-hidden flex items-center justify-center font-sans">
             <div className="sda-animation-scaler">
               <SystemDesignAnimation />
             </div>
@@ -50,16 +50,16 @@ const ProductDesign = () => {
 
           {/* dot */}
           <div className="absolute top-36 w-4 h-4 bg-[#5759b3] rounded-full"></div>
-          <div className="absolute mt-[580px] w-4 h-4 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute mt-[620px] w-4 h-4 bg-[#5759b3] rounded-full"></div>
           <div className="absolute mt-[380px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
         </div>
-        <div className="hidden lg:flex relative h-[650px] mt-[630px] w-16 mr-3 justify-center">
+        <div className="hidden lg:flex relative h-[650px] mt-[690px] w-12 mr-2 justify-center">
           <div className="timeline-line4"></div>
 
           {/* dot */}
-          <div className="absolute top-38 w-4 h-4 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute top-18 w-4 h-4 bg-[#5759b3] rounded-full"></div>
 
-          <div className="absolute mt-[450px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute mt-[350px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
           {/* <div className="absolute top-[500px] w-4 h-4 bg-[#5759b3] rounded-full"></div> */}
           {/* <div className="absolute top-[700px] w-4 h-4 bg-[#5759b3] rounded-full"></div> */}
         </div>
@@ -100,7 +100,7 @@ const ProductDesign = () => {
               className="relative my-5 w-full flex flex-col items-center lg:items-start"
             >
               {/* Image */}
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
+              <div className="w-10 h-10  bg-gray-200 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
                 <img
                   src={item.img}
                   alt={item.title}
@@ -109,12 +109,12 @@ const ProductDesign = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 font-Nunito mb-2">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className="lg:pt-1 lg:pr-1  text-[13.9px] font-semibold lg:mx-1 w-full lg:w-auto text-center lg:text-start text-gray-500 leading-relaxed">
+              <p className="font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left   mt-[10px] text-gray-500">
                 {item.text}
               </p>
             </div>

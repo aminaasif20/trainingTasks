@@ -97,7 +97,7 @@ function Home() {
       {/* 2. Main Content Box */}
       <div className="relative z-10 w-full lg:w-[60%] lg:mt-[1px]">
         <div className="header-group text-left text-2xl lg:w-[700px]">
-          <h2 className="hero-title lg:text-2xl text-2xl tracking-tight leading-[1.1] uppercase">
+          <h2 className="hero-title lg:text-2xl font-nunito text-2xl tracking-tight leading-[1.1] uppercase">
             <span
               className="inline-block"
               style={{
@@ -129,7 +129,7 @@ function Home() {
           </h2>
         </div>
 
-        <p className="hero-description text-left w-full lg:w-[690px] mt-8 lg:mt-2 text-gray-400 font-medium leading-6 text-sm lg:text-base">
+        <p className="hero-description font-nunito text-left w-full lg:w-[690px] mt-8 lg:mt-2 text-gray-400 font-medium leading-6 text-sm lg:text-base">
           We are a team of tech enthusiasts dedicated to developing world-class
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.

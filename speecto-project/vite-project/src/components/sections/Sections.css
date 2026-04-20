@@ -469,14 +469,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  /* margin-bottom: 5px; */
   position: relative;
 }
 
 .step-badge {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #0056ff, #00a3ff);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #0056ff, #8dd5ff);
   border-radius: 50%;
   color: white;
   display: flex;
@@ -788,16 +788,16 @@
 .timeline-line1 {
   position: absolute;
   top: 0;
-  height: 700px;
+  height: 820px;
   bottom: 0;
-  width: 1.5px;
+  width: 2px;
 
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    /* faded start */ #dce8ff 10%,
+    /* faded start */ #f38ce3 10%,
     /* light blue */ #d822a5 20%,
-    /* bright */ #de0ba3 100% /* solid */
+    /* bright */ #e259bb 100% /* solid */
   );
 }
 .timeline-line-r {
@@ -821,12 +821,12 @@
   top: 0;
   height: 500px;
   bottom: 0;
-  width: 1.5px;
+  width: 2px;
 
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    /* faded start */ #dce8ff 10%,
+    /* faded start */ #ffc7a8 10%,
     /* light blue */ #f46b48 20%,
     /* bright */ #f46643 100% /* solid */
   );
@@ -835,9 +835,9 @@
 .timeline-line3 {
   position: absolute;
   top: 0;
-  height: 600px;
+  height: 625px;
   bottom: 0;
-  width: 1.5px;
+  width: 2px;
 
   background: linear-gradient(
     to bottom,
@@ -852,7 +852,7 @@
   top: 0;
   height: 850px;
   bottom: 0;
-  width: 1.6px;
+  width: 2px;
 
   background: linear-gradient(
     to bottom,
@@ -866,9 +866,9 @@
 .timeline-line4 {
   position: absolute;
   top: 0;
-  height: 450px;
+  height: 360px;
   bottom: 0;
-  width: 1.5px;
+  width: 2px;
 
   background: linear-gradient(
     to bottom,
@@ -878,10 +878,10 @@
     /* bright */ #5759b3 100% /* solid */
   );
 }
-.timeline-lineHeader {
+.timeline-lineHeader1 {
   position: absolute;
   top: 0;
-  height: 50px;
+  height: 70px;
   bottom: 0;
   width: 1.5px;
   /* margin-top: 10px; */
@@ -889,9 +889,9 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    /* faded start */ #dce8ff 20%,
-    /* light blue */ #f74ec7 60%,
-    /* bright */ #f74ec7 100% /* solid */
+    /* faded start */ #f9adf5 20%,
+    /* light blue */ #fc65d1 60%,
+    /* bright */ #f335bd 100% /* solid */
   );
 }
 .timeline-lineHeader {
@@ -955,8 +955,8 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    /* faded start */ #dce8ff 20%,
-    /* light blue */ #f46b48 60%,
+    /* faded start */ #ffc7a8 20%,
+    /* light blue */ #f88e74 60%,
     /* bright */ #f46b48 100% /* solid */
   );
 }
@@ -971,9 +971,9 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    /* faded start */ #dce8ff 20%,
-    /* light blue */ #5759b3 60%,
-    /* bright */ #5759b3 100% /* solid */
+    /* faded start */ #afc1e2 20%,
+    /* light blue */ #afb0f6 60%,
+    /* bright */ #414290 100% /* solid */
   );
 }
 

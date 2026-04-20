@@ -16,21 +16,21 @@ const Requirments = () => {
       {/* Top header */}
       <div className="section-header">
         <div className="step-badge">1</div>
-        <h2 className="text-center text-[#2563eb] tracking-[5px] text-xl font-semibold uppercase lg:step-title">
+        <h2 className=" lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#0065fd] to-[#03a0fe] bg-clip-text text-transparent">
           REQUIREMENTS ENGINEERING
         </h2>
       </div>
-      <div className="flex flex-col lg:flex-row items-center lg:items-start px-4 w-full max-w-[1200px] mx-auto lg:px-6 sm:px-2 lg:px-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start px-4 w-full max-w-[1200px] mx-auto lg:px-3 sm:px-2 lg:px-3 lg:mr-3">
         <RequirmentAnimation />
         <div className="hidden lg:flex relative h-[700px] w-6 justify-center">
           <div className="timeline-line-r"></div>
 
           {/* dot */}
-          <div className="absolute top-32 w-4 h-4 bg-[#2563eb] rounded-full"></div>
-          <div className="absolute mt-[300px] w-4 h-4 bg-[#2563eb] rounded-full"></div>
-          <div className="absolute mt-[300px]  w-4 h-4 bg-[#2563eb] rounded-full"></div>
-          <div className="absolute top-[500px] w-4 h-4 bg-[#2563eb] rounded-full"></div>
-          <div className="absolute top-[700px] w-4 h-4 bg-[#2563eb] rounded-full"></div>
+          <div className="absolute top-34 w-5 h-5 bg-[#2563eb] rounded-full"></div>
+          <div className="absolute mt-[320px] w-5 h-5 bg-[#2563eb] rounded-full"></div>
+          {/* <div className="absolute mt-[300px]  w-5 h-5 bg-[#2563eb] rounded-full"></div> */}
+          <div className="absolute top-[500px] w-5 h-5 bg-[#2563eb] rounded-full"></div>
+          <div className="absolute top-[690px] w-5 h-5 bg-[#2563eb] rounded-full"></div>
         </div>
 
         {/* Right Section  */}
@@ -61,22 +61,22 @@ const Requirments = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="relative my-5 w-[360px] lg:w-full flex flex-col items-center lg:items-start"
+              className="relative my-5 lg:ml-6 w-[400px] lg:w-full flex flex-col items-center lg:items-start"
             >
               {/* Image */}
-              <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
+              <div className="w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center mb-3 shadow-sm mx-auto lg:ml-0 lg:mr-auto">
                 <span className="w-6 h-6 object-contain text-2xl text-gray-500">
                   {item.img}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className="text-xl sm:text-lg font-semibold text-gray-900 mb-1">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className="lg:pt-1 lg:pr-1  text-[13.9px] font-semibold lg:mx-1 w-full lg:w-auto text-center lg:text-start text-gray-500 leading-relaxed">
+              <p className=" font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left   mt-[10px] text-gray-500">
                 {item.text}
               </p>
             </div>

@@ -173,13 +173,13 @@
 
 /* Top-right of the big gear */
 .sda-gear-top-right {
-  top: 60px;
+  top: 0px;
   right: 40px;
 }
 
 .sda-gear-bottom-left {
-  bottom: 40px;
-  left: 40px;
+  bottom: -50px;
+  left: 80px;
 }
 
 .sda-gear-bottom-left1 {
@@ -188,8 +188,8 @@
 }
 
 .sda-gear-bottom-right {
-  bottom: 60px;
-  right: 80px;
+  bottom: -30px;
+  right: 120px;
 }
 .sda-gear-top-right,
 .sda-gear-bottom-left,

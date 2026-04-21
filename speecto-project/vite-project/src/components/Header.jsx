@@ -111,36 +111,75 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div
-        className={`fixed top-0 left-0 h-full w-72 bg-gradient-to-b from-blue-600 to-cyan-500 text-white p-8 transform ${menuOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 md:hidden`}
-      >
-        {/* Close Button */}
-        <button
-          className="absolute top-5 right-6 text-2xl"
+      {/* Backdrop overlay — closes menu when tapped */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-[90] md:hidden"
           onClick={() => setMenuOpen(false)}
-        >
-          ×
-        </button>
+        />
+      )}
 
-        {/* Logo */}
-        <div className="w-30">
-          <img src={logo} alt="logoImage" />
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[280px] max-w-[85vw] bg-gradient-to-b from-blue-700 to-cyan-600 text-white flex flex-col z-[100] transform transition-transform duration-300 md:hidden ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Header row: logo + close */}
+        <div className="flex items-center justify-between px-6 py-5 border-b border-white/20">
+          <div className="w-28">
+            <img src={logo} alt="logoImage" />
+          </div>
+          <button
+            className="text-3xl leading-none"
+            onClick={() => setMenuOpen(false)}
+          >
+            ×
+          </button>
         </div>
 
-        {/* Menu Links */}
-        <ul className="space-y-6 text-lg">
-          <li className="cursor-pointer">Home</li>
-          <li className="cursor-pointer">Services</li>
-          <li className="cursor-pointer">Contact Us</li>
-          <li className="cursor-pointer">Our Team</li>
-          <li className="cursor-pointer">About Us</li>
-        </ul>
+        {/* Scrollable link list */}
+        <nav className="flex-1 overflow-y-auto px-6 py-6">
+          <ul className="space-y-5 text-lg font-medium">
+            <li>
+              <NavLink to="/" onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => isActive ? "text-white font-bold" : "text-white/80 hover:text-white"}>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/services" onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => isActive ? "text-white font-bold" : "text-white/80 hover:text-white"}>
+                Services
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => isActive ? "text-white font-bold" : "text-white/80 hover:text-white"}>
+                Contact Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/team" onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => isActive ? "text-white font-bold" : "text-white/80 hover:text-white"}>
+                Our Team
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about us" onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => isActive ? "text-white font-bold" : "text-white/80 hover:text-white"}>
+                About Us
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
 
-        {/* Button */}
-        <button className="mt-10 w-full bg-white text-black py-3 rounded-xl font-medium">
-          Get Started
-        </button>
+        {/* Get Started button pinned to bottom */}
+        <div className="px-6 py-6 border-t border-white/20">
+          <button className="w-full bg-white text-blue-700 py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+            Get Started
+          </button>
+        </div>
       </div>
     </>
   );

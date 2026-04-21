@@ -12,18 +12,21 @@ const CONTENT_VARIATIONS = [
     suffix: "MOBILE APPS",
     typewriterText: "APP DEVELOPMENT",
     themeColor: "#ff2a85",
+    gradientLight: "#ffadd2",
   },
   {
     highlight: "HIGH-PERFORMANCE",
     suffix: "WEB APPS",
     typewriterText: "WEB DEVELOPMENT",
     themeColor: "#ff6d00",
+    gradientLight: "#ffb347",
   },
   {
     highlight: "CRAFTING SUPERIOR",
     suffix: "SOFTWARE SOLUTIONS",
     typewriterText: "DIGITAL SOLUTION",
     themeColor: "#8b80f9",
+    gradientLight: "#c4beff",
   },
 ];
 
@@ -94,9 +97,11 @@ function Home() {
       {/* 1. Background Watermark */}
       <div className="bg-watermark-text select-none">TECH</div>
 
-      {/* 2. Main Content Box */}
-      <div className="relative z-10 w-full lg:w-[60%] lg:mt-[1px]">
-        <div className="header-group text-left text-2xl lg:w-[700px]">
+      {/* Left wrapper: display:contents on mobile (children join parent flex directly),
+          normal block-level left column on desktop */}
+      <div className="contents lg:block lg:relative lg:z-10 lg:w-[60%] lg:mt-[1px]">
+        {/* Title block — order 1 on mobile */}
+        <div className="order-1 header-group text-left text-2xl lg:w-[700px]">
           <h2 className="hero-title lg:text-2xl font-nunito text-2xl tracking-tight leading-[1.1] uppercase">
             <span
               className="inline-block"
@@ -108,8 +113,11 @@ function Home() {
               WE DEVELOP
             </span>{" "}
             <span
-              className="whitespace-nowrap"
-              style={{ color: currentContent.themeColor }}
+              className="whitespace-nowrap theme-gradient-shift"
+              style={{
+                "--c1": currentContent.themeColor,
+                "--c2": currentContent.gradientLight,
+              }}
             >
               {currentContent.highlight}
             </span>
@@ -121,23 +129,50 @@ function Home() {
 
           {/* Typewriter */}
           <h2
-            className="hero-title text-3xl lg:text-5xl font-bold mt-1"
-            style={{ color: currentContent.themeColor }}
+            className="hero-title mb-5 text-3xl lg:text-5xl font-bold mt-1 theme-gradient-shift"
+            style={{
+              "--c1": currentContent.themeColor,
+              "--c2": currentContent.gradientLight,
+            }}
           >
             {typedText}
-            <span className="cursor text-white">|</span>
+            <span
+              className="cursor text-white"
+              style={{
+                "--c1": currentContent.themeColor,
+                "--c2": currentContent.gradientLight,
+              }}
+            >
+              |
+            </span>
           </h2>
         </div>
 
-        <p className="hero-description font-nunito text-left w-full lg:w-[690px] mt-8 lg:mt-2 text-gray-400 font-medium leading-6 text-sm lg:text-base">
+        {/* Description — order 2 on mobile */}
+        <p className="order-2 hero-description font-nunito sm:block hidden text-left w-full lg:w-[690px] lg:mt-8 text-gray-400 font-medium leading-6  lg:text-base">
           We are a team of tech enthusiasts dedicated to developing world-class
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.
         </p>
+
+        {/* CTA Buttons — order 4 on mobile (after animation) */}
+        <div className="order-4 flex flex-col sm:flex-row w-full sm:w-80 items-center sm:items-start justify-center lg:justify-start gap-4 mt-8 lg:mt-8">
+          <button
+            className="btn-get-started  py-2 rounded-lg font-bold w-full lg:w-28 sm:w-80"
+            style={{ "--btn-color": currentContent.themeColor }}
+            onMouseEnter={() => setIsButtonHovered(true)}
+            onMouseLeave={() => setIsButtonHovered(false)}
+          >
+            Get Started
+          </button>
+          <button className="flex mt-3 items-center text-white font-bold  btn-learn-more">
+            Learn more <span className="arrow-icon">→</span>
+          </button>
+        </div>
       </div>
 
-      {/* Animation - FIRST on mobile */}
-      <div className="  mt-12 lg:mt-0 lg:flex-1 relative flex items-center justify-center h-[500px] lg:h-auto hero-anim-cycle">
+      {/* Animation — order 3 on mobile (between description and buttons) */}
+      <div className="order-3 lg:order-2 mt-4 lg:mt-0 lg:flex-1 relative flex items-center justify-center h-[400px] lg:h-auto hero-anim-cycle">
         <div className="scale-75 lg:scale-100 w-full h-full flex items-center justify-center">
           <div
             className="anim-container w-full h-full flex items-center justify-center"
@@ -151,21 +186,6 @@ function Home() {
             {ActiveAnimation}
           </div>
         </div>
-      </div>
-
-      {/* Button LAST below animation on mobile, with delay */}
-      <div className=" mt-8 w-full lg:w-auto flex justify-center lg:justify-start lg:ml-auto gap-6 lg:mt-10">
-        <button
-          className="btn-get-started1 h-14 lg:btn-get-started px-8 py-3 rounded-lg font-bold opacity-0 lg:opacity-100 [animation-delay:1.5s] lg:[animation-delay:0s]"
-          style={{ "--btn-color": currentContent.themeColor }}
-          onMouseEnter={() => setIsButtonHovered(true)}
-          onMouseLeave={() => setIsButtonHovered(false)}
-        >
-          Get Started
-        </button>
-        <button className="hidden lg:flex lg:items-center lg:text-white lg:font-bold lg:gap-2 btn-learn-more">
-          Learn more <span className="arrow-icon">→</span>
-        </button>
       </div>
     </section>
   );

@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 import { MdLocationPin } from "react-icons/md";
 import { RiInboxArchiveFill } from "react-icons/ri";
+import contactus from "../../assets/asset/contactUS.mp4";
 import { FaPhoneAlt } from "react-icons/fa";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
 import logo from "../../assets/asset/speectoLogo.png";
+
+// Fix default marker icon broken in Vite/Webpack builds
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+});
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -59,31 +72,42 @@ const ContactUs = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col md:flex-row bg-[#081533] min-h-[250px] md:min-h-[330px] w-full items-center justify-center py-12 md:py-0">
+      <div className="flex hidden sm:flex flex-col md:flex-row lg:flex-row bg-[#081533] min-h-[250px] md:min-h-[330px] w-full items-center justify-center py-12 md:py-0">
         {/* Left */}
-        <div className="flex w-full md:w-1/2 justify-center items-center mb-6 md:mb-0">
-          <h1 className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent text-4xl md:text-5xl text-center px-4">
-            Contact Us
+        <div className="flex md:w-1/2 ml-3 mt-[-6px] font-semibold justify-start items-left  md:mb-0">
+          <h1 className="bg-gradient-to-r from-blue-600 to-blue-300 bg-clip-text text-transparent font-Nunito sm:text-2xl lg:text-4xl md:text-5xl text-left px-2">
+            CONTACT
+          </h1>
+          <h1 className="text-white sm:text-2xl lg:text-4xl md:text-5xl text-left px-1">
+            US
           </h1>
         </div>
 
         {/* Right */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
           {/* Picture Placeholder */}
-          <div className="mb-7 flex justify-center items-center"></div>
+          <div className="mb-7 pl-10 w-200 h-90 flex justify-center items-center">
+            <video
+              src={contactus}
+              autoPlay
+              loop
+              muted
+              className="w-full h-full object-contain"
+            ></video>
+          </div>
         </div>
       </div>
 
-      <div className=" px-4 py-12">
-        <h2 className="text-[18px] font-semibold mb-8">Get In Touch</h2>
+      <div className=" px-6 py-4 lg:py-16">
+        <h2 className="text-[18px] font-bold mb-8">Get In Touch</h2>
 
         <div className="grid md:grid-cols-2 gap-18">
           <div className="space-y-6">
             <div className="flex items-start space-x-3">
-              <span className="mt-3">
+              <span className="mt-2">
                 <MdLocationPin />
               </span>
-              <p className="text-[14x]">
+              <p className="text-[14px] mb-[-4px]">
                 71-75 Shelton Street, Covent Garden, <br />
                 London, WC2H 9JQ
               </p>
@@ -111,15 +135,22 @@ const ContactUs = () => {
             </div>
 
             {/* Map */}
-            <div className="mt-4">
-              <iframe
-                title="Google Map"
-                className="w-full h-64 rounded-md border"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217897.62046051834!2d72.92448501493419!3d31.42375904241891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392242a895a55ca9%3A0xdec58f88932671c6!2sFaisalabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1773650091226!5m2!1sen!2s"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div className="mt-4 h-78 w-full  overflow-hidden border border-gray-200 z-0">
+              <MapContainer
+                center={[31.4237, 73.079]}
+                zoom={13}
+                scrollWheelZoom={false}
+                className="w-full h-full"
+                style={{ zIndex: 0 }}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={[31.4237, 73.079]}>
+                  <Popup>Speecto — Faisalabad, Pakistan</Popup>
+                </Marker>
+              </MapContainer>
             </div>
           </div>
 
@@ -127,7 +158,7 @@ const ContactUs = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label className="text-gray-900 font-semibold ml-1">Name</label>
+                <label className="font-semibold ml-1">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -143,9 +174,7 @@ const ContactUs = () => {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-gray-900 font-semibold ml-1">
-                  Email
-                </label>
+                <label className=" font-semibold ml-1">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -164,9 +193,7 @@ const ContactUs = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
-                <label className="text-gray-900 font-semibold ml-1">
-                  Phone No.
-                </label>
+                <label className=" font-semibold ml-1">Phone No.</label>
                 <input
                   type="text"
                   name="phone"
@@ -182,9 +209,7 @@ const ContactUs = () => {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-gray-900 font-semibold ml-1">
-                  Subject
-                </label>
+                <label className="font-semibold ml-1">Subject</label>
                 <input
                   type="text"
                   name="subject"
@@ -202,9 +227,7 @@ const ContactUs = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-gray-900 font-semibold ml-1">
-                Your Message
-              </label>
+              <label className=" font-semibold ml-1">Your Message</label>
               <textarea
                 name="message"
                 cols={40}
@@ -222,18 +245,22 @@ const ContactUs = () => {
             </div>
 
             <div
-              className={`relative w-36 p-[1.5px] rounded-md bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden ${isSubmitting ? "opacity-80 pointer-events-none" : ""}`}
+              className={`relative  item-center lg:w-28 w-25 mt-5  p-[1.6px] rounded-[12px] bg-gradient-to-r from-[#0049ff] to-[#00c3ff] group overflow-hidden${isSubmitting ? "opacity-80 pointer-events-none" : ""}`}
             >
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="relative flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-white text-blue-500 transition-transform duration-300 hover:translate-x-1 w-full"
+                className="relative lg:py-3 py-2 rounded-[12px] bg-white text-gradient-to-r from-[#0049ff] to-[#00c3ff] 
+                            transition-transform duration-300 hover:translate-x-1 w-full"
               >
                 {!isSubmitting && (
-                  <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 transition-all duration-300 group-hover:w-full z-0"></span>
+                  <span
+                    className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-[#0049ff] to-[#00c3ff] transition-all 
+                            duration-300 group-hover:w-full z-0"
+                  ></span>
                 )}
 
-                <span className="relative font-bold z-10 flex items-center gap-2 group-hover:text-white">
+                <span className="relative bg-gradient-to-r from-[#0049ff] to-[#00c3ff] bg-clip-text text-transparent font-bold z-10 group-hover:text-white">
                   {isSubmitting ? (
                     <>
                       <svg

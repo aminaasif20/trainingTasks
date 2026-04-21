@@ -1,18 +1,19 @@
 /* 1. The Import */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..900;1,200..900&family=Montserrat:wght@400;600;700&display=swap");
 
 /* 2. Tailwind Directives (v3 or v4) */
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Montserrat", sans-serif;
-  --font-serif: "Montserrat", serif;
-  --font-mono: "Montserrat", monospace;
+  --font-nunito: "Nunito", sans-serif;
+  --font-sans: "Nunito", sans-serif;
+  --font-serif: "Nunito", serif;
+  --font-mono: "Nunito", monospace;
 }
 
-/* 3. The Global Force */
+/* 3. The Global Force - Nunito everywhere */
 * {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Nunito", sans-serif !important;
 }
 
 /* 4. Specific fix for inputs and buttons (they often ignore global fonts) */
@@ -21,5 +22,5 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Nunito", sans-serif !important;
 }

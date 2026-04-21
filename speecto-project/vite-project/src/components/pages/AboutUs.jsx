@@ -5,42 +5,41 @@ import aboutusPicture from "../../assets/asset/aboutus.webp";
 const AboutUs = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col lg:flex-row bg-[#081533] min-h-[400px] py-12 lg:py-0 items-center justify-between">
+      <div
+        className="flex flex-col lg:flex-row bg-[#081533] 
+min-h-[300px] sm:min-h-[150px] lg:min-h-[400px] 
+py-12 sm:py-8 lg:py-0 
+items-center justify-between px-2 sm:px-4 lg:px-6"
+      >
         {/* Left */}
-        <div className="flex px-4 w-full lg:w-[55%] p-2 flex-col justify-center mx-auto lg:ml-8 mb-8 lg:mb-0">
-          <div>
-            <h1 className="text-white text-4xl ">
-              About{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent text-4xl ">
-                {" "}
-                Us
-              </span>
-            </h1>
-          </div>
-          <div>
-            <p className="text-gray-200 mt-4 text-[1.12rem] pr-7 leading">
-              We are keen to deliver highly innovative & technological solutions
-              through utilizing a rigorous development process. Our journey has
-              taken us from the development of dynamic websites and mobile
-              applications to the development of key enterprise solutions
-              including.
-            </p>
-          </div>
-          <div className="relative w-36 mt-8 p-[1.5px] rounded-md bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
+        <div className="flex w-full lg:w-[52%] flex-col justify-center items-center lg:items-start text-center lg:text-left mb-8 lg:mb-0">
+          <h1 className="text-white font-Nunito font-semibold text-3xl sm:text-4xl">
+            ABOUT{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+              US
+            </span>
+          </h1>
+
+          <p className="text-gray-200 mt-4 text-sm sm:text-base lg:text-[1.12rem] leading-relaxed max-w-md lg:max-w-none">
+            We are keen to deliver highly innovative & technological solutions
+            through utilizing a rigorous development process. Our journey has
+            taken us from the development of dynamic websites and mobile
+            applications to enterprise solutions.
+          </p>
+
+          {/* Button */}
+          <div className="relative w-full sm:w-[160px] mt-8 p-[1.5px] rounded-md bg-gradient-to-r from-[#0049ff] to-[#00c3ff] group overflow-hidden">
             <button
-              className="relative px-4 py-2 rounded-md bg-[#081533] text-blue-500 
-                            transition-transform duration-300 hover:translate-x-1 w-full"
+              className="relative px-6 py-3 rounded-md bg-[#081533] text-[#0049ff] 
+      transition-transform duration-300 hover:translate-x-1 w-full sm:min-w-[150px]"
             >
-              {/* Sliding background */}
               <span
-                className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 
-                           ransition-all 
-                            duration-300 group-hover:w-full z-0"
+                className="absolute left-0 top-0 h-full w-0 
+        bg-gradient-to-r from-[#0049ff] to-[#00c3ff] 
+        transition-all duration-300 group-hover:w-full z-0"
               ></span>
 
-              {/* Button text */}
               <span className="relative font-bold z-10 group-hover:text-white">
-                {/* <Link to>Our Team</Link> */}
                 <NavLink to="/team">Our Team</NavLink>
               </span>
             </button>
@@ -48,9 +47,13 @@ const AboutUs = () => {
         </div>
 
         {/* Right */}
-        <div className="w-full lg:w-[45%] flex justify-center mt-6 lg:mt-0">
-          <div className="w-[80%] md:w-[60%] lg:w-[66%] lg:ml-16">
-            <img src={aboutusPicture} alt="About us" className="w-full h-auto" />
+        <div className="w-full lg:w-[50%] flex justify-center lg:justify-start mt-6 lg:mt-0">
+          <div className="w-[45%] sm:w-[70%] md:w-[60%] lg:w-[68%] lg:ml-16">
+            <img
+              src={aboutusPicture}
+              alt="About us"
+              className="w-full object-contain h-auto"
+            />
           </div>
         </div>
       </div>

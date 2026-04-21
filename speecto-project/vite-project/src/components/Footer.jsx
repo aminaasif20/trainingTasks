@@ -32,9 +32,9 @@ const Footer = () => {
                 Let's Get Started
               </h2>
 
-              <form className="space-y-6">
+              <form className="space-y-6 mx-3">
                 {/* Row 1 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 mb-10 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold  mb-2">
                       Name
@@ -42,7 +42,7 @@ const Footer = () => {
                     <input
                       type="text"
                       placeholder="Name"
-                      className="w-full border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full border border-gray-300 rounded-full px-3 py-2 focus:outline-none "
                     />
                   </div>
 
@@ -53,13 +53,13 @@ const Footer = () => {
                     <input
                       type="email"
                       placeholder="Email"
-                      className="w-full border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full border border-gray-300 rounded-full px-3 py-2 focus:outline-none "
                     />
                   </div>
                 </div>
 
                 {/* Row 2 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 mb-10 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold mb-2">
                       Phone No.
@@ -67,7 +67,7 @@ const Footer = () => {
                     <input
                       type="text"
                       placeholder="Phone Number"
-                      className="w-full border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full border border-gray-300 rounded-full px-3 py-2 focus:outline-none  "
                     />
                   </div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
                     <input
                       type="text"
                       placeholder="Subject"
-                      className="w-full border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full border border-gray-300 rounded-full px-3 py-2 focus:outline-none "
                     />
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const Footer = () => {
                   <textarea
                     placeholder="Write your message..."
                     rows="4"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-3 mb-6 focus:outline-none focus:ring-2 "
                   ></textarea>
                 </div>
 
@@ -128,7 +128,7 @@ const Footer = () => {
             <img
               src={Logo}
               alt="Speecto Logo"
-              className="h-6 w-auto filter invert"
+              className="h-7  w-48 filter invert"
             />
           </div>
 

@@ -25,19 +25,20 @@ const teamMembers = [
     bio: "Meet Hamza Shafiq, Speectos composed Software Engineer. Graduating from Punjab University in 2021, he is been with Speecto for a year, appreciating its relaxed environment. A sports lover, Hamza also aspires to solve real-world problems with his own product in the future.",
   },
   {
-    id: 2,
-    name: "Muhammad Ahmad",
-    role: "Full Stack Engineer",
-    image: pic2,
-    bio: "Introducing Muhammad Ahmed - a compelling personality and a front-end engineer by profession. Ahmed, a 2021 NCBA graduate, joined Speecto appreciating its supportive atmosphere and growth opportunities. A budding book enthusiast and Ted Talks producer, he also enjoys mentoring juniors.",
-  },
-  {
     id: 3,
     name: "Muhammad Umar",
     role: "Full Stack Engineer",
     image: pic3,
     bio: "Introducing Muhammad Umar - a consistent high-achiever and our esteemed React Native Developer. A GK University graduate, Umar joined Speecto a year ago, and despite his accomplishments, hes ever-humble and committed to learning. With two years of experience pre-graduation, Umar is fond of reading technical blogs and is passionate about technology.",
   },
+  {
+    id: 2,
+    name: "Muhammad Ahmad",
+    role: "Full Stack Engineer",
+    image: pic2,
+    bio: "Introducing Muhammad Ahmed - a compelling personality and a front-end engineer by profession. Ahmed, a 2021 NCBA graduate, joined Speecto appreciating its supportive atmosphere and growth opportunities. A budding book enthusiast and Ted Talks producer, he also enjoys mentoring juniors.",
+  },
+
   {
     id: 4,
     name: "Muhammad Usmn",
@@ -127,18 +128,21 @@ const OurTeam = () => {
   return (
     <section className="bg-gray-50 ">
       <div className="w-auto mx-auto ">
-        <div className="relative   h-[70vh]">
+        <div className="relative h-[30vh]  lg:h-[70vh]">
           <img
             className="w-full pt-18 bottom-0 absolute object-contain"
             src={groupImage}
             alt="Group photo background"
           />
 
-          <div className="absolute inset-0 bg-black/60 flex flex-col items-center  text-center px-4">
-            <h2 className="text-2xl mt-12 sm:text-4xl font-Montserrat text-white">
-              MEET OUR <span className="text-blue-400">TEAM</span>
+          <div className="absolute inset-0 bg-gray-800/50 flex flex-col items-center  text-center px-4">
+            <h2 className="text-xl font-semibold mt-9 sm:text-3xl font-nunito text-white">
+              MEET OUR{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text font-semibold">
+                TEAM
+              </span>
             </h2>
-            <p className="mt-3 text-gray-100 font-Montserrat max-w-2xl">
+            <p className="mt-3 text-[14px] sm:text-[16px] lg:text-[19px] text-gray-100 font-nunito max-w-4xl">
               UNLEASHING THE POWER OF COLLABORATION TO CREATE EXTRAORDINARY
               RESULTS.
             </p>
@@ -156,15 +160,15 @@ const OurTeam = () => {
             }
           `}
         </style>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-10 my-16 sm:grid-cols-2 lg:grid-cols-3 mx-6">
           {teamMembers.map((mem, indx) => (
             <div
               key={indx}
-              className="relative group rounded-3xl overflow-hidden shadow-lg bg-[#f0f0f0] h-[330px] w-full"
+              className="relative group rounded-3xl overflow-hidden shadow-lg bg-[#f0f0f0] h-[400px] w-[380px]"
             >
               {/* Image with grayscale transition */}
               <img
-                className="w-full  h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                className="w-full  h-full  grayscale group-hover:grayscale-0 transition-all duration-500"
                 src={mem.image}
                 alt={mem.name}
               />
@@ -182,11 +186,13 @@ const OurTeam = () => {
                   <h3 className="text-lg font-bold text-white tracking-wide">
                     {mem.name}
                   </h3>
-                  <p className={`text-sm mt-1 font-medium bg-clip-text text-transparent ${
-                    indx % 2 === 0
-                      ? 'bg-gradient-to-r from-pink-500 to-rose-400'
-                      : 'bg-gradient-to-r from-purple-500 to-fuchsia-400'
-                  }`}>
+                  <p
+                    className={`text-sm mt-1 font-medium bg-clip-text text-transparent ${
+                      indx % 2 === 0
+                        ? "bg-gradient-to-r from-pink-500 to-rose-400"
+                        : "bg-gradient-to-r from-purple-500 to-fuchsia-400"
+                    }`}
+                  >
                     {mem.role}
                   </p>
                 </div>

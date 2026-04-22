@@ -68,24 +68,24 @@ const Serivces = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Top Banner */}
-      <div className="flex flex-col lg:flex-row bg-[#081533] min-h-[410px] w-full items-start lg:items-center py-10 lg:py-0">
+      <div className="flex flex-col lg:flex-row bg-[#081533] min-h-[410px] w-full items-start lg:items-top lg:pt-10 lg:py-0">
         {/* Left Section */}
-        <div className="flex flex-col mt-5 px-6 lg:pl-10 lg:pr-10 max-w-full lg:w-1/2">
-          <h2 className="text-3xl md:text-4xl text-white font-poppins pt-2 md:pt-8 py-4 font-bold mb-4">
+        <div className="flex lg:text-left text-center flex-col px-6 lg:pl-6 lg:pr-8 max-w-full lg:w-1/2">
+          <h2 className="text-3xl text-xl md:text-4xl text-white font-nunito pt-2 md:pt-2 pb-4 font-bold ">
             OUR
             <span className="bg-gradient-to-r from-blue-600 py-8 to-blue-400 bg-clip-text text-transparent">
               SERVICES
             </span>
           </h2>
-          <p className="text-gray-100 text-[1.05rem] md:text-[1.12rem] w-full font-poppins leading-7 mb-6">
+          <p className="text-white lg:text-left text-center text-[1rem] md:text-[1.12rem] w-full font-nunito leading-5 lg:leading-7  mb-5">
             We offer a comprehensive range of IT solutions to meet your business
             needs. From Requirement Engineering, development and Product design
             to cloud computing and Testing, our experienced team is here to
             provide expert guidance and deliver innovative solutions.
           </p>
 
-          {/* Button */}
-          <div className="relative w-36 p-[1.5px] mt-8 rounded-lg bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
+          {/* Button (Desktop) */}
+          <div className="hidden lg:block relative w-36 p-[1.5px] mt-8 rounded-lg bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
             <button
               className="relative px-2 py-3 rounded-lg bg-[#081533] text-blue-500 
                               transition-transform duration-300 hover:translate-x-1 w-full flex items-center justify-center"
@@ -105,9 +105,30 @@ const Serivces = () => {
         </div>
 
         {/* Right Section */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center mt-10 lg:mt-0 min-h-[300px]">
-          <div className="transform scale-75 md:scale-90 lg:scale-100 origin-center lg:origin-left">
-            {/* <HomeAnimation /> */}
+        <div className="w-full sm:w-1/2  w-full flex flex-col items-center justify-center mt-2 lg:mt-0 min-h-[220px]">
+          <div className="transform scale-[0.8] sm:scale-100 origin-center lg:origin-center">
+            <HomeAnimation />
+          </div>
+
+          {/* Button (Mobile) */}
+          <div className="lg:hidden pt-14 w-full px-6 mb-10 flex justify-center -mt-8">
+            <div className="relative w-full p-[1.5px] rounded-lg bg-gradient-to-r from-blue-500 to-blue-300 group overflow-hidden">
+              <button
+                className="relative px-2 py-3 rounded-lg bg-[#081533] text-blue-500 
+                              transition-transform duration-300 hover:translate-x-1 w-full flex items-center justify-center"
+              >
+                {/* Sliding background */}
+                <span
+                  className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 
+                               transition-all duration-300 group-hover:w-full z-0"
+                ></span>
+
+                {/* Button text */}
+                <span className="relative font-poppins text-lg font-bold z-10 group-hover:text-white">
+                  Contact Us
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -151,12 +172,12 @@ const Serivces = () => {
           {/* Left Content */}
           <div className="lg:w-1/2 flex flex-col">
             <div className="flex items-center gap-4 mb-4">
-              <h4 className="text-blue-600 font-light text-md">
+              <h4 className="text-blue-600 font-nunito text-sm">
                 How Do We Do It.
               </h4>
               <div className="h-[2px] w-12 bg-blue-600"></div>
             </div>
-            <h2 className="text-2xl  md:text-2xl font-Montserrat lg:text-2xl font-bold text-gray-900 mb-3 leading-tight">
+            <h2 className="text-2xl  md:text-2xl font-Montserrat lg:text-[1.7rem] font-bold text-gray-900 mb-3 leading-tight">
               Crafting Exceptional Digital Experiences: Our Process
             </h2>
             <p className="text-gray-500 mb-7 text-[.8rem] leading-relaxed">

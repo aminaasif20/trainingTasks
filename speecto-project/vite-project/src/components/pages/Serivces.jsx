@@ -92,12 +92,12 @@ const Serivces = () => {
             >
               {/* Sliding background */}
               <span
-                className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-blue-500 to-blue-400 
+                className="absolute left-0 top-0 h-full w-0 bg-gradient-to-r from-[#0051ff] to-[#00bbff] 
                              transition-all duration-300 group-hover:w-full z-0"
               ></span>
 
               {/* Button text */}
-              <span className="relative font-poppins text-lg font-bold  z-10 group-hover:text-white">
+              <span className="relative font-nunito bg-gradient-to-r from-[#0051ff] to-[#00bbff] bg-clip-text text-transparent text-lg font-bold  z-10 group-hover:text-white">
                 Contact Us
               </span>
             </button>

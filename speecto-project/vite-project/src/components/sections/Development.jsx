@@ -22,11 +22,11 @@ const Development = () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="lg:w-15 lg:h-15 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#ee5228] to-[#f77959] text-white font-bold shadow-lg mb-4">
+        <div className="sm:w-[50px] sm:h-[50px] w-10 h-10 md:w-[60px] md:h-[60px] lg:w-15 lg:h-15 flex items-center justify-center rounded-full bg-gradient-to-r from-[#ee5228] to-[#f77959] text-white font-bold shadow-lg mb-4">
           4
         </div>
 
-        <h2 className="text-[#ee5228] lg:text-[28px] font-nunito z-20 sm:text-2xl 2xl:text-[32px] tracking-[5px] bg-gradient-to-r from-[#ee5228] to-[#f77959] bg-clip-text text-transparent font-semibold uppercase">
+        <h2 className=" lg:text-[28px] font-nunito z-20 sm:text-2xl 2xl:text-[32px] lg:tracking-[0.2em]  tracking-[0.1em] 2xl:tracking-[0.3em]  bg-gradient-to-r from-[#ee5228] to-[#f88669] bg-clip-text text-transparent font-bold uppercase">
           DEVELOPMENT
         </h2>
       </div>
@@ -64,12 +64,12 @@ const Development = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium  2xl:!text-2xl !text-xl justify-end text-black  mt-[10px] !font-bold text-opacity-100 undefined">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className=" font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left  mt-[10px] text-gray-500 lg:text-end  leading-relaxed">
+              <p className=" ffont-Nunito 2xl:text-xl xl:text-lg text-base font-medium text-center md:text-right  !font-bold mt-[10px] text-gray-500 undefined">
                 {item.text}
               </p>
             </div>

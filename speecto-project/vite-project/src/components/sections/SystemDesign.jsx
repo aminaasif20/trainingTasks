@@ -26,7 +26,7 @@ const ProductDesign = () => {
           3
         </div>
 
-        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-Nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#554bac] to-[#8c99e3] bg-clip-text text-transparent">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-Nunito tracking-[5px] font-bold uppercase bg-gradient-to-r from-[#554bac] to-[#8c99e3] bg-clip-text text-transparent">
           SYSTEM DESIGN
         </h2>
       </div>
@@ -45,7 +45,7 @@ const ProductDesign = () => {
         </div>
 
         {/* -------------------------Middle dots--------------- */}
-        <div className="hidden lg:flex relative h-[650px] w-16 justify-center">
+        <div className="hidden lg:flex relative h-[650px] w-16 ml-5 justify-center">
           <div className="timeline-line3"></div>
 
           {/* dot */}
@@ -53,13 +53,13 @@ const ProductDesign = () => {
           <div className="absolute mt-[620px] w-4 h-4 bg-[#5759b3] rounded-full"></div>
           <div className="absolute mt-[380px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
         </div>
-        <div className="hidden lg:flex relative h-[650px] mt-[690px] w-12 mr-2 justify-center">
+        <div className="hidden lg:flex relative h-[670px] mt-[690px] w-12 mr-2 justify-center">
           <div className="timeline-line4"></div>
 
           {/* dot */}
           <div className="absolute top-18 w-4 h-4 bg-[#5759b3] rounded-full"></div>
 
-          <div className="absolute mt-[350px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute mt-[410px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
           {/* <div className="absolute top-[500px] w-4 h-4 bg-[#5759b3] rounded-full"></div> */}
           {/* <div className="absolute top-[700px] w-4 h-4 bg-[#5759b3] rounded-full"></div> */}
         </div>
@@ -109,12 +109,12 @@ const ProductDesign = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-900 font-Nunito mb-2">
+              <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium  2xl:!text-2xl !text-xl justify-start text-black   mt-[10px] !font-bold text-opacity-100 undefined">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className="font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left   mt-[10px] text-gray-500">
+              <p className=" font-Nunito 2xl:text-xl  xl:text-lg text-base font-medium text-center md:text-left  !font-bold mt-[10px] text-gray-500 undefined">
                 {item.text}
               </p>
             </div>

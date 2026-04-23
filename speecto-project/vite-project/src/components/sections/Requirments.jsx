@@ -22,8 +22,8 @@ const Requirments = () => {
       </div>
       <div className="flex flex-col lg:flex-row items-center lg:items-start mt-28 lg:mt-2 px-4 w-full max-w-[1200px] mx-auto lg:px-3 sm:px-2 lg:px-3 lg:mr-3">
         <RequirmentAnimation />
-        
-        <div className="hidden lg:flex relative h-[700px] w-6 justify-center">
+
+        <div className="hidden ml-4 lg:flex relative h-[700px] w-6 justify-center">
           <div className="timeline-line-r"></div>
 
           {/* dot */}
@@ -72,12 +72,12 @@ const Requirments = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-lg font-semibold text-gray-900 mb-1">
+              <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium  2xl:!text-2xl !text-xl justify-start text-black  mt-[10px] !font-bold text-opacity-100 undefined">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className=" font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left   mt-[10px] text-gray-500">
+              <p className="  font-Nunito 2xl:text-xl xl:text-lg text-base font-medium text-center md:text-left  !font-bold mt-[10px] text-gray-500 undefined">
                 {item.text}
               </p>
             </div>

@@ -22,11 +22,11 @@ const ProductDesign = () => {
       </div>
 
       <div className="flex flex-col items-center mb-10">
-        <div className="lg:w-14 font-Nunito lg:h-14 h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#f02cb1] to-[#f959cf] text-white  shadow-lg mb-4">
+        <div className="lg:w-15 font-Nunito lg:h-15 h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#f02cb1] to-[#fb79d8] text-white  shadow-lg mb-4">
           2
         </div>
 
-        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#f02cb1] to-[#f959cf] bg-clip-text text-transparent">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito lg:tracking-[0.2em]  tracking-[0.1em] 2xl:tracking-[0.3em] font-bold uppercase bg-gradient-to-r from-[#f02cb1] to-[#ff6dd8] bg-clip-text text-transparent">
           PRODUCT DESIGN
         </h2>
       </div>
@@ -75,12 +75,12 @@ const ProductDesign = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-lg font-semibold text-gray-900 mb-1">
+              <h3 className="font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium  2xl:!text-2xl !text-xl justify-start text-black  mt-[10px] !font-bold text-opacity-100 undefined">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className="font-Nunito 2xl:text-xl xl:text-[16px] text-base text-center font-semibold lg:text-right md:text-right   mt-[10px] text-gray-500">
+              <p className=" font-Nunito 2xl:text-xl xl:text-lg text-base font-medium text-center md:text-right  !font-bold mt-[10px] text-gray-500 undefined">
                 {item.text}
               </p>
             </div>
@@ -93,9 +93,9 @@ const ProductDesign = () => {
           {/* dot */}
           <div className="absolute top-36 w-5 h-5 bg-[#f02cb1] rounded-full"></div>
           <div className="absolute mt-[350px] w-5 h-5 bg-[#f02cb1] rounded-full"></div>
-          {/* <div className="absolute mt-[300px]  w-4 h-4 bg-[#f02cb1] rounded-full"></div> */}
+          <div className="absolute mt-[870px]  w-5 h-5 bg-[#f02cb1] rounded-full"></div>
           <div className="absolute top-[570px] w-5 h-5 bg-[#f02cb1] rounded-full"></div>
-          <div className="absolute top-[810px] w-5 h-5 bg-[#f02cb1] rounded-full"></div>
+          {/* <div className="absolute top-[810px] w-5 h-5 bg-[#f02cb1] rounded-full"></div> */}
         </div>
 
         {/*--------------- Right section------------- */}

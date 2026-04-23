@@ -26,10 +26,10 @@ const Testins = () => {
           5
         </div>
 
-        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#57c126] to-[#a5eb84] bg-clip-text text-transparent">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito tracking-[5px] font-bold uppercase bg-gradient-to-r from-[#57c126] to-[#a5eb84] bg-clip-text text-transparent">
           TESTING
         </h2>
-        <p className="pt-4 pl-5 pr-5 font-semibold 2xl:text-xl xl:text-[16.5px] font-medium w-full lg:w-auto lg:mx-2 text-center text-gray-500 font-Nunito">
+        <p className=" font-Nunito 2xl:text-xl xl:text-lg text-base font-medium !font-bold text-gray-500 text-center 2xl:mt-[30px] mt-6">
           By employing various testing strategies such as unit, integration,
           integration testing, and end-to-end testing, we identify and fix
           defects early in the development process, leading to a highly reliable

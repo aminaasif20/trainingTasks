@@ -10,6 +10,7 @@ import systemDesignMessage from "../../assets/asset/systemDesignMessage.webp";
 import product from "../../assets/asset/product.svg";
 import roadmap from "../../assets/asset/roadmap.svg";
 import wireframe from "../../assets/asset/wireframe.svg";
+import v1 from "../../assets/asset/systemD.mp4"
 import design from "../../assets/asset/design.svg";
 import SystemDesignAnimation from "./SystemDesignAnimation";
 
@@ -32,34 +33,42 @@ const ProductDesign = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex flex-col lg:flex-row max-w-5xl w-full items-center lg:items-start relative">
+      <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
-        <div className="lg:w-[480px] lg:w-[40%] order-first lg:order-none relative lg:sticky lg:top-12 w-[330px] self-start flex items-start justify-center lg:pt-[px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full  h-[400px] lg:w-[500px] lg:-ml-8 lg:h-[600px] mx-auto ml-3 overflow-hidden flex items-center justify-center font-sans">
-            <div className="sda-animation-scaler">
+        <div className=" lg:w-[55%] order-first lg:order-none relative lg:sticky lg:top-12 w-[350px] self-start flex items-start justify-center lg:pt-[px] lg:mt-0 productDesignIllustrationWrapper">
+          {/* <div className="relative w-full  h-[400px] lg:w-[550px] lg:-ml-8 lg:h-[600px] mx-auto ml-3 overflow-hidden flex items-center justify-center font-sans">
+            <div className="">
               <SystemDesignAnimation />
             </div>
-          </div>
+          </div> */}
+          <video src={v1}
+          autoPlay
+            muted
+            loop
+            playsInline
+            style={{ width: "100%", height: "auto" }}
+          
+          ></video>
         </div>
 
         {/* -------------------------Middle dots--------------- */}
-        <div className="hidden lg:flex relative h-[650px] w-16 ml-5 justify-center">
+        <div className="hidden l-6 lg:flex relative h-[650px] w-14 justify-center">
           <div className="timeline-line3"></div>
 
           {/* dot */}
-          <div className="absolute top-36 w-4 h-4 bg-[#5759b3] rounded-full"></div>
-          <div className="absolute mt-[620px] w-4 h-4 bg-[#5759b3] rounded-full"></div>
-          <div className="absolute mt-[380px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute top-36 w-5 h-5 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute mt-[650px] w-5 h-5 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute mt-[380px]  w-5 h-5 bg-[#5759b3] rounded-full"></div>
         </div>
-        <div className="hidden lg:flex relative h-[670px] mt-[690px] w-12 mr-2 justify-center">
+        <div className="hidden lg:flex relative h-[650px] mt-[690px] w-12 mr-2 justify-center">
           <div className="timeline-line4"></div>
 
           {/* dot */}
-          <div className="absolute top-18 w-4 h-4 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute top-24 w-5 h-5 bg-[#5759b3] rounded-full"></div>
 
-          <div className="absolute mt-[410px]  w-4 h-4 bg-[#5759b3] rounded-full"></div>
+          <div className="absolute mt-[400px]  w-5 h-5 bg-[#5759b3] rounded-full"></div>
           {/* <div className="absolute top-[500px] w-4 h-4 bg-[#5759b3] rounded-full"></div> */}
           {/* <div className="absolute top-[700px] w-4 h-4 bg-[#5759b3] rounded-full"></div> */}
         </div>
@@ -109,12 +118,12 @@ const ProductDesign = () => {
               </div>
 
               {/* Title */}
-              <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium  2xl:!text-2xl !text-xl justify-start text-black   mt-[10px] !font-bold text-opacity-100 undefined">
+              <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium  2xl:!text-2xl !text-xl justify-start text-black mt-[10px] !font-bold text-opacity-100 undefined">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className=" font-Nunito 2xl:text-xl  xl:text-lg text-base font-medium text-center md:text-left  !font-bold mt-[10px] text-gray-500 undefined">
+              <p className=" font-Nunito 2xl:text-xl xl:text-lg text-base font-medium text-center md:text-left  !font-bold mt-[10px] text-gray-500 undefined">
                 {item.text}
               </p>
             </div>

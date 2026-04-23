@@ -85,17 +85,17 @@ const SystemDesignAnimation = () => {
           <img className="w-10 ml-10 mb-10" src={l1} alt="" />
           {/* Big central gear*/}
           <div className="sda-big-gear">
-            <GearSVG size={105} color="#9246f4" />
+            <GearSVG size={150} color="#9246f4" />
             {/* White circle behind API label */}
             <div className="sda-api-circle">
               <span className="sda-api-label">API</span>
             </div>
           </div>
-          <img className="w-15 mr-8  mt-25" src={l2} alt="" />
+          <img className="w-15 mr-8  mt-45" src={l2} alt="" />
           {/* Top-right gear */}
 
           <div className="sda-small-gear sda-gear-top-right">
-            <GearSVG size={42} color="#6230a0" />
+            <GearSVG size={46} color="#6230a0" />
           </div>
 
           {/* Bottom-left gear */}

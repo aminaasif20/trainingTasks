@@ -839,16 +839,16 @@
 .timeline-line3 {
   position: absolute;
   top: 0;
-  height: 625px;
+  height: 655px;
   bottom: 0;
-  width: 2px;
+  width: 1.5px;
 
   background: linear-gradient(
     to bottom,
     transparent 0%,
     /* faded start */ #dce8ff 10%,
-    /* light blue */ #5759b3 20%,
-    /* bright */ #5759b3 100% /* solid */
+    /* light blue */ #5254f4 20%,
+    /* bright */ #5052d9 100% /* solid */
   );
 }
 .timeline-line5 {
@@ -872,14 +872,14 @@
   top: 0;
   height: 410px;
   bottom: 0;
-  width: 2px;
+  width: 1.5px;
 
   background: linear-gradient(
     to bottom,
     transparent 0%,
     /* faded start */ #dce8ff 10%,
-    /* light blue */ #5759b3 20%,
-    /* bright */ #5759b3 100% /* solid */
+    /* light blue */ #5759dd 20%,
+    /* bright */ #4d4ff5 100% /* solid */
   );
 }
 .timeline-lineHeader1 {

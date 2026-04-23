@@ -25,7 +25,7 @@ import FrameStaric from "../../../assets/asset/FrameStaric.webp";
 const ManLaptop = () => {
   return (
     <div className="man-laptop-wrapper relative w-full h-full flex items-center justify-center">
-      <div className="man-laptop-scene mb-[100px] lg:mb-[30px] w-[300px] lg:h-[400px] relative">
+      <div className="man-laptop-scene lg:mb-[30px] w-[300px] lg:h-[400px] relative">
         {/* Shadow Layer */}
         <img src={laptopShadow} alt="shadow" className="ml-img ml-shadow" />
 

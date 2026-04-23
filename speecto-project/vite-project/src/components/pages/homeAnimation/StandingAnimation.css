@@ -7,9 +7,8 @@
   background-color: transparent;
   position: relative;
   overflow: visible;
-  /* Remove self-scale animations - parent controls cycle */
-  transform: scale(1);
-/* animation: seqScaleStanding 12s ease-in-out infinite; Parent handles cycle */
+  animation: seqScaleMobile 12s ease-in-out infinite;
+  transform-origin: center center;
 }
 @keyframes seqScaleMobile {
   0% {

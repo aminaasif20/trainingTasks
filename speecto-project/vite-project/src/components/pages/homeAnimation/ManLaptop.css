@@ -8,10 +8,32 @@
   position: relative;
   height: 300px;
   width: 300px;
-  animation: seqScaleStanding 12s ease-in-out infinite;
-  /* Remove self-scale - parent cycle */
+  animation: seqScaleMobile 12s ease-in-out infinite;
+  transform-origin: center center;
 }
-/* Removed seqScaleMobile - parent cycle handles scaling */
+
+@keyframes seqScaleMobile {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  8.33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  33.33% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
 
 /* Common image properties for absolute positioning */
 .ml-img {
@@ -19,7 +41,7 @@
   width: 100%;
   height: auto;
   /* top: 20%; */
-  left: 54%;
+  left: 50%;
   transform: translate(-50%, -50%);
   object-fit: contain;
 }

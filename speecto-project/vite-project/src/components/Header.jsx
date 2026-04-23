@@ -26,7 +26,7 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
-            to="services"
+            to="/services"
             className={({ isActive }) =>
               isActive
                 ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
@@ -37,7 +37,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="contact"
+            to="/contact"
             className={({ isActive }) =>
               isActive
                 ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
@@ -48,7 +48,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="team"
+            to="/team"
             className={({ isActive }) =>
               isActive
                 ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
@@ -58,7 +58,7 @@ const Navbar = () => {
             Our Team
           </NavLink>
           <NavLink
-            to="about us"
+            to="/about us"
             className={({ isActive }) =>
               isActive
                 ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
@@ -110,7 +110,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 left-0 h-full w-72 bg-gradient-to-b from-blue-600 to-cyan-500 text-white p-8 transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 md:hidden`}
+        } transition-transform duration-300 md:hidden z-[100]`}
       >
         <button
           className="absolute top-5 right-6 text-2xl"
@@ -119,16 +119,66 @@ const Navbar = () => {
           ×
         </button>
 
-        <div className="w-30">
+        <div className="w-30 mb-8">
           <img src={logo} alt="logoImage" />
         </div>
 
         <ul className="space-y-6 text-lg">
-          <li className="cursor-pointer">Home</li>
-          <li className="cursor-pointer">Services</li>
-          <li className="cursor-pointer">Contact Us</li>
-          <li className="cursor-pointer">Our Team</li>
-          <li className="cursor-pointer">About Us</li>
+          <li>
+            <NavLink
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-white font-bold" : "text-blue-100"
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/services"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-white font-bold" : "text-blue-100"
+              }
+            >
+              Services
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-white font-bold" : "text-blue-100"
+              }
+            >
+              Contact Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/team"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-white font-bold" : "text-blue-100"
+              }
+            >
+              Our Team
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about us"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                isActive ? "text-white font-bold" : "text-blue-100"
+              }
+            >
+              About Us
+            </NavLink>
+          </li>
         </ul>
 
         {/* Button */}

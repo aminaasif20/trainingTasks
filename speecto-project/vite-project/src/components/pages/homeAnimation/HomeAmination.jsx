@@ -9,7 +9,7 @@ import reactLogo from "../../../assets/asset/reactIcon2.webp";
 import LaptopAnimation from "../homeAnimation/LaptopAnimation.jsx";
 import ManAnimation from "../homeAnimation/StandingAnimation.jsx";
 import ManLaptopAnimation from "../homeAnimation/ManLaptop.jsx";
-// import MobileAnimation from "../homeAnimation/mobileAnimation.jsx";
+import MobileAnimation from "../homeAnimation/MobileAnimation.jsx";
 import CenterDisplay from "./CenterDisplay.jsx";
 
 const HomeAnimation = () => {

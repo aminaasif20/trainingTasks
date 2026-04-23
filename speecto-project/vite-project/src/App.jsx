@@ -8,7 +8,7 @@ import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/AboutUs";
 import ContactUs from "./components/pages/ContactUs";
 import OurTeam from "./components/pages/OurTeam";
-import Serivces from "./components/pages/Serivces";
+import Services from "./components/pages/Services";
 import HeroSection from "./components/HeroSection";
 import ProductSaas from "./components/pages/Services/ProductSaas";
 import WebApp from "./components/pages/Services/WebApp";
@@ -26,7 +26,7 @@ function App() {
         <Route path="/about us" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/team" element={<OurTeam />} />
-        <Route path="/services" element={<Serivces />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/services/product-saas" element={<ProductSaas />} />
         <Route path="/services/web-app" element={<WebApp />} />
         <Route path="/services/seo-optimization" element={<SeoOptimization />} />

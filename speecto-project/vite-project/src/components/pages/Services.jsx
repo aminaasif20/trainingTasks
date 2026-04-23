@@ -63,7 +63,7 @@ const servicesList = [
   },
 ];
 
-const Serivces = () => {
+const Services = () => {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col w-full">
@@ -313,4 +313,4 @@ const Serivces = () => {
   );
 };
 
-export default Serivces;
+export default Services;

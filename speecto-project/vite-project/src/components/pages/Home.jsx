@@ -5,6 +5,8 @@ import StandingAnimation from "./homeAnimation/StandingAnimation.jsx";
 import MobileAnimation from "./homeAnimation/MobileAnimation.jsx";
 import ManLaptop from "./homeAnimation/ManLaptop.jsx";
 import LaptopAnimation from "./homeAnimation/LaptopAnimation.jsx";
+import homeAnimation from "./homeAnimation/HomeAmination.jsx";
+import HomeAnimation from "./homeAnimation/HomeAmination.jsx";
 
 const CONTENT_VARIATIONS = [
   {
@@ -42,8 +44,9 @@ function Home() {
   const myComponents = [
     { component: <LaptopAnimation />, delay: 0 },
     { component: <ManLaptop />, delay: 1 },
-    { component: <MobileAnimation />, delay: 2 },
+    { component: <MobileAnimation />, delay: 2},
     { component: <StandingAnimation />, delay: 3 },
+    { component: <HomeAnimation />, delay: 4 },
   ];
 
   useEffect(() => {
@@ -102,9 +105,9 @@ function Home() {
       <div className="contents lg:block lg:relative lg:z-10 lg:w-[60%] lg:mt-[1px]">
         {/* Title block — order 1 on mobile */}
         <div className="order-1 header-group text-left text-2xl lg:w-[700px]">
-          <h2 className="hero-title lg:text-2xl font-nunito text-2xl tracking-tight leading-[1.1] uppercase">
+          <h2 className="hero-title lg:text-2xl font-nunito text-2xl  uppercase">
             <span
-              className="inline-block"
+              className="inline-block font-bold text-3xl lg:text-4xl"
               style={{
                 color: isButtonHovered ? currentContent.themeColor : "white",
                 transition: "color 0.3s",
@@ -113,7 +116,7 @@ function Home() {
               WE DEVELOP
             </span>{" "}
             <span
-              className="whitespace-nowrap theme-gradient-shift"
+              className="font-bold whitespace-nowrap theme-gradient-shift"
               style={{
                 "--c1": currentContent.themeColor,
                 "--c2": currentContent.gradientLight,
@@ -122,14 +125,14 @@ function Home() {
               {currentContent.highlight}
             </span>
             <br />
-            <span className="text-white inline-block mt-1">
+            <span className="text-white font-bold inline-block">
               {currentContent.suffix}
             </span>
           </h2>
 
           {/* Typewriter */}
           <h2
-            className="hero-title mb-5 text-3xl lg:text-5xl font-bold mt-1 theme-gradient-shift"
+            className="hero-title mb-2 text-3xl lg:text-5xl font-bold theme-gradient-shift"
             style={{
               "--c1": currentContent.themeColor,
               "--c2": currentContent.gradientLight,
@@ -149,31 +152,31 @@ function Home() {
         </div>
 
         {/* Description — order 2 on mobile */}
-        <p className="order-2 hero-description font-nunito sm:block hidden text-left w-full lg:w-[690px] lg:mt-8 text-gray-400 font-medium leading-6  lg:text-base">
+        <p className="order-2  font-nunito sm:block hidden text-left w-full lg:w-[700px] lg:mt-2 text-gray-400 font-medium leading-4  lg:text-base  hero-description">
           We are a team of tech enthusiasts dedicated to developing world-class
           custom software solutions while fostering a culture of creativity,
           inclusivity, and continuous learning.
         </p>
 
         {/* CTA Buttons — order 4 on mobile (after animation) */}
-        <div className="order-4 flex flex-col sm:flex-row w-full sm:w-80 items-center sm:items-start justify-center lg:justify-start gap-4 mt-8 lg:mt-8">
+        <div className="order-4 flex flex-col sm:flex-row w-full sm:w-80 items-center sm:items-start justify-center lg:justify-start gap-6 mt-4 lg:mt-4">
           <button
-            className="btn-get-started  py-2 rounded-lg font-bold w-full lg:w-28 sm:w-80"
+            className="btn-get-started rounded-lg font-bold w-full lg:w-42 sm:w-80"
             style={{ "--btn-color": currentContent.themeColor }}
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
           >
             Get Started
           </button>
-          <button className="flex mt-3 items-center text-white font-bold  btn-learn-more">
+          <button className="flex mt-3 ml-3 items-center text-white font-bold  btn-learn-more">
             Learn more <span className="arrow-icon">→</span>
           </button>
         </div>
       </div>
 
       {/* Animation — order 3 on mobile (between description and buttons) */}
-      <div className="order-3 lg:order-2 mt-4 lg:mt-0 lg:flex-1 relative flex items-center justify-center h-[400px] lg:h-auto hero-anim-cycle">
-        <div className="scale-75 lg:scale-100 w-full h-full flex items-center justify-center">
+      <div className="order-3 lg:order-2 mt-6 lg:mt-5 lg:flex-1 relative flex items-center justify-center h-[400px] lg:h-auto hero-anim-cycle">
+        <div className="scale-80 lg:scale-105 w-full h-full flex items-center justify-center">
           <div
             className="anim-container w-full h-full flex items-center justify-center"
             style={{
@@ -184,7 +187,9 @@ function Home() {
             }}
           >
             {ActiveAnimation}
+            
           </div>
+          {/* <LaptopAnimation/> */}
         </div>
       </div>
     </section>

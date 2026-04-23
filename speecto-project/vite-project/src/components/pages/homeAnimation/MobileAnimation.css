@@ -4,6 +4,7 @@
   width: 360px;
   animation: seqScaleMobile 12s ease-in-out infinite;
   transform-origin: center center;
+  /* margin-bottom: 20px; */
 }
 
 @keyframes seqScaleMobile {
@@ -85,14 +86,14 @@
   box-shadow:
     0 0 10px rgba(254, 76, 28, 0.5),
     inset 0 0 10px rgba(254, 76, 28, 0.3);
-  /* animation: squarePulse 4s ease-in-out infinite alternate; */
+  animation: squarePulse 4s ease-in-out infinite alternate;
 }
 
 /* Top Left Square */
 .sq-1 {
   width: 80px;
   height: 80px;
-  top: 30%;
+  top: 10%;
   left: 20%;
   animation-delay: 3s;
   border-color: #fe4c1c; /* Orange fading to red styling */
@@ -102,7 +103,7 @@
 .sq-2 {
   width: 60px;
   height: 60px;
-  bottom: 25%;
+  bottom: 35%;
   right: 20%;
   animation-delay: 3s;
 }
@@ -111,7 +112,7 @@
 .sq-3 {
   width: 90px;
   height: 90px;
-  bottom: 5%;
+  bottom: 15%;
   right: 10%;
   animation-delay: 2.5s;
 }

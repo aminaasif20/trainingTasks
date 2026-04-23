@@ -11,7 +11,7 @@ import "./Sections.css";
 const RequirmentAnimation = () => {
   return (
     <div className="lg:w-1/2 relative lg:sticky lg:top-32 flex justify-center">
-      <div className="flex items-start  justify-center h-[350px] lg:mt-32 w-full lg:w-[500px]">
+      <div className="h-[230px] md:h-[350px] mt-6 2xl:h-[410px] relative flex items-center 2xl:max-w-[650px] w-full lg:max-w-full md:max-w-[400px] sm:max-w-[350px] max-w-[250px] opacity-100">
         <div className="req-animation-scaler">
           <div className="scene-wrapper">
             <div className="scene-container">

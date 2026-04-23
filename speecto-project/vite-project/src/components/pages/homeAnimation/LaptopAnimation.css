@@ -54,7 +54,7 @@
 /* Distributing the shapes around the laptop */
 .pos1 {
   top: 15%;
-  left: 20%;
+  left: 2%;
   width: 10%;
   animation-duration: 5s;
   animation-delay: 0s;
@@ -63,7 +63,7 @@
 
 .pos2 {
   top: 45%;
-  right: 25%;
+  right: 5%;
   width: 8%;
   animation-duration: 7s;
   animation-delay: -2s;
@@ -71,15 +71,15 @@
 }
 
 .pos3 {
-  top: 10%;
-  left: 45%;
-  width: 20%;
+  top: 5%;
+  left: 4%;
+  width: 15%;
   animation-duration: 4s;
   animation-delay: -1s;
 }
 .pos9 {
-  top: 50%;
-  left: 25%;
+  top: 5%;
+  left: 15%;
   width: 20%;
   animation-duration: 4s;
   animation-delay: -1s;
@@ -87,15 +87,15 @@
 
 .pos4 {
   top: 20%;
-  right: 10%;
+  right: 1%;
   width: 16%;
   animation-duration: 5.5s;
 }
 
 .pos5 {
-  bottom: 35%;
-  right: 45%;
-  width: 20%;
+  /* bottom: 0%; */
+  right: 35%;
+  width: 15%;
   animation-duration: 6.5s;
 }
 .pos10 {
@@ -113,7 +113,7 @@
 }
 
 .pos7 {
-  bottom: 25%;
+  bottom: 39%;
   left: 45%;
   width: 5%;
   animation-duration: 4.5s;
@@ -122,7 +122,7 @@
 
 .pos8 {
   top: 15%;
-  right: 45%;
+  right: 5%;
   width: 14%;
   animation-duration: 5s;
 }
@@ -163,7 +163,7 @@
   position: relative;
   width: 75%;
   height: 75%;
-  transform: rotateX(40deg) rotateZ(-15deg);
+  /* transform: rotateX(40deg) rotateZ(-15deg); */
   transform-style: preserve-3d;
 }
 
@@ -179,7 +179,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  animation: zoomInlid 3s ease forwards;
+  animation: open-screen 3s ease forwards;
   z-index: 10;
   transform-origin: bottom center;
   /* animation: open-screen 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; */
@@ -289,6 +289,7 @@
   top: -62%;
   left: 69.5%;
   z-index: 2;
+
   transform: translate(-55%, 25%);
 }
 
@@ -368,17 +369,33 @@
 }
 
 /* TimeLine Sequencer */
+/* Screen rotation from closed to open */
 @keyframes open-screen {
   0% {
-    transform: rotateX(70deg) rotateY(20deg) translateY(30px) scale(0.9);
-    opacity: 0;
+    transform: rotateY(50deg) rotateX(50deg) scaleX(1) scaleY(1)
+      translateY(20px) translateX(25px);
+    opacity: 0.2;
   }
-  60% {
-    transform: rotateX(-10deg) rotateY(5deg) translateY(0);
-    opacity: 1;
+  80% {
+    /* transform: translateX(0px); */
+    opacity: 0.9;
   }
   100% {
-    transform: rotateX(0deg) rotateY(0deg) translateY(0) scale(1);
+    transform: rotateY(0deg) rotateX(0deg) scaleX(1) scaleY(1) translateY(5px)
+      translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* Shadow stretch animation */
+@keyframes shadow-grow {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
   }
 }
 

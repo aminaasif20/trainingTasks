@@ -16,12 +16,13 @@ const Requirments = () => {
       {/* Top header */}
       <div className="section-header">
         <div className="step-badge">1</div>
-        <h2 className=" lg:text-[28px] sm:text-2xl 2xl:text-[32px] font-nunito tracking-[5px] font-semibold uppercase bg-gradient-to-r from-[#0065fd] to-[#03a0fe] bg-clip-text text-transparent">
+        <h2 className=" lg:text-[28px] sm:text-2xl font-bold 2xl:text-[32px] font-nunito tracking-[5px] uppercase bg-gradient-to-r from-[#0065fd] to-[#7ac8f5] bg-clip-text text-transparent">
           REQUIREMENTS ENGINEERING
         </h2>
       </div>
-      <div className="flex flex-col lg:flex-row items-center lg:items-start px-4 w-full max-w-[1200px] mx-auto lg:px-3 sm:px-2 lg:px-3 lg:mr-3">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start mt-28 lg:mt-2 px-4 w-full max-w-[1200px] mx-auto lg:px-3 sm:px-2 lg:px-3 lg:mr-3">
         <RequirmentAnimation />
+        
         <div className="hidden lg:flex relative h-[700px] w-6 justify-center">
           <div className="timeline-line-r"></div>
 

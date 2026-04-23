@@ -33,7 +33,7 @@ const LaptopAnimation = () => {
 
   return (
     <div className="wrapper relative w-full h-full flex items-center justify-center">
-      <div className="animation-container relative flex items-center justify-center w-[600px] h-[600px]">
+      <div className="animation-container relative flex items-center justify-center top-10 right-12 w-[600px] h-[500px]">
         {/* Floating Geometric Background Shapes */}
         <div className="floating-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">
           {/* Orange/Red Circles */}
@@ -45,8 +45,8 @@ const LaptopAnimation = () => {
           {/* Cyan Hollow Circle */}
           <div className="shape pos3">
             <svg
-              width="24"
-              height="24"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="#52b7aaff"
@@ -86,7 +86,7 @@ const LaptopAnimation = () => {
               <polygon points="12,2 22,12 12,22 2,12" />
             </svg>
           </div>
-          <div className="shape pos10">
+          {/* <div className="shape pos10">
             <svg
               width="16"
               height="16"
@@ -97,8 +97,8 @@ const LaptopAnimation = () => {
             >
               <polygon points="12,2 22,12 12,22 2,12" />
             </svg>
-          </div>
-          <div className="shape pos9">
+          </div> */}
+          {/* <div className="shape pos9">
             <svg
               width="12"
               height="12"
@@ -110,7 +110,7 @@ const LaptopAnimation = () => {
             >
               <circle cx="12" cy="12" r="10" />
             </svg>
-          </div>
+          </div> */}
 
           {/* Small Cyan Dot */}
           <div className="shape pos8">
@@ -135,11 +135,11 @@ const LaptopAnimation = () => {
             </div>
 
             {/* LID */}
-            <div className="lid">
+            <div className="lid open">
               <img src={laptopScreenBack} className="imgLidBack" />
               <img src={laptopScreen} className="imgLidScreen" />
               <img src={seondLaptopScreenText} className="imgLidText glow" />
-              <img src={laptopScreenUppeback} className="imgLidUpperBack" />
+              <img src={laptopScreenUppeback} className="imgLidUpperBack " />
               {/* <img src={keyboardBase} className="img" /> */}
             </div>
           </div>

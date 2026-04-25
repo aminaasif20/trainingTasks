@@ -15,7 +15,7 @@ import DevelopmentAnimation from "./DevelopmentAnimation";
 
 const Development = () => {
   return (
-    <div className="flex flex-col items-center bg-white px2 lg:px-5 py-3 lg:py-10">
+    <div className="flex flex-col items-center bg-white px2 lg:px-2 py-3 lg:py-10">
       {/* HEADER */}
       <div className="relative h-[50px] w-6 flex justify-center">
         <div className="timeline-lineHeader4"></div>
@@ -26,17 +26,17 @@ const Development = () => {
           4
         </div>
 
-        <h2 className=" lg:text-[28px] font-nunito z-20 sm:text-2xl 2xl:text-[32px] lg:tracking-[0.2em]  tracking-[0.1em] 2xl:tracking-[0.3em]  bg-gradient-to-r from-[#ee5228] to-[#f88669] bg-clip-text text-transparent font-bold uppercase">
+        <h2 className=" lg:text-[26px] font-nunito z-20 sm:text-2xl 2xl:text-[32px] lg:tracking-[0.2em]  tracking-[0.1em] 2xl:tracking-[0.3em]  bg-gradient-to-r from-[#ee5228] to-[#f88669] bg-clip-text text-transparent font-bold uppercase">
           DEVELOPMENT
         </h2>
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="flex flex-col lg:flex-row max-w-6xl w-full items-center lg:items-start relative">
+      <div className="flex flex-col lg:flex-row px-6 max-w-7xl w-full items-center lg:items-start relative">
         {/* LEFT COLUMN */}
         {/* LEFT COLUMN */}
-        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-end text-center lg:text-right px-2 lg:pr-4">
-          <div className="hidden lg:block bg-white w-auto h-28"></div>
+        <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-end text-center lg:text-right  lg:pr-4">
+          <div className="hidden  lg:block bg-white w-auto h-28"></div>
 
           {[
             {
@@ -76,8 +76,8 @@ const Development = () => {
           ))}
         </div>
 
-        <div className="hidden lg:flex relative h-[600px] w-6 justify-center">
-          <div className="timeline-linee4"></div>
+        <div className="hidden pl-5 lg:flex relative h-[600px] w-6 justify-center">
+          <div className="timeline-linee4 "></div>
 
           {/* dot */}
           <div className="absolute top-38 w-4 h-4 bg-[#f46b48] rounded-full"></div>
@@ -89,7 +89,7 @@ const Development = () => {
 
         {/* -------------------Right section---------------- */}
         <div className="w-full lg:w-[50%] order-first lg:order-none relative lg:sticky mb-[2px] lg:pl-26 flex items-start justify-center pt-2 lg:pt-[0px] lg:mt-0 productDesignIllustrationWrapper">
-          <div className="relative w-full max-w-5xl h-[550px] z-5 lg:mt-[-40px] lg:h-[600px] mx-auto item-end bg-white overflow-hidden flex items-end md:items-center justify-center font-sans">
+          <div className="relative w-full max-w-5xl h-[550px] z-5 lg:mt-[-60px] lg:h-[600px] mx-auto item-end bg-white overflow-hidden flex items-end md:items-center justify-center font-sans">
             <DevelopmentAnimation />
           </div>
         </div>

@@ -27,10 +27,10 @@ const AutomatedDep = () => {
           7
         </div>
 
-        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] text-center lg:tracking-[5px] tracking-[2px] font-semibold uppercase bg-gradient-to-r font-Nunito from-[#ff4550] to-[#ff4550] bg-clip-text text-transparent">
+        <h2 className="lg:text-[28px] sm:text-2xl 2xl:text-[32px] text-center lg:tracking-[5px] tracking-[2px] font-bold uppercase bg-gradient-to-r font-Nunito from-[#ff4550] to-[#ff4550] bg-clip-text text-transparent">
           AUTOMATED DEPLOUMENT
         </h2>
-        <p className=" pt-4 pl-5 pr-5 font-semibold 2xl:text-xl xl:text-[16.5px] font-medium w-full lg:w-auto lg:mx-12 text-center text-gray-500 font-Nunito ">
+        <p className="font-Nunito mt-6 mx-20 2xl:text-xl xl:text-lg text-base font-medium !font-bold  text-gray-500 text-center ">
           Automated deployment ensures a smoother and safer production process
           by streamlining deployment, reducing human error, and allowing for
           faster and more consistent releases. It can be achieved through

@@ -18,9 +18,11 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive
-                ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
-                : "text-[#6A6A6A] cursor-pointer"
+              `font-Nunito 2xl:text-xl xl:text-lg text-base font-medium relative flex justify-center ${
+                isActive
+                  ? "text-white1 !font-bold before:w-[30%] before:h-[5px] before:bg-white before:content-[''] before:absolute before:-bottom-[5px]"
+                  : "text-[#6A6A6A] cursor-pointer"
+              }`
             }
           >
             Home
@@ -28,9 +30,11 @@ const Navbar = () => {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              isActive
-                ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
-                : "text-[#6A6A6A]  cursor-pointer"
+              `font-Nunito 2xl:text-xl xl:text-lg text-base font-medium relative flex justify-center ${
+                isActive
+                  ? "text-white1 !font-bold before:w-[30%] before:h-[5px] before:bg-white before:content-[''] before:absolute before:-bottom-[5px]"
+                  : "text-[#6A6A6A] cursor-pointer"
+              }`
             }
           >
             Services
@@ -39,9 +43,11 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive
-                ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
-                : "text-[#6A6A6A] cursor-pointer"
+              `font-Nunito 2xl:text-xl xl:text-lg text-base font-medium relative flex justify-center ${
+                isActive
+                  ? "text-white1 !font-bold before:w-[30%] before:h-[5px] before:bg-white before:content-[''] before:absolute before:-bottom-[5px]"
+                  : "text-[#6A6A6A] cursor-pointer"
+              }`
             }
           >
             Contact Us
@@ -50,9 +56,11 @@ const Navbar = () => {
           <NavLink
             to="/team"
             className={({ isActive }) =>
-              isActive
-                ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
-                : "text-[#6A6A6A] cursor-pointer"
+              `font-Nunito 2xl:text-xl xl:text-lg text-base font-medium relative flex justify-center ${
+                isActive
+                  ? "text-white1 !font-bold before:w-[30%] before:h-[5px] before:bg-white before:content-[''] before:absolute before:-bottom-[5px]"
+                  : "text-[#6A6A6A] cursor-pointer"
+              }`
             }
           >
             Our Team
@@ -60,9 +68,11 @@ const Navbar = () => {
           <NavLink
             to="/about us"
             className={({ isActive }) =>
-              isActive
-                ? "relative text-white font-bold after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-4 after:h-[5px] after:bg-white"
-                : "text-[#6A6A6A] cursor-pointer"
+              `font-Nunito 2xl:text-xl xl:text-lg text-base font-medium relative flex justify-center ${
+                isActive
+                  ? "text-white1 !font-bold before:w-[30%] before:h-[5px] before:bg-white before:content-[''] before:absolute before:-bottom-[5px]"
+                  : "text-[#6A6A6A] cursor-pointer"
+              }`
             }
           >
             About Us
@@ -70,13 +80,13 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center justify-start gap-4 mr-6">
-          <button className="hidden md:block bg-white text-black mx-2 px-5 py-3 rounded-lg font-semibold text-[16px]">
+          <button className=" cursor-pointer min-w-max py-[14px] px-5 lg:text-lg md:text-base text-sm 2xl:text-xl font-bold text-white rounded-[10px] bg-blue-300 !py-[9px] lg:block hidden !rounded-lg !bg-white !text-black cursor-pointer">
             Get Started
           </button>
 
           <div
             onClick={() => setToggle(!toggle)}
-            className="w-16 h-8 bg-[#A7C7E7] rounded-full relative overflow-hidden cursor-pointer shadow-inner"
+            className="w-16 h-7 bg-[#A7C7E7] rounded-full relative overflow-hidden cursor-pointer shadow-inner"
           >
             {/* The Static Sun: Vertically Centered */}
             <div className="absolute left-2 top-1/2 -translate-y-1/2 w-5 h-5 bg-[#FFD700] rounded-full z-0 shadow-[0_0_8px_#FFD700]"></div>

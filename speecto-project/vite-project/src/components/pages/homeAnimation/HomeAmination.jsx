@@ -19,7 +19,7 @@ const HomeAnimation = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoaded(true);
-    }, 100);
+    }, 50);
   }, []);
 
   const nodes = [
@@ -115,7 +115,7 @@ const HomeAnimation = () => {
                     style={{
                       transform: `translate(${radius}px)`,
                       transition: isComponent
-                        ? `transform 0.8s ease-out ${node.id * 0.05}s`
+                        ? `transform 0.2s ease-out ${node.id * 0.05}s`
                         : "none",
                     }}
                   >

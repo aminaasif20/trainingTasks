@@ -103,17 +103,18 @@
   min-height: 90vh;
   display: flex;
   overflow: hidden;
-  font-family: "Montserrat", sans-serif;
 }
 
 .bg-watermark-text {
   position: absolute;
-  top: -23px;
+  top: -19px;
   left: 0;
   width: 90%;
-  font-size: 9rem;
-  font-weight: 900;
-  line-height: 1;
+  font-size: 9.3rem;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 0.95;
+  letter-spacing: -3px;
 
   background: linear-gradient(
     to bottom,
@@ -132,12 +133,19 @@
 
 /* ================= TEXT ================= */
 .hero-title {
-  font-size: 2.3rem;
-  /* font-weight: 800; */
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif !important;
   color: white;
-  line-height: 1.1;
+  letter-spacing: -1px;
+  /* font-s; */
+  line-height: 1;
   text-transform: uppercase;
-  font-family: "Nunito", sans-serif;
+  transform: scaleY(1.2);
+}
+
+.hero-title .hero-title {
+  transform: none;
 }
 
 .hero-description {
@@ -161,7 +169,7 @@
 
 .btn-get-started {
   background: #ffffff;
-  border: 2px solid var(--btn-color, #ff2a85);
+  border: 1.3px solid var(--btn-color, #ff2a85);
   color: #081533;
   /* padding: 14px 34px; */
   border-radius: 16px;
@@ -187,11 +195,11 @@
 }
 
 /* ================= CURSOR ================= */
-.cursor {
-  font-weight: 300;
+/* .cursor {
+  font-weight: 100;
   color: white;
   animation: blink 0.8s infinite;
-}
+} */
 
 @keyframes blink {
   0%,
@@ -242,11 +250,11 @@
 
 .btn-get-started {
   background: transparent;
-  border: 2px solid var(--btn-color, blueviolet);
+  border: 1.3px solid var(--btn-color, blueviolet);
   color: var(--btn-color, blueviolet);
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 700;
   position: relative;
   overflow: hidden;
   transition: 0.3s;
@@ -414,8 +422,8 @@
   .bg-watermark-text {
     width: 100%;
     font-size: clamp(3rem, 10vw, 5rem);
-    top: 5%;
-    text-align: center;
+    top: 6%;
+    left: 2%;
   }
 
   .hero-title {

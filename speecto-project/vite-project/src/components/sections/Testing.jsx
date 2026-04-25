@@ -22,7 +22,7 @@ const Testins = () => {
       </div>
 
       <div className="flex flex-col items-center mb-6">
-        <div className="lg:w-14 font-nunito lg:h-14 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#57c126] to-[#a5eb84] text-white font-bold shadow-lg mb-4">
+        <div className="lg:w-15 font-nunito lg:h-15 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#57c126] to-[#a5eb84] text-white font-bold shadow-lg mb-4">
           5
         </div>
 
@@ -43,7 +43,7 @@ const Testins = () => {
         {/* LEFT COLUMN */}
 
         {/* LEFT COLUMN */}
-        <div className="w-full lg:w-[52%] order-first lg:order-none relative lg:sticky lg:top-24 self-start flex items-start justify-center lg:pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
+        <div className="w-full lg:w-[52%] order-first lg:order-none relative lg:sticky lg:top-24 self-start flex items-start justify-center o lg:pt-8 lg:pt-[60px] lg:mt-0 productDesignIllustrationWrapper">
           <video
             src={v1}
             autoPlay
@@ -52,7 +52,6 @@ const Testins = () => {
             playsInline
             style={{ width: "100%", height: "auto" }} // Optional: ensures it fits your container
           >
-            Your browser does not support the video tag.
           </video>
         </div>
 
@@ -62,9 +61,9 @@ const Testins = () => {
 
           {/* dot */}
           <div className="absolute top-36 bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
-          <div className="absolute mt-[580px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
-          <div className="absolute mt-[350px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
-          <div className="absolute mt-[835px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
+          <div className="absolute mt-[620px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
+          <div className="absolute mt-[370px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
+          <div className="absolute mt-[895px] bg-gradient-to-r from-[#57c126] to-[#a5eb84]  w-5 h-5 rounded-full"></div>
         </div>
 
         {/* Right section */}
@@ -107,12 +106,12 @@ const Testins = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-lg font-semibold text-gray-900 mb-1">
+              <h3 className=" font-Nunito 2xl:text-2xl lg:text-xl  text-lg font-medium  2xl:!text-2xl !text-xl justify-start text-black mt-[10px] !font-bold  md:dark:text-opacity-50 md:text-opacity-50 text-opacity-100 undefined">
                 {item.title}
               </h3>
 
               {/* Text */}
-              <p className=" font-Nunito 2xl:text-xl xl:text-[16px] text-base font-semibold md:text-left   mt-[10px] text-gray-500">
+              <p className="  font-Nunito 2xl:text-xl xl:text-lg text-base font-medium text-center md:text-left  !font-bold mt-[10px] text-gray-500 undefined">
                 {item.text}
               </p>
             </div>

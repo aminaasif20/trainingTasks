@@ -33,7 +33,7 @@ const LaptopAnimation = () => {
 
   return (
     <div className="wrapper relative w-full h-full flex items-center justify-center">
-      <div className="animation-container relative flex items-center justify-center top-10 right-12 w-[600px] h-[500px]">
+      <div className="animation-container relative flex items-center justify-center top-10 right- w-[600px] h-[500px]">
         {/* Floating Geometric Background Shapes */}
         <div className="floating-shapes-layer z-0 absolute inset-0 w-full h-full pointer-events-none">
           {/* Orange/Red Circles */}

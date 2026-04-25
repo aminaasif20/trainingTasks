@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./HomeAnimation.css";
 
 import bannerReactCircle1 from "../../../assets/asset/bannerReactCircle1.webp";
 import bannerReactCircle2 from "../../../assets/asset/bannerReactCircle2.webp";
@@ -69,7 +70,7 @@ const HomeAnimation = () => {
   ];
 
   return (
-    <div className="flex w-[90%] h-[260px] lg:h-[400px] items-center justify-center lg:-mt-6 mt-0">
+    <div className="home-anim-wrapper flex w-[90%] h-[260px] lg:h-[400px] items-center justify-center lg:-mt-6 mt-0">
       <style>{`
         @keyframes orbit-spin {
           from { transform: rotate(0deg); }

@@ -5,7 +5,7 @@
   justify-content: center;
   perspective: 1200px;
   align-items: center;
-  animation: seqScaleMobile 12s ease-in-out infinite;
+  animation: seqScaleMobile 15s ease-in-out infinite;
   transform-origin: center center;
 }
 
@@ -181,7 +181,7 @@
   height: 100%;
   animation: open-screen 3s ease forwards;
   z-index: 10;
-  transform-origin: bottom center;
+  /* transform-origin: bottom center; */
   /* animation: open-screen 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; */
 }
 
@@ -228,24 +228,24 @@
   position: absolute;
   width: 100%;
   height: auto;
-  top: 50%;
-  left: 50%;
+  top: 54%;
+  left: 51%;
   transform: translate(-50%, -50%);
 }
 .img1 {
   position: absolute;
   width: 100%;
   height: auto;
-  top: 43%;
-  left: 50%;
+  top: 46%;
+  left: 51%;
   transform: translate(-50%, -50%);
 }
 .img2 {
   position: absolute;
   width: 100%;
   height: auto;
-  top: 38%;
-  left: 50%;
+  top: 41%;
+  left: 51%;
   transform: translate(-50%, -50%);
 }
 .img3 {
@@ -253,7 +253,7 @@
   width: 65%;
   height: auto;
   top: 38%;
-  left: 52%;
+  left: 53%;
   transform: translate(-50%, -50%);
 }
 .img4 {
@@ -266,10 +266,10 @@
 }
 .imgLidScreen {
   position: relative;
-  width: 66%;
+  width: 67%;
   height: 90%;
-  top: -61%;
-  left: 69%;
+  top: -64%;
+  left: 73%;
   z-index: 5;
   transform: translate(-55%, 25%);
 }
@@ -277,8 +277,8 @@
   position: absolute;
   width: 66%;
   height: 90%;
-  top: -63%;
-  left: 71%;
+  top: -65%;
+  left: 75%;
   z-index: 2;
   transform: translate(-55%, 25%);
 }
@@ -286,8 +286,8 @@
   position: absolute;
   width: 68%;
   height: 90%;
-  top: -62%;
-  left: 69.5%;
+  top: -64%;
+  left: 73%;
   z-index: 2;
 
   transform: translate(-55%, 25%);
@@ -297,8 +297,8 @@
   position: absolute;
   width: 60%;
   height: 66%;
-  top: -44%;
-  left: 70.5%;
+  top: -47%;
+  left: 73.5%;
   z-index: 10;
   transform: translate(-56%, 25%);
   filter: drop-shadow(0 0 10px rgba(255, 69, 58, 0.6));

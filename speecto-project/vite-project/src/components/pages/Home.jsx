@@ -33,6 +33,15 @@ const CONTENT_VARIATIONS = [
   },
 ];
 
+// Defined OUTSIDE Home so it never gets recreated on re-renders (fixes blinking)
+const ANIM_COMPONENTS = [
+  { component: LaptopAnimation, delay: 0 },
+  { component: ManLaptop, delay: 1 },
+  { component: MobileAnimation, delay: 2 },
+  { component: StandingAnimation, delay: 3 },
+  { component: HomeAnimation, delay: 4 },
+];
+
 function Home() {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -41,14 +50,6 @@ function Home() {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
   // New animation cycle state
   const [currentAnimIndex, setCurrentAnimIndex] = useState(0);
-
-  const myComponents = [
-    { component: <LaptopAnimation />, delay: 0 },
-    { component: <ManLaptop />, delay: 1 },
-    { component: <MobileAnimation />, delay: 2 },
-    { component: <StandingAnimation />, delay: 3 },
-    { component: <HomeAnimation />, delay: 4 },
-  ];
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -60,8 +61,8 @@ function Home() {
   // New: Animation cycle every 4 seconds
   useEffect(() => {
     const animInterval = setInterval(() => {
-      setCurrentAnimIndex((prev) => (prev + 1) % myComponents.length);
-    }, 5000); // 4s cycle to match staggered feel
+      setCurrentAnimIndex((prev) => (prev + 1) % ANIM_COMPONENTS.length);
+    }, 5000);
     return () => clearInterval(animInterval);
   }, []);
 
@@ -94,7 +95,7 @@ function Home() {
   const currentContent =
     CONTENT_VARIATIONS[loopNum % CONTENT_VARIATIONS.length];
 
-  const ActiveAnimation = myComponents[currentAnimIndex].component;
+  const ActiveComponent = ANIM_COMPONENTS[currentAnimIndex].component;
 
   return (
     <section className="relative flex flex-col lg:flex-row hero-wrapper items-stretch lg:items-start justify-between px-6 min-h-screen overflow-hidden pt-16 lg:pt-20">
@@ -183,10 +184,10 @@ function Home() {
               transition:
                 "opacity 0.8s ease, transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)",
               opacity: 1,
-              transitionDelay: `${myComponents[currentAnimIndex].delay * 0.3}s`,
+              transitionDelay: `${ANIM_COMPONENTS[currentAnimIndex].delay * 0.3}s`,
             }}
           >
-            {ActiveAnimation}
+            <ActiveComponent />
           </div>
           {/* <LaptopAnimation/> */}
         </div>

@@ -1,0 +1,32 @@
+.home-anim-wrapper {
+  height: 400px;
+  width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: seqScaleMobile 15s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes seqScaleMobile {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  8.33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  33.33% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

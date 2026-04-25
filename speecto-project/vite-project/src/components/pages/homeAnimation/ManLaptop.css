@@ -1,6 +1,7 @@
 /* Base wrapper for the component */
 .man-laptop-wrapper {
   perspective: 1200px;
+  margin-top: 20px;
 }
 
 /* Scene container */
